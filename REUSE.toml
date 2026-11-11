@@ -1,0 +1,10 @@
+version = 1
+SPDX-PackageName = "RunaPlayer"
+SPDX-PackageSupplier = "Sectorfive"
+SPDX-PackageDownloadLocation = "https://github.com/Sectorfive03/Runa"
+
+[[annotations]]
+path = "po/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "KDE Translators"
+SPDX-License-Identifier = "GPL-3.0-or-later"

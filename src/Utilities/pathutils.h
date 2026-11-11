@@ -1,0 +1,66 @@
+
+/*
+ * SPDX-FileCopyrightText: 2021 George Florea Bănuș <georgefb899@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+#ifndef GLOBALS_H
+#define GLOBALS_H
+
+#include <QObject>
+#include <QStandardPaths>
+#include <QtQml/qqmlregistration.h>
+
+class QQmlEngine;
+class QJSEngine;
+
+class PathUtilsPrivate;
+
+class PathUtils : public QObject
+{
+    Q_OBJECT
+    QML_SINGLETON
+    QML_ELEMENT
+
+public:
+    static PathUtils *instance();
+    static PathUtils *create(QQmlEngine *, QJSEngine *);
+
+    enum class ConfigFile {
+        Main,
+        Shortcuts,
+        Database,
+        PlaylistCache,
+    };
+    Q_ENUM(ConfigFile)
+
+    Q_INVOKABLE QString configFileParentPath(ConfigFile configFile = ConfigFile::Main);
+    Q_INVOKABLE QString configFilePath(ConfigFile configFile = ConfigFile::Main);
+    Q_INVOKABLE QString playlistsFolder();
+    Q_INVOKABLE void highlightInFileManager(const QString &path);
+
+    Q_INVOKABLE bool pathExists(const QString &path);
+    Q_INVOKABLE bool isFile(const QString &path);
+    Q_INVOKABLE bool isDir(const QString &path);
+    Q_INVOKABLE QUrl pathToUrl(const QString &path);
+    Q_INVOKABLE QString urlToPath(const QUrl &url);
+    Q_INVOKABLE QString parentPath(const QString &path);
+    Q_INVOKABLE QUrl parentUrl(const QUrl &url);
+
+Q_SIGNALS:
+    void error(const QString &message);
+
+private:
+    PathUtils();
+    ~PathUtils() = default;
+
+    PathUtils(const PathUtils &) = delete;
+    PathUtils &operator=(const PathUtils &) = delete;
+    PathUtils(PathUtils &&) = delete;
+    PathUtils &operator=(PathUtils &&) = delete;
+
+    std::unique_ptr<PathUtilsPrivate> d_ptr;
+};
+
+#endif // GLOBALS_H

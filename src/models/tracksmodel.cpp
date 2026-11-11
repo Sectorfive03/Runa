@@ -1,0 +1,159 @@
+/*
+ * SPDX-FileCopyrightText: 2020 George Florea Bănuș <georgefb899@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+#include <utility>
+
+#include "tracksmodel.h"
+
+using namespace Qt::StringLiterals;
+
+TracksModel::TracksModel(QObject *parent)
+    : QAbstractListModel(parent)
+{
+}
+
+int TracksModel::rowCount(const QModelIndex &parent) const
+{
+    if (parent.isValid()) {
+        return 0;
+    }
+
+    return m_data.count();
+}
+
+QVariant TracksModel::data(const QModelIndex &index, int role) const
+{
+    if (!index.isValid()) {
+        return {};
+    }
+
+    const auto &item = m_data.at(index.row());
+
+    switch (role) {
+    case IdRole:
+        return item.trackid;
+    case TextRole:
+        return item.display();
+    case LanguageRole:
+        return item.lang;
+    case TitleRole:
+        return item.title;
+    case CodecRole:
+        return item.codec;
+    case ExternalPathRole:
+        if (item.externalPath.has_value()) {
+            return item.externalPath.value();
+        }
+        return {};
+    case StreamIndexRole:
+        return item.streamIndex;
+    }
+
+    return {};
+}
+
+QHash<int, QByteArray> TracksModel::roleNames() const
+{
+    // clang-format off
+    static QHash<int, QByteArray> roles{
+        {IdRole,            QByteArrayLiteral("trackId")},
+        {TextRole,          QByteArrayLiteral("displayText")},
+        {LanguageRole,      QByteArrayLiteral("language")},
+        {TitleRole,         QByteArrayLiteral("title")},
+        {CodecRole,         QByteArrayLiteral("codec")},
+        {ExternalPathRole,  QByteArrayLiteral("externalPath")},
+        {StreamIndexRole,   QByteArrayLiteral("streamIndex")},
+    };
+    // clang-format on
+
+    return roles;
+}
+
+void TracksModel::clear()
+{
+    beginResetModel();
+    m_data.clear();
+    m_trackIds.clear();
+    endResetModel();
+}
+
+void TracksModel::addTrack(const Track &track)
+{
+    beginInsertRows(QModelIndex(), m_data.count(), m_data.count());
+    m_data.append(track);
+    addTrackId(track.trackid);
+    endInsertRows();
+    Q_EMIT rowCountChanged();
+}
+
+Track TracksModel::track(int row) const
+{
+    return m_data.at(row);
+}
+
+void TracksModel::setTracks(QList<Track> tracks)
+{
+    beginResetModel();
+    m_data = std::move(tracks);
+    endResetModel();
+    Q_EMIT rowCountChanged();
+}
+
+void TracksModel::addTrackId(int trackId)
+{
+    if (hasTrackId(trackId)) {
+        return;
+    }
+    m_trackIds.append(trackId);
+}
+
+bool TracksModel::hasTrackId(int trackId)
+{
+    return m_trackIds.contains(trackId);
+}
+
+int TracksModel::nextRow()
+{
+    auto row = activeRow() + 1;
+    if (row < 0 || row >= rowCount()) {
+        return 0;
+    }
+
+    return row;
+}
+
+int TracksModel::previousRow()
+{
+    auto row = activeRow() - 1;
+    if (row < 0 || row >= rowCount()) {
+        return rowCount() - 1;
+    }
+
+    return row;
+}
+
+int TracksModel::activeRow() const
+{
+    return m_activeRow;
+}
+
+void TracksModel::setActiveRow(int newActiveTrack)
+{
+    m_activeRow = newActiveTrack;
+}
+
+int TracksModel::findTrackRow(int trackId) const
+{
+    for (int row = 0; row < m_data.size(); ++row) {
+        if (m_data.at(row).trackid == trackId) {
+            return row;
+        }
+    }
+
+    return -1;
+}
+
+#include "moc_tracksmodel.cpp"
