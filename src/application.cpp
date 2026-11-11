@@ -1,0 +1,327 @@
+/*
+ * SPDX-FileCopyrightText: 2020 George Florea Bănuș <georgefb899@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+#include "application.h"
+
+#include <QAbstractItemModel>
+#include <QApplication>
+#include <QCommandLineParser>
+#include <QDesktopServices>
+#include <QDir>
+#include <QFileInfo>
+#include <QIcon>
+#include <QMimeDatabase>
+#include <QProcess>
+#include <QQmlApplicationEngine>
+#include <QQuickView>
+#include <QStandardPaths>
+#include <QStyle>
+#include <QStyleFactory>
+#include <QThread>
+#include <QThreadPool>
+#include <QUrlQuery>
+#include <commandlineoptions.h>
+
+#include "kconfig_version.h"
+#include <KAboutData>
+#include <KCrash>
+#include <KLocalizedString>
+#include <KWindowSystem>
+
+#include "audiosettings.h"
+#include "generalsettings.h"
+#include "runaplayer-version.h"
+#include "miscutils.h"
+#include "mousesettings.h"
+#include "pathutils.h"
+#include "playbacksettings.h"
+#include "playlistsettings.h"
+#include "subtitlessettings.h"
+#include "videosettings.h"
+#include "worker.h"
+#include "youtube.h"
+
+using namespace Qt::StringLiterals;
+
+bool ApplicationEventFilter::eventFilter(QObject *obj, QEvent *event)
+{
+    switch (event->type()) {
+    case QEvent::KeyPress: {
+        const auto *keyEvent = static_cast<QKeyEvent *>(event);
+        if (keyEvent->key() == Qt::Key_Alt) {
+            Q_EMIT altKeyPressed();
+        }
+        break;
+    }
+    case QEvent::KeyRelease: {
+        const auto *keyEvent = static_cast<QKeyEvent *>(event);
+        if (keyEvent->key() == Qt::Key_Alt) {
+            Q_EMIT altKeyReleased();
+        }
+        break;
+    }
+    case QEvent::Leave:
+        Q_EMIT applicationMouseLeave();
+        break;
+    case QEvent::Enter:
+        Q_EMIT applicationMouseEnter();
+        break;
+    default:
+        break;
+    }
+    return QObject::eventFilter(obj, event);
+}
+
+Application *Application::instance()
+{
+    static Application app;
+    return &app;
+}
+
+Application *Application::create(QQmlEngine *, QJSEngine *)
+{
+    QQmlEngine::setObjectOwnership(instance(), QQmlEngine::CppOwnership);
+    return instance();
+}
+
+Application::Application()
+    : QObject{nullptr}
+    , m_systemDefaultStyle(QApplication::style()->objectName())
+    , m_appEventFilter{std::make_unique<ApplicationEventFilter>()}
+{
+    if (GeneralSettings::guiStyle() != u"System"_s) {
+        QApplication::setStyle(GeneralSettings::guiStyle());
+    }
+
+    KLocalizedString::setApplicationDomain("runaplayer");
+
+    setupWorkerThread();
+    setupAboutData();
+
+    KCrash::initialize();
+
+    connect(PathUtils::instance(), &PathUtils::error, MiscUtils::instance(), &MiscUtils::error);
+}
+
+Application::~Application() = default;
+
+QColor Application::accentColor() const
+{
+    return QColor(u"#ff6600"_s);
+}
+
+bool Application::actionsEnabled()
+{
+    return m_actionsEnabled;
+}
+
+void Application::setActionsEnabled(bool enable)
+{
+    if (enable == actionsEnabled()) {
+        return;
+    }
+    m_actionsEnabled = enable;
+    Q_EMIT actionsEnabledChanged();
+}
+
+bool Application::isAltKeyPressed() const
+{
+    return m_isAltKeyPressed;
+}
+
+void Application::setIsAltKeyPressed(bool newIsAltKeyPressed)
+{
+    if (m_isAltKeyPressed == newIsAltKeyPressed) {
+        return;
+    }
+    m_isAltKeyPressed = newIsAltKeyPressed;
+    Q_EMIT isAltKeyPressedChanged();
+}
+
+void Application::setupEventFilter(QObject *object)
+{
+    // used to hide playlist when mouse leaves the application
+    // while moving between monitors while in fullscreen
+    // and detecting if alt key is pressed to show tooltips even when they are disabled in settings
+    object->installEventFilter(m_appEventFilter.get());
+
+    QObject::connect(m_appEventFilter.get(), &ApplicationEventFilter::applicationMouseLeave, this, &Application::qmlApplicationMouseLeave);
+    QObject::connect(m_appEventFilter.get(), &ApplicationEventFilter::applicationMouseEnter, this, &Application::qmlApplicationMouseEnter);
+
+    QObject::connect(m_appEventFilter.get(), &ApplicationEventFilter::altKeyPressed, this, [this]() {
+        setIsAltKeyPressed(true);
+    });
+    QObject::connect(m_appEventFilter.get(), &ApplicationEventFilter::altKeyReleased, this, [this]() {
+        setIsAltKeyPressed(false);
+    });
+}
+
+void Application::setupWorkerThread()
+{
+    auto *worker = Worker::instance();
+    auto *thread = new QThread();
+    worker->moveToThread(thread);
+    QObject::connect(thread, &QThread::finished, worker, &Worker::deleteLater);
+    QObject::connect(thread, &QThread::finished, thread, &QThread::deleteLater);
+    thread->start();
+}
+
+void Application::aboutDataAddComponent(const KAboutComponent &component)
+{
+    m_aboutData.addComponent(component);
+}
+
+KAboutData Application::aboutData()
+{
+    return m_aboutData;
+}
+
+void Application::setupAboutData()
+{
+    m_aboutData.setComponentName(u"runaplayer"_s);
+    m_aboutData.setDisplayName(i18nc("application title/display name", "RunaPlayer"));
+    m_aboutData.setProgramLogo(QIcon(u":/icons/256-apps-runa.png"_s));
+    m_aboutData.setVersion(Application::version().toUtf8());
+    m_aboutData.setShortDescription(i18nc("@title", "Media player"));
+    m_aboutData.setLicense(KAboutLicense::GPL_V3);
+    m_aboutData.setCopyrightStatement(i18nc("copyright statement, use copyright symbol and en dash for the year range", "© 2026 Sectorfive"));
+    m_aboutData.setHomepage(u"https://runa.sectorfive.win"_s);
+    m_aboutData.setBugAddress(u"https://github.com/Sectorfive03/Runa/issues"_s.toUtf8());
+    m_aboutData.setDesktopFileName(u"win.sectorfive.runaplayer"_s);
+
+    m_aboutData.addAuthor(i18nc("@info:credit", "Sectorfive"),
+                          i18nc("@info:credit", "Developer"),
+                          u"contact@sectorfive.win"_s,
+                          u"https://sectorfive.win"_s);
+
+    QPointer self(this);
+    QThreadPool::globalInstance()->start([self]() {
+        if (!self) {
+            return;
+        }
+
+        YouTube yt;
+        if (yt.youtubeDlExecutable().isEmpty()) {
+            return;
+        }
+        QProcess ytdlpProcess;
+        ytdlpProcess.setProgram(yt.youtubeDlExecutable());
+        ytdlpProcess.setArguments({u"--version"_s});
+        ytdlpProcess.start();
+        ytdlpProcess.waitForFinished(2000);
+
+        auto ytdlpVersion = ytdlpProcess.readAllStandardOutput().simplified();
+        QMetaObject::invokeMethod(self, [self, ytdlpVersion]() {
+            if (!self) {
+                return;
+            }
+
+            self->m_aboutData.addComponent(u"yt-dlp"_s,
+                                           i18n("Feature-rich command-line audio/video downloader"),
+                                           QString::fromUtf8(ytdlpVersion),
+                                           u"https://github.com/yt-dlp/yt-dlp"_s,
+                                           u"https://unlicense.org"_s);
+            KAboutData::setApplicationData(self->m_aboutData);
+            // Keep the window title exactly as set by QML. Qt appends the
+            // application display name with an em dash otherwise.
+            QGuiApplication::setApplicationDisplayName(QString());
+        });
+    });
+
+    const auto parser = CommandLineOptions::instance().parser();
+    m_aboutData.setupCommandLine(parser.get());
+    m_aboutData.processCommandLine(parser.get());
+
+    KAboutData::setApplicationData(m_aboutData);
+    // Keep the window title exactly as set by QML. Qt appends the
+    // application display name with an em dash otherwise.
+    QGuiApplication::setApplicationDisplayName(QString());
+}
+
+QString Application::version()
+{
+    return QString::fromStdString(RUNAPLAYER_VERSION_STRING);
+}
+
+QList<QUrl> Application::urls()
+{
+    return m_urls;
+}
+
+QUrl Application::url(uint index)
+{
+    if (m_urls.isEmpty() || index >= m_urls.size()) {
+        return {};
+    }
+
+    return m_urls.at(index);
+}
+
+void Application::addUrl(const QString &value)
+{
+    m_urls.append(QUrl::fromUserInput(value, QDir::currentPath()));
+}
+
+void Application::handleSecondayInstanceMessage(const QByteArray &message, const QString &activationToken)
+{
+    auto msgString = QString::fromStdString(message.data());
+    QFileInfo fileInfo{msgString};
+    if (fileInfo.exists() && fileInfo.isFile()) {
+        Q_EMIT openUrl(QUrl::fromUserInput(msgString));
+        qputenv("XDG_ACTIVATION_TOKEN", activationToken.toUtf8());
+        raiseWindow();
+    }
+}
+
+QStringList Application::availableGuiStyles()
+{
+    return QStyleFactory::keys();
+}
+
+void Application::setGuiStyle(const QString &style)
+{
+    if (style == u"Default"_s) {
+        QApplication::setStyle(m_systemDefaultStyle);
+        return;
+    }
+    QApplication::setStyle(style);
+}
+
+QQmlApplicationEngine *Application::qmlEngine() const
+{
+    return m_qmlEngine;
+}
+
+void Application::setQmlEngine(QQmlApplicationEngine *_qmlEngine)
+{
+    m_qmlEngine = _qmlEngine;
+}
+
+int Application::frameworksVersionMinor()
+{
+    return KCONFIG_VERSION_MINOR;
+}
+
+int Application::qtMajorVersion()
+{
+    return QT_VERSION_MAJOR;
+}
+
+void Application::raiseWindow()
+{
+    QObject *rootObject = m_qmlEngine->rootObjects().constFirst();
+    if (rootObject == nullptr) {
+        return;
+    }
+
+    QWindow *window = qobject_cast<QWindow *>(rootObject);
+    if (window != nullptr) {
+        KWindowSystem::updateStartupId(window);
+        KWindowSystem::activateWindow(window);
+    }
+}
+
+#include "moc_application.cpp"

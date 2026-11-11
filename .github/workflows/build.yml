@@ -1,0 +1,198 @@
+# SPDX-FileCopyrightText: 2026 Sectorfive
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  linux:
+    name: Linux (Arch, Qt 6 / KF6)
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Install dependencies
+        run: |
+          pacman -Syu --noconfirm --needed \
+            cmake ninja gcc pkgconf git \
+            qt6-base qt6-declarative qt6-5compat qt6-svg qt6-shadertools qt6-tools \
+            extra-cmake-modules kconfig kcoreaddons kcrash ki18n kiconthemes \
+            kio kfilemetadata kcolorscheme kwindowsystem kirigami kdeclarative \
+            kitemmodels qqc2-desktop-style breeze-icons kdsingleapplication \
+            vlc ffmpeg yt-dlp gettext \
+            squashfs-tools patchelf desktop-file-utils \
+            xorg-server-xvfb xorg-xauth mesa
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build -j"$(nproc)"
+
+      - name: Smoke test
+        run: |
+          set +e
+          LIBGL_ALWAYS_SOFTWARE=1 timeout 15 xvfb-run -a ./build/bin/runa > /tmp/runa.log 2>&1
+          rc=$?
+          set -e
+          cat /tmp/runa.log
+          if grep -qiE "Could not initialize libvlc|module .* not installed|Failed to load" /tmp/runa.log; then
+            echo "Runa failed to start cleanly" >&2
+            exit 1
+          fi
+          # 124 means the application was still running when timeout fired.
+          if [ "$rc" -ne 124 ] && [ "$rc" -ne 0 ]; then
+            echo "Runa exited with unexpected status $rc" >&2
+            exit 1
+          fi
+
+      - name: Install
+        run: cmake --install build --prefix "$PWD/stage/usr"
+
+      - name: Package
+        id: package
+        run: |
+          VERSION="$(sed -n 's/^project(runaplayer VERSION \([0-9.]*\).*/\1/p' CMakeLists.txt)"
+          TARBALL="Runa-${VERSION}-linux-x86_64.tar.gz"
+          tar -czf "$TARBALL" -C stage usr
+          echo "archive=$TARBALL" >> "$GITHUB_OUTPUT"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Runa-linux-x86_64
+          path: ${{ steps.package.outputs.archive }}
+
+      - name: Upload release asset
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.package.outputs.archive }}
+
+  windows:
+    name: Windows (MSYS2 UCRT64 / MinGW-w64)
+    runs-on: windows-latest
+    timeout-minutes: 90
+    defaults:
+      run:
+        shell: msys2 {0}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSYS2
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: UCRT64
+          update: true
+          cache: true
+          install: >-
+            git
+            zip
+            curl
+            mingw-w64-ucrt-x86_64-gcc
+            mingw-w64-ucrt-x86_64-cmake
+            mingw-w64-ucrt-x86_64-ninja
+            mingw-w64-ucrt-x86_64-pkgconf
+            mingw-w64-ucrt-x86_64-gettext-tools
+            mingw-w64-ucrt-x86_64-icoutils
+            mingw-w64-ucrt-x86_64-ntldd
+            mingw-w64-ucrt-x86_64-qt6-base
+            mingw-w64-ucrt-x86_64-qt6-declarative
+            mingw-w64-ucrt-x86_64-qt6-5compat
+            mingw-w64-ucrt-x86_64-qt6-svg
+            mingw-w64-ucrt-x86_64-qt6-shadertools
+            mingw-w64-ucrt-x86_64-qt6-tools
+            mingw-w64-ucrt-x86_64-extra-cmake-modules
+            mingw-w64-ucrt-x86_64-kconfig
+            mingw-w64-ucrt-x86_64-kcoreaddons
+            mingw-w64-ucrt-x86_64-kcrash
+            mingw-w64-ucrt-x86_64-ki18n
+            mingw-w64-ucrt-x86_64-kiconthemes
+            mingw-w64-ucrt-x86_64-kio
+            mingw-w64-ucrt-x86_64-kfilemetadata
+            mingw-w64-ucrt-x86_64-kcolorscheme
+            mingw-w64-ucrt-x86_64-kwindowsystem
+            mingw-w64-ucrt-x86_64-kirigami
+            mingw-w64-ucrt-x86_64-kdeclarative
+            mingw-w64-ucrt-x86_64-kitemmodels
+            mingw-w64-ucrt-x86_64-qqc2-desktop-style
+            mingw-w64-ucrt-x86_64-breeze-icons
+            mingw-w64-ucrt-x86_64-kdsingleapplication
+            mingw-w64-ucrt-x86_64-ffmpeg
+            mingw-w64-ucrt-x86_64-vlc
+
+      - name: Configure
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build -j"$(nproc)"
+
+      - name: Bundle
+        run: bash packaging/windows/bundle.sh build/bin/runa.exe dist
+
+      - name: Verify bundle
+        run: |
+          test -f dist/runa.exe
+          test -f dist/libvlc.dll
+          test -f dist/libvlccore.dll
+          test -d dist/lib/vlc/plugins
+          test -f dist/yt-dlp.exe
+          test -n "$(find dist -name qwindows.dll -print -quit)"
+          test -n "$(find dist -name qsqlite.dll -print -quit)"
+          test -n "$(find dist -name qsvgicon.dll -print -quit)"
+          test -d dist/qml/org/kde/kirigami
+          # ntldd also reports Windows API-set and OS-internal DLLs as "not
+          # found"; those are provided by the system. Fail only when a missing
+          # name actually exists in the MSYS2 prefix and should have been
+          # bundled.
+          prefix_dlls="$(find "$MINGW_PREFIX" -type f -iname '*.dll' -printf '%f\n' \
+            | tr '[:upper:]' '[:lower:]' | sort -u)"
+          missing="$(ntldd -R dist/runa.exe 2>/dev/null | awk '/=> not found/{print $1}' | sort -u || true)"
+          for name in $missing; do
+            lower="$(echo "$name" | tr '[:upper:]' '[:lower:]')"
+            if grep -qxF "$lower" <<< "$prefix_dlls"; then
+              echo "missing bundled dependency: $name" >&2
+              exit 1
+            fi
+          done
+
+      - name: Package
+        id: package
+        run: |
+          VERSION="$(sed -n 's/^project(runaplayer VERSION \([0-9.]*\).*/\1/p' CMakeLists.txt)"
+          ZIP="Runa-${VERSION}-windows-x64.zip"
+          (cd dist && zip -r -9 "../$ZIP" .)
+          echo "archive=$ZIP" >> "$GITHUB_OUTPUT"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Runa-windows-x64
+          path: ${{ steps.package.outputs.archive }}
+
+      - name: Upload release asset
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.package.outputs.archive }}

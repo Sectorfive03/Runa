@@ -1,0 +1,239 @@
+/*
+ * SPDX-FileCopyrightText: 2020 George Florea Bănuș <georgefb899@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+pragma ComponentBehavior: Bound
+
+import QtQuick
+import QtQuick.Window
+import QtQuick.Controls
+
+import org.kde.ki18n
+import org.kde.kirigami as Kirigami
+
+import win.sectorfive.runaplayer
+
+Loader {
+    id: root
+
+    required property VlcVideo m_mpv
+
+    property int activePage: SettingsWindow.Page.General
+
+    enum Page {
+        General = 0,
+        Osd,
+        Playback,
+        Video,
+        Audio,
+        Subtitles,
+        Playlist,
+        Mouse,
+        Shortcuts,
+        Database,
+        Debug,
+        About,
+        None
+    }
+
+    function openSettingPage(page: int) : void {
+        if (!root.active) {
+            root.active = true
+            root.loaded.connect(function() {
+                root.openSettingPage(page)
+            })
+            return
+        }
+
+        const settingsWindow = root.item as Kirigami.ApplicationWindow
+        if (page !== SettingsWindow.Page.None) {
+            root.activePage = page
+        }
+        if (settingsWindow.visible) {
+            settingsWindow.raise()
+        } else {
+            settingsWindow.visible = true
+        }
+    }
+
+    active: false
+    asynchronous: true
+    sourceComponent: Kirigami.ApplicationWindow {
+        id: settingsWindow
+
+        property string settingsPath: "qrc:/qt/qml/win/sectorfive/runaplayer/settings"
+
+        width: 800
+        height: 600
+        minimumWidth: 750
+        minimumHeight: 400
+        title: KI18n.i18nc("@title:window", "Settings")
+        transientParent: null
+        pageStack.initialPage: Kirigami.ScrollablePage {
+            globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None
+            bottomPadding: 0
+            leftPadding: 0
+            rightPadding: 0
+            topPadding: 0
+            Kirigami.Theme.colorSet: Kirigami.Theme.View
+
+            ListView {
+                id: settingsPagesList
+
+                currentIndex: root.activePage
+
+                property list<Kirigami.Action> pages: [
+                    Kirigami.Action {
+                        text: KI18n.i18nc("@action", "General")
+                        icon.name: "configure"
+                        onTriggered: {
+                            root.activePage = SettingsWindow.Page.General
+                            settingsWindow.pageStack.removePage(1)
+                            settingsWindow.pageStack.push(`${settingsWindow.settingsPath}/GeneralPage.qml`)
+                        }
+                    },
+                    Kirigami.Action {
+                        text: KI18n.i18nc("@action", "Osd")
+                        icon.name: "dialog-messages"
+                        onTriggered: {
+                            root.activePage = SettingsWindow.Page.Osd
+                            settingsWindow.pageStack.removePage(1)
+                            settingsWindow.pageStack.push(`${settingsWindow.settingsPath}/OsdPage.qml`)
+                        }
+                    },
+                    Kirigami.Action {
+                        text: KI18n.i18nc("@action", "Playback")
+                        icon.name: "media-playback-start"
+                        onTriggered: {
+                            root.activePage = SettingsWindow.Page.Playback
+                            settingsWindow.pageStack.removePage(1)
+                            settingsWindow.pageStack.push(`${settingsWindow.settingsPath}/PlaybackPage.qml`)
+                        }
+                    },
+                    Kirigami.Action {
+                        text: KI18n.i18nc("@action", "Video")
+                        icon.name: "video-x-generic"
+                        onTriggered: {
+                            root.activePage = SettingsWindow.Page.Video
+                            settingsWindow.pageStack.removePage(1)
+                            settingsWindow.pageStack.push(`${settingsWindow.settingsPath}/VideoPage.qml`,
+                                                               {m_mpv: root.m_mpv})
+                        }
+                    },
+                    Kirigami.Action {
+                        text: KI18n.i18nc("@action", "Audio")
+                        icon.name: "player-volume"
+                        onTriggered: {
+                            root.activePage = SettingsWindow.Page.Audio
+                            settingsWindow.pageStack.removePage(1)
+                            settingsWindow.pageStack.push(`${settingsWindow.settingsPath}/AudioPage.qml`)
+                        }
+                    },
+                    Kirigami.Action {
+                        text: KI18n.i18nc("@action", "Subtitles")
+                        icon.name: "add-subtitle"
+                        onTriggered: {
+                            root.activePage = SettingsWindow.Page.Subtitles
+                            settingsWindow.pageStack.removePage(1)
+                            settingsWindow.pageStack.push(`${settingsWindow.settingsPath}/SubtitlesPage.qml`)
+                        }
+                    },
+                    Kirigami.Action {
+                        text: KI18n.i18nc("@action", "Playlist")
+                        icon.name: "view-media-playlist"
+                        onTriggered: {
+                            root.activePage = SettingsWindow.Page.Playlist
+                            settingsWindow.pageStack.removePage(1)
+                            settingsWindow.pageStack.push(`${settingsWindow.settingsPath}/PlaylistPage.qml`)
+                        }
+                    },
+                    Kirigami.Action {
+                        text: KI18n.i18nc("@action", "Mouse")
+                        icon.name: "input-mouse"
+                        onTriggered: {
+                            root.activePage = SettingsWindow.Page.Mouse
+                            settingsWindow.pageStack.removePage(1)
+                            settingsWindow.pageStack.push(`${settingsWindow.settingsPath}/MousePage.qml`)
+                        }
+                    },
+                    Kirigami.Action {
+                        text: KI18n.i18nc("@action", "Shortcuts")
+                        icon.name: "configure-shortcuts"
+                        onTriggered: {
+                            root.activePage = SettingsWindow.Page.Shortcuts
+                            settingsWindow.pageStack.removePage(1)
+                            settingsWindow.pageStack.push(`${settingsWindow.settingsPath}/ShortcutsPage.qml`,)
+                        }
+                    },
+                    Kirigami.Action {
+                        text: KI18n.i18nc("@action", "Database")
+                        icon.name: "server-database"
+                        onTriggered: {
+                            root.activePage = SettingsWindow.Page.Database
+                            settingsWindow.pageStack.removePage(1)
+                            settingsWindow.pageStack.push(`${settingsWindow.settingsPath}/DatabasePage.qml`)
+                        }
+                    },
+                    Kirigami.Action {
+                        text: KI18n.i18nc("@action", "Debug")
+                        icon.name: "help-about"
+                        onTriggered: {
+                            root.activePage = SettingsWindow.Page.Debug
+                            settingsWindow.pageStack.removePage(1)
+                            settingsWindow.pageStack.push(`${settingsWindow.settingsPath}/DebugPage.qml`)
+                        }
+                    },
+                    Kirigami.Action {
+                        text: KI18n.i18nc("@action", "About")
+                        icon.source: "qrc:/icons/22-apps-runa.png"
+                        onTriggered: {
+                            root.activePage = SettingsWindow.Page.About
+                            settingsWindow.pageStack.removePage(1)
+                            settingsWindow.pageStack.push(aboutPage)
+                        }
+                    }
+                ]
+
+                anchors.fill: parent
+                model: pages
+                delegate: ItemDelegate {
+                    id: delegate
+
+                    required property int index
+                    required property Action modelData
+
+                    width: settingsPagesList.width
+                    action: delegate.modelData
+                    highlighted: delegate.index === ListView.view.currentIndex
+                }
+
+                onCurrentIndexChanged: {
+                    settingsPagesList.pages[root.activePage].trigger()
+                }
+            }
+
+            Component {
+                id: aboutPage
+
+                Kirigami.AboutPage {
+                    aboutData: RunaplayerApp.aboutData()
+                }
+            }
+        }
+
+        onClosing: root.active = false
+
+        Component.onCompleted: {
+            RunaplayerApp.setupEventFilter(settingsWindow)
+            pageStack.columnView.columnWidth = Kirigami.Units.gridUnit * 15
+        }
+
+        Shortcut {
+            sequence: "Esc"
+            enabled: RunaplayerApp.actionsEnabled
+            onActivated: settingsWindow.close()
+        }
+    }
+}

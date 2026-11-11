@@ -1,0 +1,371 @@
+/*
+ * SPDX-FileCopyrightText: 2025 Muhammet Sadık Uğursoy <sadikugursoy@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+pragma ComponentBehavior: Bound
+
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+
+import org.kde.ki18n
+
+import org.kde.kirigami as Kirigami
+import win.sectorfive.runaplayer
+import win.sectorfive.runaplayer.settings
+
+TabButton {
+    id: root
+
+    required property int index
+    required property string name
+    required property bool isVisible
+    required property bool isActive
+    required property PlaylistsManager playlistsManager
+    property PlaylistTabBar playlistTabBar: TabBar.tabBar as PlaylistTabBar
+
+    property bool aboutToBeRemoved: false
+    property int dragCenter: 0
+
+    // Normally, 'dragHandler.activeTranslation.x < 0 ' check would suffice to detect a drag direction, but
+    // that variable gets no updates after a tab move. So, we offset it by calculating the new tab center manually
+    property bool leftDrag: dragHandler.activeTranslation.x < dragCenter
+    property int maximumTabWidth: 150
+
+    implicitWidth: Math.min(maximumTabWidth, contentItem.implicitWidth)
+
+    Drag.active: dragHandler.active
+    Drag.hotSpot.x: calculateHotSpot()
+
+    contentItem: RowLayout {
+
+        TapHandler {
+            acceptedButtons: Qt.MiddleButton | Qt.LeftButton
+            acceptedModifiers: Qt.NoModifier
+            gesturePolicy: TapHandler.WithinBounds
+
+            onTapped: function(point, button) {
+                switch (button) {
+                case Qt.LeftButton:
+                    root.click()
+                    break
+                case Qt.MiddleButton:
+                    root.removePlaylist()
+                    break
+                }
+            }
+        }
+
+        Item {
+            id: leftItem
+
+            property int iconSize: Kirigami.Units.iconSizes.small
+
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.preferredWidth: iconSize
+            Layout.preferredHeight: iconSize
+
+            states: [
+                State {
+                    name: "Play"
+                    when: root.isActive && (root.index === 0 || !leftItemHover.hovered)
+                },
+                State {
+                    name: "Drag"
+                    when: root.index !== 0
+                },
+                State {
+                    name: "Empty"
+                }
+            ]
+
+            Kirigami.Icon {
+                id: dragIcon
+
+                z: 4
+                anchors.fill: parent
+                width: leftItem.iconSize
+                height: leftItem.iconSize
+
+                source: {
+                    switch(leftItem.state) {
+                    case "Empty":
+                        return ""
+                    case "Play":
+                        return "media-playback-start"
+                    case "Drag":
+                        return "drag-surface"
+                    }
+                }
+            }
+
+            HoverHandler {
+                id: leftItemHover
+
+                cursorShape: root.index !== 0 ? Qt.OpenHandCursor : Qt.ArrowCursor
+            }
+
+            DragHandler {
+                id: dragHandler
+
+                acceptedButtons: Qt.LeftButton
+                dragThreshold: 10
+                cursorShape: active ? Qt.ClosedHandCursor : Qt.OpenHandCursor
+                enabled: root.index !== 0
+
+                target: root
+                yAxis.enabled: false
+                xAxis {
+                    enabled: true
+                    minimum: 0
+                    maximum: root.playlistTabBar?.contentWidth ?? 0
+                }
+
+                onGrabChanged: function(transition, eventPoint) {
+                    switch(transition) {
+                    case PointerDevice.GrabExclusive:
+                    case PointerDevice.GrabPassive:
+                        root.z = 100
+                        break
+                    case PointerDevice.CancelGrabExclusive:
+                    case PointerDevice.CancelGrabPassive:
+                    case PointerDevice.UngrabExclusive:
+                    case PointerDevice.UngrabPassive:
+                        root.z = 0
+                        if (root.index !== 0) {
+                            const prevItem = root.playlistTabBar.itemAt(root.index - 1)
+                            root.x = prevItem.x + prevItem.width
+                        }
+                        root.dragCenter = 0
+                        break
+                    }
+                }
+            }
+        }
+
+        Text {
+            id: tabText
+
+            text: root.index === 0
+                      ? KI18n.i18nc("@label:title name of default playlist tab", "Default")
+                      : root.name
+            font: root.font
+            elide: Text.ElideRight
+            color: Kirigami.Theme.textColor
+
+            Layout.fillWidth: true
+
+            ToolTip {
+                text: root.name
+                visible: tabText.truncated && root.hovered
+            }
+        }
+
+        Rectangle {
+            id: rightItem
+
+            visible: root.index !== 0
+            radius: Kirigami.Units.iconSizes.small
+            color: rightItemHover.hovered ? Kirigami.Theme.negativeTextColor : "transparent"
+
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            Layout.preferredWidth: Kirigami.Units.iconSizes.small
+            Layout.preferredHeight: Kirigami.Units.iconSizes.small
+
+            Kirigami.Icon {
+                id: closeIcon
+
+                z: 4
+                anchors.fill: parent
+                width: Kirigami.Units.iconSizes.small
+                height: Kirigami.Units.iconSizes.small
+
+                source: "dialog-close"
+                color: rightItemHover.hovered ? Kirigami.Theme.backgroundColor : Kirigami.Theme.textColor
+            }
+
+            HoverHandler {
+                id: rightItemHover
+            }
+
+            TapHandler {
+                id: rightItemTap
+
+                dragThreshold: Kirigami.Units.iconSizes.small * 0.75
+                onPressedChanged: {
+                    if (pressed) {
+                        progressTimer.start()
+                        progressTimer.heldAmount = 0.0
+                    }
+                    else {
+                        progressTimer.stop()
+                        progressTimer.heldAmount = 0.0
+                    }
+                }
+            }
+
+            ToolTip {
+                text: KI18n.i18nc("@info:tooltip", "Click and hold")
+                delay: RunaplayerApp.isAltKeyPressed ? 0 : Kirigami.Units.toolTipDelay
+                visible: rightItemHover.hovered
+                         && (GeneralSettings.showExplanatoryToolTips || RunaplayerApp.isAltKeyPressed)
+            }
+        }
+
+        // ensures there's enough space after the text
+        // when the close button is hidden
+        Item {
+            visible: root.index === 0
+            Layout.preferredWidth: leftItem.width + Kirigami.Units.largeSpacing
+        }
+    }
+
+    DropArea {
+        id: dropArea
+
+        anchors.fill: parent
+        onEntered: function (drag) {
+            const sourceItem = (drag.source as PlaylistTabDelegate)
+            if (sourceItem === null) {
+                return
+            }
+
+            const from = sourceItem.index
+            const to = root.index
+            const leftDrag = sourceItem.leftDrag
+
+            if (to === 0) {
+                return
+            }
+
+            // Depending on the current dragging direction, update the dragCenter so that
+            // we can update dragging direction even if the user doesn't let go the drag.
+            // This is necessary because we use dragHandler.activeTranslation.x to detect dragging
+            // direction and it always references the initial drag position, even after a tab move occurs.
+            // We want to re-check from the new position, after the tab move. dragCenter effectively updates
+            // the dragHandler.activeTranslation.x
+            if (leftDrag) {
+                if (from < to) {
+                    return
+                }
+                sourceItem.dragCenter -= root.width
+            }
+            if (!leftDrag) {
+                if (from > to) {
+                    return
+                }
+                sourceItem.dragCenter += root.width
+            }
+
+            root.movePlaylist(from, to)
+        }
+    }
+
+    Timer {
+        id: progressTimer
+
+        property real holdThreshold: 0.8 //seconds
+        property real heldAmount: 0.0 //seconds
+        property real progress: heldAmount / holdThreshold
+
+        interval: 10
+        running: false
+        repeat: true
+
+        onTriggered: {
+            heldAmount += 0.01 //ms
+            if (progress >= 1.0) {
+                root.removePlaylist()
+                stop()
+            }
+        }
+    }
+
+    Rectangle {
+        id: removingProgressOverlay
+
+        z: 0
+        visible: progressTimer.progress > 0.0
+        color: Qt.alpha(Kirigami.Theme.negativeTextColor, 0.5)
+        anchors {
+            left: root.left
+            top: root.top
+            bottom: root.bottom
+        }
+
+        width: Math.min(progressTimer.progress * root.width, root.width)
+    }
+
+    ContextMenu.menu: tabContextMenu
+    Menu {
+        id: tabContextMenu
+
+        MenuItem {
+            text: KI18n.i18nc("@action:inmenu", "Rename")
+            icon.name: "edit-rename"
+            visible: root.index > 0
+            onClicked: root.playlistsManager.renamePlaylist(root.index)
+        }
+        MenuItem {
+            text: KI18n.i18nc("@action:inmenu", "Remove")
+            icon.name: "remove"
+            visible: root.index > 0
+            onClicked: root.playlistsManager.removePlaylist(root.index)
+        }
+
+        MenuSeparator {
+            visible: root.index > 0
+        }
+
+        // Playlists
+        Instantiator {
+            active: tabContextMenu.visible
+            model: root.playlistsManager
+            delegate: MenuItem {
+                required property int index
+                required property string name
+                required property bool isVisible
+                required property bool isActive
+
+                text: name
+                icon.name: isVisible ? "draw-circle" : ""
+                onClicked: root.playlistTabBar.setCurrentIndex(index)
+            }
+            onObjectAdded: (index, object) => tabContextMenu.insertItem(index + 3, object)
+            onObjectRemoved: (index, object) => tabContextMenu.removeItem(object)
+        }
+    }
+
+    function movePlaylist(from, to) {
+        root.playlistsManager.movePlaylist(from, to)
+    }
+
+    function removePlaylist() {
+        root.playlistsManager.removePlaylist(root.index)
+    }
+
+    function calculateHotSpot() {
+        let defaultSpot = dragIcon.width * 0.5 + dragIcon.x
+        if (!dragHandler.active) {
+            return defaultSpot
+        }
+
+        if (root.leftDrag) {
+            if (root.index === 0) {
+                return dragIcon.x
+            }
+            const item = root.playlistTabBar.itemAt(root.index - 1)
+            return item.width - dragIcon.width
+        }
+        else {
+            if (root.index === root.playlistTabBar.count - 1) {
+                return dragIcon.width + dragIcon.x
+            }
+            const item = root.playlistTabBar.itemAt(root.index + 1)
+            return -(item.width - root.width)
+        }
+        return defaultSpot
+    }
+}

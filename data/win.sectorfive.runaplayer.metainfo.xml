@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SPDX-FileCopyrightText: 2020 George Florea Bănuș <georgefb899@gmail.com>
+
+  SPDX-License-Identifier: CC-BY-4.0
+-->
+<component type="desktop-application">
+  <name>Runa</name>
+  <name xml:lang="ar">Runa</name>
+  <name xml:lang="ca">Runa</name>
+  <name xml:lang="ca-valencia">Runa</name>
+  <name xml:lang="cs">Runa</name>
+  <name xml:lang="de">Runa</name>
+  <name xml:lang="en-GB">Runa</name>
+  <name xml:lang="eo">Runa</name>
+  <name xml:lang="es">Runa</name>
+  <name xml:lang="eu">Runa</name>
+  <name xml:lang="fi">Runa</name>
+  <name xml:lang="fr">Runa</name>
+  <name xml:lang="gl">Runa</name>
+  <name xml:lang="he">Runa</name>
+  <name xml:lang="ia">Runa</name>
+  <name xml:lang="id">Runa</name>
+  <name xml:lang="it">Runa</name>
+  <name xml:lang="ka">Runa</name>
+  <name xml:lang="ko">Runa</name>
+  <name xml:lang="lt">Runa</name>
+  <name xml:lang="lv">Runa</name>
+  <name xml:lang="nl">Runa</name>
+  <name xml:lang="pl">Runa</name>
+  <name xml:lang="pt-BR">Runa</name>
+  <name xml:lang="ro">Runa</name>
+  <name xml:lang="ru">Runa</name>
+  <name xml:lang="sa">Runa</name>
+  <name xml:lang="sk">Runa</name>
+  <name xml:lang="sl">Runa</name>
+  <name xml:lang="sv">Runa</name>
+  <name xml:lang="tr">Runa</name>
+  <name xml:lang="uk">Runa</name>
+  <name xml:lang="zh-CN">Runa</name>
+  <name xml:lang="zh-TW">Runa</name>
+  <id>win.sectorfive.runaplayer</id>
+  <launchable type="desktop-id">win.sectorfive.runaplayer.desktop</launchable>
+  <metadata_license>CC-BY-4.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <url type="homepage">https://runa.sectorfive.win</url>
+  <url type="bugtracker">https://github.com/Sectorfive03/Runa/issues</url>
+  <url type="donation">https://runa.sectorfive.win</url>
+  <url type="vcs-browser">https://github.com/Sectorfive03/Runa</url>
+  <summary>Media player</summary>
+  <summary xml:lang="ar">مشغل وسائط</summary>
+  <summary xml:lang="ca">Reproductor multimèdia</summary>
+  <summary xml:lang="ca-valencia">Reproductor multimèdia</summary>
+  <summary xml:lang="cs">Přehrávač médií</summary>
+  <summary xml:lang="de">Medienwiedergabe</summary>
+  <summary xml:lang="en-GB">Media player</summary>
+  <summary xml:lang="eo">Ludilo por aŭdvidaĵoj</summary>
+  <summary xml:lang="es">Reproductor multimedia</summary>
+  <summary xml:lang="eu">Hedabide-jotzailea</summary>
+  <summary xml:lang="fi">Mediasoitin</summary>
+  <summary xml:lang="fr">Lecteur de média</summary>
+  <summary xml:lang="gl">Reprodutor multimedia</summary>
+  <summary xml:lang="he">נגן מדיה</summary>
+  <summary xml:lang="ia">Media Player (Reproductor de Media)</summary>
+  <summary xml:lang="id">Pemutar media</summary>
+  <summary xml:lang="it">Lettore multimediale</summary>
+  <summary xml:lang="ka">მედია დამკვრელი</summary>
+  <summary xml:lang="ko">미디어 재생기</summary>
+  <summary xml:lang="lt">Medijos leistuvė</summary>
+  <summary xml:lang="lv">Multivides atskaņotājs</summary>
+  <summary xml:lang="nl">RunaPlayer mediaspeler</summary>
+  <summary xml:lang="pl">Odtwarzacz multimedialny</summary>
+  <summary xml:lang="pt-BR">Reprodutor de mídia</summary>
+  <summary xml:lang="ro">Lector multimedia</summary>
+  <summary xml:lang="ru">Медиапроигрыватель</summary>
+  <summary xml:lang="sa">मीडिया प्लेयर</summary>
+  <summary xml:lang="sk">Prehrávač médií</summary>
+  <summary xml:lang="sl">Predvajalnik medijev</summary>
+  <summary xml:lang="sv">Mediaspelare</summary>
+  <summary xml:lang="tr">Ortam Oynatıcısı</summary>
+  <summary xml:lang="ug">ۋاسىتە ياڭراتقۇچ</summary>
+  <summary xml:lang="uk">Мультимедійний програвач</summary>
+  <summary xml:lang="zh-CN">媒体播放器</summary>
+  <summary xml:lang="zh-TW">媒體播放器</summary>
+  <developer id="win.sectorfive">
+    <name translate="no">Sectorfive</name>
+  </developer>
+  <description>
+    <p>Open source media player with lots of options to make it work the way you want it.</p>
+    <p xml:lang="ar">مشغل وسائط مفتوح المصدر مع الكثير من الخيارات لتشغيله بالطريقة التي تريدها.</p>
+    <p xml:lang="ca">Reproductor multimèdia de codi obert amb moltes opcions per a fer que funcioni de la manera que vulgueu.</p>
+    <p xml:lang="ca-valencia">Reproductor multimèdia de codi obert amb moltes opcions per a fer que funcione de la manera que vulgueu.</p>
+    <p xml:lang="cs">Mediální přehrávač s otevřeným zdrojovým kódem, který nabízí spoustu možností, jak si ho přizpůsobit podle svých představ.</p>
+    <p xml:lang="de">Open-Source-Medienwiedergabe mit vielen Einstellungsmöglichkeiten, damit alles genau so funktioniert, wie Sie es möchten.</p>
+    <p xml:lang="es">Reproductor multimedia de código abierto con muchas opciones para que funcione a su gusto.</p>
+    <p xml:lang="eu">Sorburu irekiko hedabide jotzailea zuk nahi duzun bezala ibiltzeko aukera asko dituena.</p>
+    <p xml:lang="fi">Avoimen lähdekoodin mediasoitin, jonka runsain asetuksin saat toimimaan juuri kuten haluat.</p>
+    <p xml:lang="fr">Lecteur multimédia « Open source » proposant de nombreuses options pour qu'il fonctionne exactement comme vous le souhaitez.</p>
+    <p xml:lang="he">נגן מדיה בקוד פתוח עם מגוון רחב של אפשרויות כדי שיפעל כמו שמתאים לך.</p>
+    <p xml:lang="it">Riproduttore multimediale open source ricco di opzioni e con grandi possibilità di personalizzazione.</p>
+    <p xml:lang="ko">옵션이 많은 오픈 소스 미디어 플레이어로 원하는 대로 작동하도록 만들 수 있습니다.</p>
+    <p xml:lang="lt">Atvirojo kodo medijos leistuvė, turinti daug parinkčių, kad ji veiktų taip, kaip jūs norite.</p>
+    <p xml:lang="lv">Atvērtā koda multivides atskaņotājs ar daudziem iespējām, lai tas darbotos tieši tā, kā jūs vēlaties.</p>
+    <p xml:lang="nl">Open-source mediaspeler met veel opties om het zo te laten werken zoals u wilt.</p>
+    <p xml:lang="pl">Odtwarzacz multimedialny o otwartym kodzie źródłowym z wieloma opcjami dostosowującymi go do Twoich potrzeb.</p>
+    <p xml:lang="pt-BR">Reprodutor de mídia de código aberto com muitas opções para fazê-lo funcionar do jeito que você quiser.</p>
+    <p xml:lang="ro">Lector multimedia cu sursă deschisă, cu multe opțiuni pentru a face să funcționeze așa cum dorești.</p>
+    <p xml:lang="ru">Открытый медиапроигрыватель с множеством настроек, чтобы он работал именно так, как вы хотите.</p>
+    <p xml:lang="sa">बहुत सारे विकल्पों के साथ खुला स्रोत मीडिया प्लेयर, इसे अपने अनुसार काम करने के लिए।</p>
+    <p xml:lang="sk">Open source prehrávač médií s mnohými možnosťami, aby fungoval presne tak, ako chcete.</p>
+    <p xml:lang="sl">Odprtokodni medijski predvajalnik z mnogo možnostmi, da deluje tako, kot si želite.</p>
+    <p xml:lang="sv">Mediaspelare med öppen källkod och många alternativ för att göra den till precis det du vill.</p>
+    <p xml:lang="tr">İstediğiniz şekilde çalışmasını sağlamak için birçok seçeneğe sahip açık kaynaklı ortam oynatıcı.</p>
+    <p xml:lang="uk">Програвач мультимедійних даних із відкритим кодом, що має безліч налаштувань для роботи саме так, як ви хочете.</p>
+    <p xml:lang="zh-CN">具有丰富选项的开源媒体播放器，可按您的意愿定制工作方式。</p>
+    <p xml:lang="zh-TW">具備眾多選項的開源媒體播放器，可依您的喜好調整運作方式。</p>
+  </description>
+  <releases>
+    <release version="1.0.0" date="2026-11-10">
+      <description>
+        <p>Initial RunaPlayer 1.0.0 release.</p>
+        <p>Built against libvlc/VLC 3.0.x (minimum 3.0.16).</p>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1"/>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source" width="1280" height="720">https://runa.sectorfive.win/screenshots/runaplayer-dark.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image type="source" width="1280" height="720">https://runa.sectorfive.win/screenshots/runaplayer-light.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>runa</binary>
+  </provides>
+</component>

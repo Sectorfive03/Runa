@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ SPDX-FileCopyrightText: 2026 George Florea Bănuș <georgefb899@gmail.com>
+
+ SPDX-License-Identifier: BSD-3-Clause
+ -->
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+                          http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+<kcfgfile name="runaplayer/runaplayer.conf" />
+    <group name="Osd">
+        <entry name="OsdFontSize" type="Int">
+            <default>25</default>
+        </entry>
+        <entry name="ShowABLoop" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="ShowChapter" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="ShowDeinterlace" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="ShowImageAdjustments" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="ShowLoadFile" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="ShowPlaybackSpeed" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="ShowScreenshot" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="ShowSubtitleDelay" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="ShowSubtitleToggle" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="ShowTrack" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="ShowVolume" type="Bool">
+            <default>true</default>
+        </entry>
+    </group>
+</kcfg>

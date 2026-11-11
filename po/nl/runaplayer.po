@@ -1,0 +1,3963 @@
+# Copyright (C) 2023 This file is copyright:
+# This file is distributed under the same license as the runaplayer package.
+#
+# SPDX-FileCopyrightText: 2021-2026 Freek de Kruijf <freekdekruijf@kde.nl>
+msgid ""
+msgstr ""
+"Project-Id-Version: runaplayer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-11-08 02:56+0000\n"
+"PO-Revision-Date: 2026-11-04 11:10+0100\n"
+"Last-Translator: freek <freekdekruijf@kde.nl>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 26.04.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Freek de Kruijf - 2022-2026"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "freekdekruijf@kde.nl"
+
+#: src/application.cpp:183
+#, kde-format
+msgctxt "application title/display name"
+msgid "RunaPlayer"
+msgstr "RunaPlayer"
+
+#: src/application.cpp:185
+#, kde-format
+msgctxt "@title"
+msgid "Media player"
+msgstr "RunaPlayer mediaspeler"
+
+#: src/application.cpp:187
+#, kde-format
+msgctxt ""
+"copyright statement, use copyright symbol and en dash for the year range"
+msgid "© 2019–2025"
+msgstr "© 2019–2025"
+
+#: src/application.cpp:192
+#, kde-format
+msgctxt "@info:credit"
+msgid "George Florea Bănuș"
+msgstr "George Florea Bănuș"
+
+#: src/application.cpp:193
+#, kde-format
+msgctxt "@info:credit"
+msgid "Developer"
+msgstr "Ontwikkelaar"
+
+#: src/application.cpp:220
+#, kde-format
+msgid "Feature-rich command-line audio/video downloader"
+msgstr "Audio/video-downloader voor de opdrachtregel rijk aan mogelijkheden"
+
+#: src/Database/database.cpp:83
+#, kde-format
+msgid ""
+"Using memory database since database version (%1) of the application is "
+"lower than the version of the database file (%2). Changes are not persisted. "
+"Either update to the latest version of delete/rename the database file (%3)."
+msgstr ""
+"Er wordt gebruikgemaakt van een database in het geheugen, omdat de "
+"databaseversie van de toepassing (%1) lager is dan de versie van het "
+"databasebestand (%2). Wijzigingen worden niet opgeslagen. Werk bij naar de "
+"nieuwste versie of verwijder/hernoem het databasebestand (%3)."
+
+#: src/lockmanager.cpp:49
+#, kde-format
+msgctxt "@info reason for blocking sleep and screen locking"
+msgid "Playing media file"
+msgstr "Mediabestand wordt afgespeeld"
+
+#: src/models/actionsmodel.cpp:25
+#, kde-format
+msgctxt "@action"
+msgid "Open Actions Dialog"
+msgstr "Actiedialoog openen"
+
+#: src/models/actionsmodel.cpp:32
+#, kde-format
+msgctxt "@action"
+msgid "About RunaPlayer"
+msgstr "Info over RunaPlayer"
+
+#: src/models/actionsmodel.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "Report bug"
+msgstr "Bug rapporteren"
+
+#: src/models/actionsmodel.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Sponsor RunaPlayer"
+msgstr "Sponsor RunaPlayer"
+
+#: src/models/actionsmodel.cpp:56
+#, kde-format
+msgctxt "@action"
+msgid "Cycle Up Audio Track"
+msgstr "Audiotrack verhogen"
+
+#: src/models/actionsmodel.cpp:64
+#, kde-format
+msgctxt "@action"
+msgid "Cycle Down Audio Track"
+msgstr "Audiotrack verlagen"
+
+#: src/models/actionsmodel.cpp:72
+#, kde-format
+msgctxt "@action"
+msgid "Settings"
+msgstr "Instellingen"
+
+#: src/models/actionsmodel.cpp:80
+#, kde-format
+msgctxt "@action"
+msgid "Open General Settings"
+msgstr "Algemene instellingen openen"
+
+#: src/models/actionsmodel.cpp:88
+#, kde-format
+msgctxt "@action"
+msgid "Open Osd Settings"
+msgstr "Osd-instellingen openen"
+
+#: src/models/actionsmodel.cpp:96
+#, kde-format
+msgctxt "@action"
+msgid "Open Playback Settings"
+msgstr "Afspeelinstellingen openen"
+
+#: src/models/actionsmodel.cpp:104
+#, kde-format
+msgctxt "@action"
+msgid "Open Video Settings"
+msgstr "Video-instellingen openen"
+
+#: src/models/actionsmodel.cpp:112
+#, kde-format
+msgctxt "@action"
+msgid "Open Audio Settings"
+msgstr "Audio-instellingen openen"
+
+#: src/models/actionsmodel.cpp:120
+#, kde-format
+msgctxt "@action"
+msgid "Open Subtitles Settings"
+msgstr "Ondertitelinstellingen openen"
+
+#: src/models/actionsmodel.cpp:128
+#, kde-format
+msgctxt "@action"
+msgid "Open Playlist Settings"
+msgstr "Afspeellijstinstellingen openen"
+
+#: src/models/actionsmodel.cpp:136
+#, kde-format
+msgctxt "@action"
+msgid "Open Mouse Settings"
+msgstr "Muisinstellingen openen"
+
+#: src/models/actionsmodel.cpp:144
+#, kde-format
+msgctxt "@action"
+msgid "Configure Keyboard Shortcuts"
+msgstr "Sneltoetsen configureren"
+
+#: src/models/actionsmodel.cpp:152
+#, kde-format
+msgctxt "@action"
+msgid "Open Custom Commands Settings"
+msgstr "Instellingen voor aangepaste commando's openen"
+
+#: src/models/actionsmodel.cpp:160
+#, kde-format
+msgctxt "@action"
+msgid "Open Database Settings"
+msgstr "Instellingen van database openen"
+
+#: src/models/actionsmodel.cpp:168
+#, kde-format
+msgctxt "@action"
+msgid "Open Debug Settings"
+msgstr "Debug-instellingen openen"
+
+#: src/models/actionsmodel.cpp:176
+#, kde-format
+msgctxt "@action"
+msgid "Exit Fullscreen"
+msgstr "Volledig scherm verlaten"
+
+#: src/models/actionsmodel.cpp:184
+#, kde-format
+msgctxt "@action"
+msgid "Step Frame Forward"
+msgstr "Frame stap voorwaarts"
+
+#: src/models/actionsmodel.cpp:192
+#, kde-format
+msgctxt "@action"
+msgid "Step Frame Backward"
+msgstr "Frame stap terug"
+
+#: src/models/actionsmodel.cpp:200
+#, kde-format
+msgctxt "@action"
+msgid "Load Last Played File"
+msgstr "Laatste afgespeeld bestand laden"
+
+#: src/models/actionsmodel.cpp:208
+#, kde-format
+msgctxt "@action"
+msgid "Mute"
+msgstr "Dempen"
+
+#: src/models/actionsmodel.cpp:216
+#, kde-format
+msgctxt "@action"
+msgid "Open Context Menu"
+msgstr "Contextmenu openen"
+
+#: src/models/actionsmodel.cpp:220
+#, kde-format
+msgctxt "@action"
+msgid "Opens and closes the context menu at the position of the mouse pointer"
+msgstr "Opent en sluit het contextmenu op de positie van de muisaanwijzer"
+
+#: src/models/actionsmodel.cpp:224
+#, kde-format
+msgctxt "@action"
+msgid "Open File"
+msgstr "Bestand openen"
+
+#: src/models/actionsmodel.cpp:232
+#, kde-format
+msgctxt "@action"
+msgid "Open Folder"
+msgstr "Map openen"
+
+#: src/models/actionsmodel.cpp:240
+#, kde-format
+msgctxt "@action"
+msgid "Add External Subtitle…"
+msgstr "Externe ondertitel toevoegen…"
+
+#: src/models/actionsmodel.cpp:248
+#, kde-format
+msgctxt "@action"
+msgid "Open URL"
+msgstr "URL openen"
+
+#: src/models/actionsmodel.cpp:256
+#, kde-format
+msgctxt "@action"
+msgid "Increase Playback Speed"
+msgstr "Afspeelsnelheid verhogen"
+
+#: src/models/actionsmodel.cpp:264
+#, kde-format
+msgctxt "@action"
+msgid "Decrease Playback Speed"
+msgstr "Afspeelsnelheid verlagen"
+
+#: src/models/actionsmodel.cpp:272
+#, kde-format
+msgctxt "@action"
+msgid "Reset Playback Speed"
+msgstr "Afspeelsnelheid resetten"
+
+#: src/models/actionsmodel.cpp:280
+#, kde-format
+msgctxt "@action"
+msgid "Play/Pause"
+msgstr "Afspelen/pauzeren"
+
+#: src/models/actionsmodel.cpp:288
+#, kde-format
+msgctxt "@action"
+msgid "Stop"
+msgstr "Stoppen"
+
+#: src/models/actionsmodel.cpp:296
+#, kde-format
+msgctxt "@action"
+msgid "Play Next"
+msgstr "Volgende afspelen"
+
+#: src/models/actionsmodel.cpp:304
+#, kde-format
+msgctxt "@action"
+msgid "Play Previous"
+msgstr "Vorige afspelen"
+
+#: src/models/actionsmodel.cpp:312
+#, kde-format
+msgctxt "@action"
+msgid "Quit"
+msgstr "Afsluiten"
+
+#: src/models/actionsmodel.cpp:320
+#, kde-format
+msgctxt "@action"
+msgid "Restart Playback"
+msgstr "Afspelen herstarten"
+
+#: src/models/actionsmodel.cpp:328
+#, kde-format
+msgctxt "@action"
+msgid "Seek Small Step Forward"
+msgstr "Ga een kleine stap voorwaarts"
+
+#: src/models/actionsmodel.cpp:336
+#, kde-format
+msgctxt "@action"
+msgid "Seek Small Step Backward"
+msgstr "Ga een kleine stap achterwaarts"
+
+#: src/models/actionsmodel.cpp:344
+#, kde-format
+msgctxt "@action"
+msgid "Seek Medium Step Forward"
+msgstr "Ga een stap voorwaarts"
+
+#: src/models/actionsmodel.cpp:352
+#, kde-format
+msgctxt "@action"
+msgid "Seek Medium Step Backward"
+msgstr "Ga een stap achterwaarts"
+
+#: src/models/actionsmodel.cpp:360
+#, kde-format
+msgctxt "@action"
+msgid "Seek Big Step Forward"
+msgstr "Ga een grote stap voorwaarts"
+
+#: src/models/actionsmodel.cpp:368
+#, kde-format
+msgctxt "@action"
+msgid "Seek Big Step Backward"
+msgstr "Ga een grote stap achterwaarts"
+
+#: src/models/actionsmodel.cpp:376
+#, kde-format
+msgctxt "@action"
+msgid "Seek To Next Chapter"
+msgstr "Ga naar volgende hoofdstuk"
+
+#: src/models/actionsmodel.cpp:384
+#, kde-format
+msgctxt "@action"
+msgid "Seek To Previous Chapter"
+msgstr "Ga naar vorige hoofdstuk"
+
+#: src/models/actionsmodel.cpp:392
+#, kde-format
+msgctxt "@action"
+msgid "Seek To Next Subtitle"
+msgstr "Ga naar volgende ondertitel"
+
+#: src/models/actionsmodel.cpp:400
+#, kde-format
+msgctxt "@action"
+msgid "Seek To Previous Subtitle"
+msgstr "Ga naar de vorige ondertitel"
+
+#: src/models/actionsmodel.cpp:408
+#, kde-format
+msgctxt "@action"
+msgid "Seek To Watch Later Position"
+msgstr "Spoelen om latere positie te bekijken"
+
+#: src/models/actionsmodel.cpp:416
+#, kde-format
+msgctxt "@action"
+msgid "Set Loop"
+msgstr "Herhalen instellen"
+
+#: src/models/actionsmodel.cpp:424
+#, kde-format
+msgctxt "@action"
+msgid "Screenshot"
+msgstr "Schermafdruk"
+
+#: src/models/actionsmodel.cpp:432
+#, kde-format
+msgctxt "@action"
+msgid "Toggle Subtitles"
+msgstr "Ondertiteling omschakelen"
+
+#: src/models/actionsmodel.cpp:440
+#, kde-format
+msgctxt "@action"
+msgid "Increase Subtitle Font Size"
+msgstr "Tekengrootte van ondertiteling vergroten"
+
+#: src/models/actionsmodel.cpp:448
+#, kde-format
+msgctxt "@action"
+msgid "Decrease Subtitle Font Size"
+msgstr "Tekengrootte van ondertiteling verkleinen"
+
+#: src/models/actionsmodel.cpp:456
+#, kde-format
+msgctxt "@action"
+msgid "Move Subtitle Up"
+msgstr "Ondertitel omhoog verplaatsen"
+
+#: src/models/actionsmodel.cpp:464
+#, kde-format
+msgctxt "@action"
+msgid "Move Subtitle Down"
+msgstr "Ondertitel omlaag verplaatsen"
+
+#: src/models/actionsmodel.cpp:472
+#, kde-format
+msgctxt "@action"
+msgid "Show Subtitles Earlier"
+msgstr "Ondertitels eerder tonen"
+
+#: src/models/actionsmodel.cpp:480
+#, kde-format
+msgctxt "@action"
+msgid "Show Subtitles Later"
+msgstr "Ondertitels later tonen"
+
+#: src/models/actionsmodel.cpp:488
+#, kde-format
+msgctxt "@action"
+msgid "Cycle Up Subtitle"
+msgstr "Ondertitel iets verhogen"
+
+#: src/models/actionsmodel.cpp:496
+#, kde-format
+msgctxt "@action"
+msgid "Cycle Down Subtitle"
+msgstr "Ondertitel iets verlagen"
+
+#: src/models/actionsmodel.cpp:504
+#, kde-format
+msgctxt "@action"
+msgid "Toggle Deinterlacing"
+msgstr "De-interlacing omschakelen"
+
+#: src/models/actionsmodel.cpp:512
+#, kde-format
+msgctxt "@action"
+msgid "Toggle Fullscreen"
+msgstr "Veranderen naar volledig scherm"
+
+#: src/models/actionsmodel.cpp:520
+#, kde-format
+msgctxt "@action"
+msgid "Toggle Menu Bar"
+msgstr "Menubalk omschakelen"
+
+#: src/models/actionsmodel.cpp:528
+#, kde-format
+msgctxt "@action"
+msgid "Toggle Header"
+msgstr "Koptekst omschakelen"
+
+#: src/models/actionsmodel.cpp:536 src/Settings/SettingsWindow.qml:145
+#, kde-format
+msgctxt "@action"
+msgid "Playlist"
+msgstr "Afspeellijst"
+
+#: src/models/actionsmodel.cpp:544
+#, kde-format
+msgctxt "@action"
+msgid "Toggle Transcript Panel"
+msgstr "Transscriptpaneel aan/uit"
+
+#: src/models/actionsmodel.cpp:552
+#, kde-format
+msgctxt "@action"
+msgid "Move Video Left"
+msgstr "Video naar links verplaatsen"
+
+#: src/models/actionsmodel.cpp:560
+#, kde-format
+msgctxt "@action"
+msgid "Move Video Right"
+msgstr "Video naar rechts verplaatsen"
+
+#: src/models/actionsmodel.cpp:568
+#, kde-format
+msgctxt "@action"
+msgid "Move Video Up"
+msgstr "Video omhoog verplaatsen"
+
+#: src/models/actionsmodel.cpp:576
+#, kde-format
+msgctxt "@action"
+msgid "Move Video Down"
+msgstr "Video omlaag verplaatsen"
+
+#: src/models/actionsmodel.cpp:584
+#, kde-format
+msgctxt "@action"
+msgid "Rotate clockwise"
+msgstr "Rechtsom draaien"
+
+#: src/models/actionsmodel.cpp:592
+#, kde-format
+msgctxt "@action"
+msgid "Rotate counter clockwise"
+msgstr "Linksom draaien"
+
+#: src/models/actionsmodel.cpp:600
+#, kde-format
+msgctxt "@action"
+msgid "Volume Up"
+msgstr "Volume omhoog"
+
+#: src/models/actionsmodel.cpp:608
+#, kde-format
+msgctxt "@action"
+msgid "Volume Down"
+msgstr "Volume omlaag"
+
+#: src/models/actionsmodel.cpp:616
+#, kde-format
+msgctxt "@action"
+msgid "Zoom In"
+msgstr "Inzoomen"
+
+#: src/models/actionsmodel.cpp:624
+#, kde-format
+msgctxt "@action"
+msgid "Zoom Out"
+msgstr "Uitzoomen"
+
+#: src/models/actionsmodel.cpp:632
+#, kde-format
+msgctxt "@action"
+msgid "Reset Zoom"
+msgstr "Zoom resetten"
+
+#: src/models/actionsmodel.cpp:640
+#, kde-format
+msgctxt "@action"
+msgid "Increase Contrast"
+msgstr "Contrast verhogen"
+
+#: src/models/actionsmodel.cpp:648
+#, kde-format
+msgctxt "@action"
+msgid "Decrease Contrast"
+msgstr "Contrast verlagen"
+
+#: src/models/actionsmodel.cpp:656
+#, kde-format
+msgctxt "@action"
+msgid "Reset Contrast"
+msgstr "Contrast resetten"
+
+#: src/models/actionsmodel.cpp:664
+#, kde-format
+msgctxt "@action"
+msgid "Increase Brightness"
+msgstr "Helderheid verhogen"
+
+#: src/models/actionsmodel.cpp:672
+#, kde-format
+msgctxt "@action"
+msgid "Decrease Brightness"
+msgstr "Helderheid verlagen"
+
+#: src/models/actionsmodel.cpp:680
+#, kde-format
+msgctxt "@action"
+msgid "Reset Brightness"
+msgstr "Helderheid resetten"
+
+#: src/models/actionsmodel.cpp:688
+#, kde-format
+msgctxt "@action"
+msgid "Increase Gamma"
+msgstr "Gamma verhogen"
+
+#: src/models/actionsmodel.cpp:696
+#, kde-format
+msgctxt "@action"
+msgid "Decrease Gamma"
+msgstr "Gamma verlagen"
+
+#: src/models/actionsmodel.cpp:704
+#, kde-format
+msgctxt "@action"
+msgid "Reset Gamma"
+msgstr "Gamma resetten"
+
+#: src/models/actionsmodel.cpp:712
+#, kde-format
+msgctxt "@action"
+msgid "Increase Saturation"
+msgstr "Verzadiging verhogen"
+
+#: src/models/actionsmodel.cpp:720
+#, kde-format
+msgctxt "@action"
+msgid "Decrease Saturation"
+msgstr "Verzadiging verlagen"
+
+#: src/models/actionsmodel.cpp:728
+#, kde-format
+msgctxt "@action"
+msgid "Reset Saturation"
+msgstr "Verzadiging resetten"
+
+#: src/models/actionsmodel.cpp:879
+#, kde-format
+msgctxt "@info"
+msgid ""
+"The chosen shortcut conflicts with the shortcut of the <b>%1</b> action."
+"<br><br>Do you want to reassign the shortcut?"
+msgstr ""
+"De gekozen sneltoets is in conflicts met de sneltoets van de actie <b>%1</b>."
+"<br><br>Wilt u de sneltoets opnieuw toekennen?"
+
+#: src/models/actionsmodel.cpp:885
+#, kde-format
+msgctxt "@action:button"
+msgid "Reassign"
+msgstr "Opnieuw toewijzen"
+
+#: src/models/mouseactionsmodel.cpp:263
+#, kde-format
+msgctxt "@label left mouse button"
+msgid "Left"
+msgstr "Links"
+
+#: src/models/mouseactionsmodel.cpp:265
+#, kde-format
+msgctxt "@label right mouse button"
+msgid "Right"
+msgstr "Rechts"
+
+#: src/models/mouseactionsmodel.cpp:267
+#, kde-format
+msgctxt "@label middle mouse button"
+msgid "Middle"
+msgstr "Midden"
+
+#: src/models/mouseactionsmodel.cpp:269
+#, kde-format
+msgctxt "@label forward mouse button"
+msgid "Forward"
+msgstr "Vooruit"
+
+#: src/models/mouseactionsmodel.cpp:271
+#, kde-format
+msgctxt "@label back mouse button"
+msgid "Back"
+msgstr "Terug"
+
+#: src/models/mouseactionsmodel.cpp:273
+#, kde-format
+msgctxt "@label mouse scroll up"
+msgid "ScrollUp"
+msgstr "Omhoog schuiven"
+
+#: src/models/mouseactionsmodel.cpp:275
+#, kde-format
+msgctxt "@label mouse scroll down"
+msgid "ScrollDown"
+msgstr "Omlaag schuiven"
+
+#: src/models/mouseactionsmodel.cpp:323
+#, kde-format
+msgctxt "@label control modifier key"
+msgid "Control"
+msgstr "Controle"
+
+#: src/models/mouseactionsmodel.cpp:325
+#, kde-format
+msgctxt "@label shift modifier key"
+msgid "Shift"
+msgstr "Shift"
+
+#: src/models/mouseactionsmodel.cpp:327
+#, kde-format
+msgctxt "@label alt modifier key"
+msgid "Alt"
+msgstr "Alt"
+
+#: src/models/mouseactionsmodel.cpp:329
+#, kde-format
+msgctxt "@label meta modifier key"
+msgid "Meta"
+msgstr "Meta"
+
+#: src/mpv/mpvitem.cpp:82
+#, kde-format
+msgid "Command line video player"
+msgstr "Videospeler voor de opdrachtregel"
+
+#: src/mpv/mpvitem.cpp:89
+#, kde-format
+msgid "Cross-platform solution to record, convert and stream audio and video"
+msgstr ""
+"Cross-platform oplossing om geluid en video op te nemen, te converteren en "
+"te streamen"
+
+#: src/mpv/mpvitem.cpp:323
+#, kde-format
+msgctxt "@info:tooltip; %1 is a video title/filename"
+msgid "Could not play: %1"
+msgstr "Kon niet afgespeeld worden: %1"
+
+#: src/mpv/mpvitem.cpp:425
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Volume: %1"
+msgstr "Volume: %1"
+
+#: src/mpv/mpvitem.cpp:459
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Subtitle timing: +%1 seconds"
+msgstr "Timing van ondertiteling: +%1 seconden"
+
+#: src/mpv/mpvitem.cpp:461
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Subtitle timing: %1 seconds"
+msgstr "Timing van ondertiteling: %1 seconden"
+
+#: src/mpv/mpvitem.cpp:510
+#, kde-format
+msgctxt "@info:tooltip; %1 is an absolute path"
+msgid "File doesn't exist: %1"
+msgstr "Bestand bestaat niet: %1"
+
+#: src/mpv/mpvitem.cpp:542
+#, kde-format
+msgctxt "%1 current item number, %2 total items count, %3 item name"
+msgid "[%1/%2] %3"
+msgstr "[%1/%2] %3"
+
+#: src/mpv/mpvitem.cpp:555
+#, kde-format
+msgctxt ""
+"@action The \"None\" subtitle track is used to clear/unset selected track"
+msgid "None"
+msgstr "Geen"
+
+#: src/mpv/mpvitem.cpp:614
+#, kde-format
+msgctxt "@info:tooltip osd"
+msgid "Screenshot failed"
+msgstr "Schermafdruk maken is mislukt"
+
+#: src/mpv/mpvitem.cpp:619
+#, kde-format
+msgctxt "@info:tooltip osd"
+msgid "Screenshot taken"
+msgstr "Schermafdruk maken"
+
+#: src/mpv/mpvitem.cpp:621
+#, kde-format
+msgctxt "@info:tooltip osd; %1 is a filename with path"
+msgid "Screenshot: %1"
+msgstr "Schermafdruk: %1"
+
+#: src/mpv/mpvitem.cpp:660
+#, kde-format
+msgctxt "Error message when video can't be decoded/played"
+msgid ""
+"No video track detected, most likely the video track can't be decoded/played "
+"due to missing codecs"
+msgstr ""
+"Geen videotrack gedetecteerd, waarschijnlijk kan de videotrack niet "
+"gedecodeerd/afgespeeld worden vanwege ontbrekende codecs"
+
+#: src/mpv/mpvitem.cpp:696
+#, kde-format
+msgctxt "@info:tooltip osd"
+msgid "Skipped chapter: %1"
+msgstr "Overgeslagen hoofdstuk: %1"
+
+#: src/mpv/mpvitem.cpp:793
+#, kde-format
+msgctxt ""
+"@info:tooltip; %1 is the track number, %2 is a string in the form: `track."
+"title track.language track.codec`"
+msgid "Audio: %1 %2"
+msgstr "Audio: %1 %2"
+
+#: src/mpv/mpvitem.cpp:804
+#, kde-format
+msgctxt "@info:tooltip; osd message when no sub is selected"
+msgid "Subtitle: none"
+msgstr "Ondertiteling: geen"
+
+#: src/mpv/mpvitem.cpp:810 src/mpv/mpvitem.cpp:827
+#, kde-format
+msgctxt ""
+"@info:tooltip; %1 is the track number, %2 is a string in the form: `track."
+"title track.language track.codec`"
+msgid "Subtitle: %1 %2"
+msgstr "Ondertitel: %1 %2"
+
+#: src/mpv/mpvitem.cpp:821
+#, kde-format
+msgctxt "@info:tooltip; osd message when no sub is selected"
+msgid "Secondary subtitle: none"
+msgstr "Secondaire ondertitel: geen"
+
+#: src/Playlist/Playlist.qml:120
+msgctxt "@action:button"
+msgid "Add new playlist"
+msgstr "Nieuwe afspeellijst toevoegen"
+
+#: src/Playlist/Playlist.qml:133
+msgctxt "@action:button"
+msgid "Search"
+msgstr "Zoeken"
+
+#: src/Playlist/Playlist.qml:153
+msgctxt "@action:button"
+msgid "Add…"
+msgstr "Toevoegen…"
+
+#: src/Playlist/Playlist.qml:161
+msgctxt "@action:button"
+msgid "Folder"
+msgstr "Map"
+
+#: src/Playlist/Playlist.qml:169
+msgctxt "@action:button"
+msgid "Files"
+msgstr "Bestanden"
+
+#: src/Playlist/Playlist.qml:177
+msgctxt "@action:button"
+msgid "URL"
+msgstr "URL"
+
+#: src/Playlist/Playlist.qml:187
+msgctxt "@action:button"
+msgid "Playlist"
+msgstr "Afspeellijst"
+
+#: src/Playlist/Playlist.qml:196
+msgctxt "@action:button"
+msgid "Sort"
+msgstr "Sorteren"
+
+#: src/Playlist/Playlist.qml:205
+msgctxt "@action:button"
+msgid "Ascending"
+msgstr "Oplopend"
+
+#: src/Playlist/Playlist.qml:222
+msgctxt "@action:button"
+msgid "Descending"
+msgstr "Aflopend"
+
+#: src/Playlist/Playlist.qml:245
+msgctxt "@action:button"
+msgid "None"
+msgstr "Geen"
+
+#: src/Playlist/Playlist.qml:255
+msgctxt "@action:button"
+msgid "File Name"
+msgstr "Bestandsnaam"
+
+#: src/Playlist/Playlist.qml:265
+msgctxt "@action:button"
+msgid "Title"
+msgstr "Titel"
+
+#: src/Playlist/Playlist.qml:275
+msgctxt "@action:button"
+msgid "Duration"
+msgstr "Tijdsduur"
+
+#: src/Playlist/Playlist.qml:285
+msgctxt "@action:button"
+msgid "Modified Date"
+msgstr "Gewijzigde datum"
+
+#: src/Playlist/Playlist.qml:295
+msgctxt "@action:button"
+msgid "File Size"
+msgstr "Bestandsgrootte"
+
+#: src/Playlist/Playlist.qml:305
+msgctxt "@action:button, as in 'Track no on a Audio CD', not 'subtitle track'"
+msgid "Track No"
+msgstr "Track-nr"
+
+#: src/Playlist/Playlist.qml:315
+msgctxt "@action:button"
+msgid "Sample Rate"
+msgstr "Samplesnelheid"
+
+#: src/Playlist/Playlist.qml:325
+msgctxt "@action:button"
+msgid "Bitrate"
+msgstr "Bitsnelheid"
+
+#: src/Playlist/Playlist.qml:340
+msgctxt "@action:button"
+msgid "Custom…"
+msgstr "Aangepast…"
+
+#: src/Playlist/Playlist.qml:351
+msgctxt "@action:button"
+msgid "Playback"
+msgstr "Afspelen"
+
+#: src/Playlist/Playlist.qml:357
+msgctxt "@action:button"
+msgid "Repeat playlist"
+msgstr "Afspeellijst herhalen"
+
+#: src/Playlist/Playlist.qml:368
+msgctxt "@action:button"
+msgid "Stop after last item"
+msgstr "Stoppen na laatste item"
+
+#: src/Playlist/Playlist.qml:378
+msgctxt "@action:button"
+msgid "Repeat item"
+msgstr "Item herhalen"
+
+#: src/Playlist/Playlist.qml:389
+msgctxt "@action:button"
+msgid "Stop after item"
+msgstr "Stoppen na item"
+
+#: src/Playlist/Playlist.qml:399
+msgctxt "@action:button"
+msgid "Random Playback"
+msgstr "Willekeurig afspelen"
+
+#: src/Playlist/Playlist.qml:411
+msgctxt "@action:button"
+msgid "Clear"
+msgstr "Wissen"
+
+#: src/Playlist/Playlist.qml:419
+msgctxt "@action:button"
+msgid "Save As"
+msgstr "Opslaan als"
+
+#: src/Playlist/Playlist.qml:429
+msgctxt "@action:inmenu"
+msgid "Update all metadata"
+msgstr "Alle metagegevens bijwerken"
+
+#: src/Playlist/Playlist.qml:437
+msgctxt "@info:tooltip"
+msgid ""
+"Update metadata for all files in the playlist\n"
+"\n"
+"Update metadata in the database with metadata inside the file.\n"
+"Metadata is stored in the database for faster retrieval."
+msgstr ""
+"Metagegevens voor alle bestanden in de afspeellijst bijwerken\n"
+"\n"
+"Metagegevens in de database bijwerken met de metagegevens in het bestand.\n"
+"De metagegevens worden in de database opgeslagen voor snellere toegang."
+
+#: src/Playlist/Playlist.qml:453 src/Playlist/Playlist.qml:474
+msgctxt "@action:button"
+msgid "Add"
+msgstr "Toevoegen"
+
+#: src/Playlist/Playlist.qml:456 src/qml/Main.qml:321
+msgctxt "@info"
+msgid ""
+"Neither <a href=\"https://github.com/yt-dlp/yt-dlp\">yt-dlp</a> nor <a href="
+"\"https://github.com/ytdl-org/youtube-dl\">youtube-dl</a> was found."
+msgstr ""
+"Zowel <a href=\"https://github.com/yt-dlp/yt-dlp\">yt-dlp</a> als <a href="
+"\"https://github.com/ytdl-org/youtube-dl\">youtube-dl</a> zijn niet gevonden."
+
+#: src/Playlist/Playlist.qml:473
+msgctxt "@placeholder"
+msgid "playlist name"
+msgstr "afspeellijstnaam"
+
+#: src/Playlist/Playlist.qml:561 src/Playlist/PlaylistItemContextMenu.qml:117
+msgctxt "@action:inmenu"
+msgid "Select All"
+msgstr "Alles selecteren"
+
+#: src/Playlist/Playlist.qml:566 src/Playlist/PlaylistItemContextMenu.qml:122
+msgctxt "@action:inmenu"
+msgid "Deselect All"
+msgstr "Alles deselecteren"
+
+#: src/Playlist/Playlist.qml:571 src/Playlist/PlaylistItemContextMenu.qml:127
+msgctxt "@action:inmenu"
+msgid "Invert Selection"
+msgstr "Selectie omkeren"
+
+#: src/Playlist/Playlist.qml:578 src/Playlist/PlaylistItemContextMenu.qml:155
+msgctxt "@action:inmenu"
+msgid "Scroll to Playing Item"
+msgstr "Schuif naar het item dat wordt afgespeeld"
+
+#: src/Playlist/Playlist.qml:664 src/Settings/VideoPage.qml:74
+msgctxt "@title:window"
+msgid "Select file"
+msgstr "Bestand selecteren"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:52
+msgctxt "@title:configure sort window"
+msgid "Advanced Sort and Group By"
+msgstr "Geavanceerd sorteren en groeperen op"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:67
+msgctxt "@label which playlist is affected, %1 is the playlist name"
+msgid "Playlist: %1"
+msgstr "Afspeellijst: %1"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:72
+msgctxt "@label sort"
+msgid "Sorting"
+msgstr "Sorteren"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:98
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:358
+msgctxt "@action:inmenu"
+msgid "Filter"
+msgstr "Filter"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:117
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:377
+msgctxt "@title:menu"
+msgid "Filter"
+msgstr "Filter"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:124
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:384
+msgctxt "@action:inmenu all"
+msgid "All"
+msgstr "Alles"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:135
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:395
+msgctxt "@action:inmenu file"
+msgid "File"
+msgstr "Bestand"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:146
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:406
+msgctxt "@action:inmenu audio"
+msgid "Audio"
+msgstr "Audio"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:157
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:417
+msgctxt "@action:inmenu video"
+msgid "Video"
+msgstr "Video"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:204
+msgctxt "@action:inmenu"
+msgid "Ascending"
+msgstr "Oplopend"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:217
+msgctxt "@action:inmenu"
+msgid "Descending"
+msgstr "Aflopend"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:333
+msgctxt "@label group"
+msgid "Grouping"
+msgstr "Groepering"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:432
+msgctxt "@action:inmenu"
+msgid "Show Sections"
+msgstr "Secties tonen"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:442
+msgctxt "@info:tooltip"
+msgid ""
+"Show/Hide section labels in the playlist view. <br>If the playlist is not "
+"sorted by the included group properties in the same order, then the sections "
+"might not be unique."
+msgstr ""
+"Toon/verberg sectielabels in de afspeellijstweergave. <br>Als de "
+"afspeellijst niet gesorteerd is op de geselecteerde groepseigenschappen in "
+"dezelfde volgorde, dan zijn de secties mogelijk niet uniek."
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:553
+msgctxt "@action:inmenu add new line button"
+msgid "Add New Line"
+msgstr "Nieuwe regel toevoegen"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:768
+msgctxt "@info:tooltip show blank"
+msgid "Property is hidden if empty or not unique."
+msgstr "Eigenschap is verborgen indien leeg of niet uniek."
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:770
+msgctxt "@info:tooltip hide blank"
+msgid "Property is shown, if empty a placeholder will be shown."
+msgstr ""
+"Eigenschap wordt getoond, indien leeg zal er een plaatshouder worden getoond."
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:775
+msgctxt "@info:tooltip group order"
+msgid "Sort ascending"
+msgstr "Oplopend sorteren"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:777
+msgctxt "@info:tooltip group order"
+msgid "Sort descending"
+msgstr "Aflopend sorteren"
+
+#: src/Playlist/PlaylistAdvancedSortWindow.qml:779
+msgctxt "@info:tooltip group order"
+msgid "Same as primary sort order"
+msgstr "Hetzelfde als de primaire sorteervolgorde"
+
+#: src/Playlist/PlaylistItemContextMenu.qml:25
+msgctxt "@action:inmenu"
+msgid "Open Containing Folder"
+msgstr "Map openen waarin het zich bevindt"
+
+#: src/Playlist/PlaylistItemContextMenu.qml:32
+msgctxt "@action:inmenu"
+msgid "Open in Browser"
+msgstr "In browser openen"
+
+#: src/Playlist/PlaylistItemContextMenu.qml:44
+msgctxt "@action:inmenu"
+msgid "Open in Thumbnail Generator"
+msgstr "In generator van miniaturen openen"
+
+#: src/Playlist/PlaylistItemContextMenu.qml:63
+msgctxt "@action:inmenu %1 is 'MediaInfo' (app name)"
+msgid "Open in %1"
+msgstr "In %1 openen"
+
+#: src/Playlist/PlaylistItemContextMenu.qml:76
+msgctxt "@action:inmenu"
+msgid "Copy Name"
+msgstr "Naam kopiëren"
+
+#: src/Playlist/PlaylistItemContextMenu.qml:83
+msgctxt "@action:inmenu"
+msgid "Copy Path"
+msgstr "Pad kopiëren"
+
+#: src/Playlist/PlaylistItemContextMenu.qml:84
+msgctxt "@action:inmenu"
+msgid "Copy URL"
+msgstr "URL kopiëren"
+
+#: src/Playlist/PlaylistItemContextMenu.qml:92
+msgctxt "@action:inmenu"
+msgid "Update metadata"
+msgstr "Metagegevens bijwerken"
+
+#: src/Playlist/PlaylistItemContextMenu.qml:103
+msgctxt "@info:tooltip"
+msgid ""
+"Update metadata in the database with metadata inside the file.\n"
+"Metadata is stored in the database for faster retrieval."
+msgstr ""
+"Metagegevens in de database bijwerken met de metagegevens in het bestand.\n"
+"De metagegevens worden in de database opgeslagen voor snellere toegang."
+
+#: src/Playlist/PlaylistItemContextMenu.qml:134
+msgctxt "@action:inmenu"
+msgid "Remove from Playlist"
+msgstr "Uit afspeellijst verwijderen"
+
+#: src/Playlist/PlaylistItemContextMenu.qml:141
+msgctxt "@action:inmenu"
+msgid "Remove Selected from Playlist"
+msgstr "Geselecteerden uit afspeellijst verwijderen"
+
+#: src/Playlist/PlaylistItemContextMenu.qml:148
+#: src/Playlist/PlaylistTabDelegate.qml:306
+msgctxt "@action:inmenu"
+msgid "Rename"
+msgstr "Hernoemen"
+
+#: src/Playlist/PlaylistItemContextMenu.qml:167
+msgctxt "@action:inmenu"
+msgid "Move File to Trash"
+msgstr "Bestand naar prullenbak verplaatsen"
+
+#: src/Playlist/PlaylistItemContextMenu.qml:174
+msgctxt "@action:inmenu"
+msgid "Move Selected Files to Trash"
+msgstr "Geselecteerde bestanden naar prullenbak verplaatsen"
+
+#: src/Playlist/playlistsmanager.cpp:194
+#, kde-format
+msgctxt "@info:tooltip; %1 playlist with same name"
+msgid "Playlists with same name is not allowed: %1"
+msgstr "Afspeellijsten met dezelfde naam zijn niet toegestaan: %1"
+
+#: src/Playlist/playlistsortproxymodel.cpp:32
+#, kde-format
+msgctxt "@label:button file name"
+msgid "File Name"
+msgstr "Bestandsnaam"
+
+#: src/Playlist/playlistsortproxymodel.cpp:38
+#, kde-format
+msgctxt "@label:button duration"
+msgid "Duration"
+msgstr "Tijdsduur"
+
+#: src/Playlist/playlistsortproxymodel.cpp:44
+#, kde-format
+msgctxt "@label:button date"
+msgid "Date"
+msgstr "Datum"
+
+#: src/Playlist/playlistsortproxymodel.cpp:50
+#, kde-format
+msgctxt "@label:button file size"
+msgid "File Size"
+msgstr "Bestandsgrootte"
+
+#: src/Playlist/playlistsortproxymodel.cpp:56
+#, kde-format
+msgctxt "@label:button title"
+msgid "Title"
+msgstr "Titel"
+
+#: src/Playlist/playlistsortproxymodel.cpp:62
+#, kde-format
+msgctxt "@label:button, as in 'Track no on a Audio CD', not 'subtitle track'"
+msgid "Track No"
+msgstr "Track-nr"
+
+#: src/Playlist/playlistsortproxymodel.cpp:68
+#, kde-format
+msgctxt "@label:button sample rate"
+msgid "Sample Rate"
+msgstr "Samplesnelheid"
+
+#: src/Playlist/playlistsortproxymodel.cpp:74
+#, kde-format
+msgctxt "@label:button bitrate"
+msgid "Bitrate"
+msgstr "Bitsnelheid"
+
+#: src/Playlist/playlistsortproxymodel.cpp:81
+#, kde-format
+msgctxt "@label:button folder"
+msgid "Folder"
+msgstr "Map"
+
+#: src/Playlist/playlistsortproxymodel.cpp:88
+#, kde-format
+msgctxt "@label:button file type"
+msgid "Type"
+msgstr "Type"
+
+#: src/Playlist/playlistsortproxymodel.cpp:95
+#, kde-format
+msgctxt "@label:button file extension"
+msgid "Extension"
+msgstr "Extensie"
+
+#: src/Playlist/playlistsortproxymodel.cpp:102
+#, kde-format
+msgctxt "@label:button disc no"
+msgid "Disc No"
+msgstr "Geen schijf"
+
+#: src/Playlist/playlistsortproxymodel.cpp:109
+#, kde-format
+msgctxt "@label:button release year"
+msgid "Release Year"
+msgstr "Jaar van uitgave"
+
+#: src/Playlist/playlistsortproxymodel.cpp:116
+#, kde-format
+msgctxt "@label:button genre"
+msgid "Genre"
+msgstr "Genre"
+
+#: src/Playlist/playlistsortproxymodel.cpp:123
+#, kde-format
+msgctxt "@label:button album"
+msgid "Album"
+msgstr "Album"
+
+#: src/Playlist/playlistsortproxymodel.cpp:130
+#, kde-format
+msgctxt "@label:button artist"
+msgid "Artist"
+msgstr "Artiest"
+
+#: src/Playlist/playlistsortproxymodel.cpp:137
+#, kde-format
+msgctxt "@label:button album artist"
+msgid "Album Artist"
+msgstr "Albumartiest"
+
+#: src/Playlist/playlistsortproxymodel.cpp:144
+#, kde-format
+msgctxt "@label:button composer"
+msgid "Composer"
+msgstr "Opsteller"
+
+#: src/Playlist/playlistsortproxymodel.cpp:151
+#, kde-format
+msgctxt "@label:button lyricist"
+msgid "Lyricist"
+msgstr "Maker liedtekst"
+
+#: src/Playlist/playlistsortproxymodel.cpp:158
+#, kde-format
+msgctxt "@label:button audio codec"
+msgid "Audio Codec"
+msgstr "Audio-codec"
+
+#: src/Playlist/playlistsortproxymodel.cpp:165
+#, kde-format
+msgctxt "@label:button framerate"
+msgid "Framerate"
+msgstr "Framesnelheid"
+
+#: src/Playlist/playlistsortproxymodel.cpp:172
+#, kde-format
+msgctxt "@label:button video codec"
+msgid "Video Codec"
+msgstr "Video-codec"
+
+#: src/Playlist/playlistsortproxymodel.cpp:179
+#, kde-format
+msgctxt "@label:button video orientation"
+msgid "Orientation"
+msgstr "Oriëntatie"
+
+#: src/Playlist/playlistsortproxymodel.cpp:186
+#, kde-format
+msgctxt "@label:button resolution"
+msgid "Resolution"
+msgstr "Resolutie"
+
+#: src/Playlist/playlistsortproxymodel.cpp:339
+#, kde-format
+msgctxt "@label:button put new line"
+msgid "New Line"
+msgstr "Nieuwe regel"
+
+#: src/Playlist/playlistsortproxymodel.cpp:533
+#, kde-format
+msgctxt "@title:group"
+msgid "No Genre"
+msgstr "Geen genre"
+
+#: src/Playlist/playlistsortproxymodel.cpp:534
+#, kde-format
+msgctxt "@title:group"
+msgid "No Album"
+msgstr "Geen album"
+
+#: src/Playlist/playlistsortproxymodel.cpp:535
+#, kde-format
+msgctxt "@title:group"
+msgid "No Artist"
+msgstr "Geen artiest"
+
+#: src/Playlist/playlistsortproxymodel.cpp:536
+#, kde-format
+msgctxt "@title:group"
+msgid "No Album Artist"
+msgstr "Geen albumartiest"
+
+#: src/Playlist/playlistsortproxymodel.cpp:537
+#, kde-format
+msgctxt "@title:group"
+msgid "No Composer"
+msgstr "Geen componist"
+
+#: src/Playlist/playlistsortproxymodel.cpp:538
+#, kde-format
+msgctxt "@title:group"
+msgid "No Lyricist"
+msgstr "Geen maker liedtekst"
+
+#: src/Playlist/playlistsortproxymodel.cpp:539
+#, kde-format
+msgctxt "@title:group"
+msgid "No Release Year"
+msgstr "Geen jaar van uitgave"
+
+#: src/Playlist/playlistsortproxymodel.cpp:540
+#, kde-format
+msgctxt "@title:group"
+msgid "Not a Video"
+msgstr "Geen video"
+
+#: src/Playlist/playlistsortproxymodel.cpp:541
+#, kde-format
+msgctxt "@title:group"
+msgid "No Audio Codec"
+msgstr "Geen audio-codec"
+
+#: src/Playlist/playlistsortproxymodel.cpp:542
+#, kde-format
+msgctxt "@title:group"
+msgid "No Video Codec"
+msgstr "Geen video-codec"
+
+#: src/Playlist/playlistsortproxymodel.cpp:565
+#, kde-format
+msgctxt "@title:group disc"
+msgid "Disc"
+msgstr "Schijf"
+
+#: src/Playlist/playlistsortproxymodel.cpp:620
+#, kde-format
+msgctxt "@title:group"
+msgid "Video File"
+msgstr "Videobestand"
+
+#: src/Playlist/playlistsortproxymodel.cpp:623
+#, kde-format
+msgctxt "@title:group"
+msgid "Audio File"
+msgstr "Geluidsbestand"
+
+#: src/Playlist/playlistsortproxymodel.cpp:647
+#, kde-format
+msgctxt "@title:group"
+msgid "Landscape"
+msgstr "Landschap"
+
+#: src/Playlist/playlistsortproxymodel.cpp:651
+#, kde-format
+msgctxt "@title:group"
+msgid "Portrait"
+msgstr "Portret"
+
+#: src/Playlist/playlistsortproxymodel.cpp:655
+#, kde-format
+msgctxt "@title:group"
+msgid "Square"
+msgstr "Vierkant"
+
+#: src/Playlist/PlaylistTabDelegate.qml:152
+msgctxt "@label:title name of default playlist tab"
+msgid "Default"
+msgstr "Standaard"
+
+#: src/Playlist/PlaylistTabDelegate.qml:210
+msgctxt "@info:tooltip"
+msgid "Click and hold"
+msgstr "Klik en houd ingedrukt"
+
+#: src/Playlist/PlaylistTabDelegate.qml:312
+msgctxt "@action:inmenu"
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: src/qml/Actions.qml:192
+msgctxt ""
+"osd message when trying to open subtitle selection dialog while no file is "
+"open"
+msgid "Can’t load subtitle when no file is open"
+msgstr "Kan ondertitel niet laden wanneer geen bestand is geopend"
+
+#: src/qml/Actions.qml:211 src/qml/Actions.qml:217 src/qml/Actions.qml:222
+msgctxt "@info:tooltip"
+msgid "Playback speed: %1"
+msgstr "Afspeelsnelheid: %1"
+
+#: src/qml/Actions.qml:324
+msgctxt "@info:tooltip; %1 is the timestamp where the loop starts"
+msgid "Loop start: %1"
+msgstr "Begin van herhalen: %1"
+
+#: src/qml/Actions.qml:333
+msgctxt "@info:tooltip, use en dash for the range"
+msgid "Loop: %1–%2"
+msgstr "Lus: %1 - %2"
+
+#: src/qml/Actions.qml:341
+msgctxt "@info:tooltip"
+msgid "Loop cleared"
+msgstr "Herhalen gewist"
+
+#: src/qml/Actions.qml:362
+msgctxt "@info:tooltip"
+msgid "Subtitles off"
+msgstr "Ondertiteling uit"
+
+#: src/qml/Actions.qml:362
+msgctxt "@info:tooltip"
+msgid "Subtitles on"
+msgstr "Ondertiteling aan"
+
+#: src/qml/Actions.qml:378 src/qml/Actions.qml:385
+msgctxt "@info:tooltip"
+msgid "Subtitle scale: %1"
+msgstr "Schaal ondertiteling: %1"
+
+#: src/qml/Actions.qml:400
+msgctxt "@info:tooltip"
+msgid "Deinterlace: %1"
+msgstr "De-interlace: %1"
+
+#: src/qml/Actions.qml:466 src/qml/Actions.qml:473
+msgctxt "@info:tooltip"
+msgid "Zoom: %1"
+msgstr "Zoomen: %1"
+
+#: src/qml/Actions.qml:479
+msgctxt "@info:tooltip"
+msgid "Zoom: 0"
+msgstr "Zoomen: 0"
+
+#: src/qml/Actions.qml:486 src/qml/Actions.qml:493
+msgctxt "@info:tooltip"
+msgid "Contrast: %1"
+msgstr "Contrast: %1"
+
+#: src/qml/Actions.qml:499
+msgctxt "@info:tooltip"
+msgid "Contrast: 0"
+msgstr "Contrast: 0"
+
+#: src/qml/Actions.qml:506 src/qml/Actions.qml:513
+msgctxt "@info:tooltip"
+msgid "Brightness: %1"
+msgstr "Helderheid: %1"
+
+#: src/qml/Actions.qml:519
+msgctxt "@info:tooltip"
+msgid "Brightness: 0"
+msgstr "Helderheid: 0"
+
+#: src/qml/Actions.qml:526 src/qml/Actions.qml:533
+msgctxt "@info:tooltip"
+msgid "Gamma: %1"
+msgstr "Gamma: %1"
+
+#: src/qml/Actions.qml:539
+msgctxt "@info:tooltip"
+msgid "Gamma: 0"
+msgstr "Gamma: 0"
+
+#: src/qml/Actions.qml:546 src/qml/Actions.qml:553
+msgctxt "@info:tooltip"
+msgid "Saturation: %1"
+msgstr "Verzadiging: %1"
+
+#: src/qml/Actions.qml:559
+msgctxt "@info:tooltip"
+msgid "Saturation: 0"
+msgstr "Verzadiging: 0"
+
+#: src/qml/Footer.qml:150
+msgctxt "@info:tooltip"
+msgid "Start playback"
+msgstr "Afspelen starten"
+
+#: src/qml/Footer.qml:150
+msgctxt "@info:tooltip"
+msgid "Pause playback"
+msgstr "Afspelen pauzeren"
+
+#: src/qml/Footer.qml:170
+msgctxt "@info:tooltip"
+msgid "Play previous file"
+msgstr "Vorige bestand afspelen"
+
+#: src/qml/Footer.qml:190
+msgctxt "@info:tooltip"
+msgid "Play next file"
+msgstr "Volgende bestand afspelen"
+
+#: src/qml/Footer.qml:209
+msgctxt "@info:tooltip"
+msgid "Open chapters menu"
+msgstr "Menu hoofdstukken openen"
+
+#: src/qml/Footer.qml:279
+msgctxt "@info:tooltip"
+msgid "Remaining: %1"
+msgstr "Resterend: %1"
+
+#: src/qml/RunaPlayer/Components/ColorPickerButton.qml:46
+msgctxt "@info:tooltip"
+msgid "Select a color"
+msgstr "Selecteer een kleur"
+
+#: src/qml/RunaPlayer/Components/ColorPickerButton.qml:55
+msgctxt "@title:window"
+msgid "Select Color"
+msgstr "Kleur selecteren"
+
+#: src/qml/RunaPlayer/Components/HamburgerMenu.qml:68 src/qml/Menus/FileMenu.qml:33
+#: src/qml/Menus/Global/GlobalFileMenu.qml:48
+msgctxt "@title:menu"
+msgid "Recent Files"
+msgstr "Recente bestanden"
+
+#: src/qml/RunaPlayer/Components/HamburgerMenu.qml:97
+#: src/qml/Menus/Global/GlobalSubtitlesMenu.qml:27
+#: src/qml/Menus/SubtitlesMenu.qml:25
+msgctxt "@title:menu"
+msgid "Primary Subtitle"
+msgstr "Primaire ondertitel"
+
+#: src/qml/RunaPlayer/Components/HamburgerMenu.qml:103
+#: src/qml/Menus/Global/GlobalSubtitlesMenu.qml:61
+#: src/qml/Menus/SubtitlesMenu.qml:31
+msgctxt "@title:menu"
+msgid "Secondary Subtitle"
+msgstr "Secondaire ondertitel"
+
+#: src/qml/RunaPlayer/Components/HamburgerMenu.qml:112
+msgctxt "@title:menu"
+msgid "Audio Track"
+msgstr "Audiotrack"
+
+#: src/qml/RunaPlayer/Components/HamburgerMenu.qml:135
+msgctxt "@title:menu"
+msgid "&More"
+msgstr "&Meer"
+
+#: src/qml/RunaPlayer/Components/SelectActionPopup.qml:28
+msgctxt "@info:placeholder"
+msgid "No action found."
+msgstr "Geen actie gevonden."
+
+#: src/qml/RunaPlayer/Components/SubtitlesFolders.qml:33
+msgctxt "@label; Below is a list of folders containing subtitles"
+msgid "Load subtitles from"
+msgstr "Ondertiteling laden uit"
+
+#: src/qml/RunaPlayer/Components/SubtitlesFolders.qml:36
+msgctxt "@info:tooltip;"
+msgid ""
+"When a relative folder name starts with * (asterisk) and recursive search is "
+"enabled, all folders containing that name will be searched.\n"
+"Relative folders are relative to the playing file's folder."
+msgstr ""
+"Wanneer een relatieve mapnaam begint met * (asterisk) en recursief zoeken is "
+"ingeschakeld, zullen alle mappen met die naam doorzocht worden.\n"
+"Relatieve mappen zijn relatief tot de map van het afspelende bestand."
+
+#: src/qml/RunaPlayer/Components/SubtitlesFolders.qml:118
+msgctxt "@action:button"
+msgid "Confirm Deletion"
+msgstr "Verwijderen bevestigen"
+
+#: src/qml/RunaPlayer/Components/SubtitlesFolders.qml:129
+msgctxt "@info:tooltip"
+msgid "Delete this folder from list"
+msgstr "Deze map uit de lijst verwijderen"
+
+#: src/qml/RunaPlayer/Components/SubtitlesFolders.qml:150
+msgctxt "@info:tooltip"
+msgid "Save changes"
+msgstr "Wijzigingen opslaan"
+
+#: src/qml/RunaPlayer/Components/SubtitlesFolders.qml:163
+msgid "No folder set"
+msgstr "Geen map ingesteld"
+
+#: src/qml/RunaPlayer/Components/SubtitlesFolders.qml:181
+msgctxt "@action:button"
+msgid "Add New Folder"
+msgstr "Nieuwe map toevoegen"
+
+#: src/qml/RunaPlayer/Components/SubtitlesFolders.qml:189
+msgctxt "@info:tooltip add new subtitle folder setting"
+msgid "Add a folder in which to look for subtitles."
+msgstr "Een map toevoegen waarin te zoeken naar ondertitels."
+
+#: src/qml/RunaPlayer/Components/SubtitlesFolders.qml:198
+msgctxt "@label:check"
+msgid "Search subtitles recursively"
+msgstr "Ondertitels recursief zoeken"
+
+#: src/qml/RunaPlayer/Components/SubtitlesFolders.qml:209
+msgctxt "@info:tooltip"
+msgid ""
+"Subtitles are searched recursively in the folders defined by the “%1” "
+"setting.\n"
+"Only relative folders are searched."
+msgstr ""
+"Ondertitels worden recursief doorzocht in de mappen gedefinieerd door de "
+"instelling ”%1”.\n"
+"Alleen relatieve mappen worden doorzocht."
+
+#: src/qml/Header.qml:77
+msgctxt "@action:intoolbar"
+msgid "Subtitles"
+msgstr "Ondertiteling"
+
+#: src/qml/Header.qml:101
+msgctxt "@action:intoolbar"
+msgid "Audio"
+msgstr "Audio"
+
+#: src/qml/HProgressBar.qml:331
+msgctxt "@action:inmenu"
+msgid "Skip Chapters"
+msgstr "Hoofdstukken overslaan"
+
+#: src/qml/HProgressBar.qml:339
+msgctxt "@info:tooltip"
+msgid ""
+"Automatically skips chapters containing certain words/characters.\n"
+"Check “Playback” settings for more details."
+msgstr ""
+"Automatisch hoofdstukken over die bepaalde woorden/tekens bevatten.\n"
+"Controleer instellingen 'Afspelen' voor meer details."
+
+#: src/qml/Main.qml:88
+msgctxt "@title:window"
+msgid "RunaPlayer"
+msgstr "RunaPlayer"
+
+#: src/qml/Main.qml:318
+msgctxt "@action:button"
+msgid "Open"
+msgstr "Openen"
+
+#: src/qml/Main.qml:355
+msgctxt "@title:window"
+msgid "Select File"
+msgstr "Bestand selecteren"
+
+#: src/qml/Main.qml:381
+msgctxt "@title:window"
+msgid "Select Subtitles File"
+msgstr "Bestand met ondertitels selecteren"
+
+#: src/qml/Menus/AudioMenu.qml:20 src/qml/Menus/Global/GlobalAudioMenu.qml:22
+msgctxt "@title:menu"
+msgid "&Audio"
+msgstr "&Audio"
+
+#: src/qml/Menus/AudioMenu.qml:28 src/qml/Menus/Global/GlobalAudioMenu.qml:27
+msgctxt "@title:menu"
+msgid "&Track"
+msgstr "&Track"
+
+#: src/qml/Menus/FileMenu.qml:20 src/qml/Menus/Global/GlobalFileMenu.qml:19
+msgctxt "@title:menu"
+msgid "&File"
+msgstr "&Bestand"
+
+#: src/qml/Menus/FileMenu.qml:68 src/qml/Menus/Global/GlobalFileMenu.qml:77
+msgctxt "@action:inmenu"
+msgid "Clear List"
+msgstr "Lijst wissen"
+
+#: src/qml/Menus/Global/GlobalHelpMenu.qml:16 src/qml/Menus/HelpMenu.qml:16
+msgctxt "@title:menu"
+msgid "&Help"
+msgstr "&Help"
+
+#: src/qml/Menus/Global/GlobalPlaybackMenu.qml:16
+#: src/qml/Menus/PlaybackMenu.qml:16
+msgctxt "@title:menu"
+msgid "&Playback"
+msgstr "&Afspelen"
+
+#: src/qml/Menus/Global/GlobalPlaybackMenu.qml:77
+#: src/qml/Menus/PlaybackMenu.qml:35
+msgctxt "@title:menu"
+msgid "Seek"
+msgstr "Zoeken "
+
+#: src/qml/Menus/Global/GlobalSettingsMenu.qml:15
+#: src/qml/Menus/SettingsMenu.qml:15
+msgctxt "@title:menu"
+msgid "&Settings"
+msgstr "In&stellingen"
+
+#: src/qml/Menus/Global/GlobalSettingsMenu.qml:18
+#: src/qml/Menus/SettingsMenu.qml:19
+msgctxt "@action:inmenu"
+msgid "General"
+msgstr "Algemeen"
+
+#: src/qml/Menus/Global/GlobalSettingsMenu.qml:24
+#: src/qml/Menus/SettingsMenu.qml:23
+msgctxt "@action:inmenu"
+msgid "Osd"
+msgstr "Osd"
+
+#: src/qml/Menus/Global/GlobalSettingsMenu.qml:30
+#: src/qml/Menus/SettingsMenu.qml:27
+msgctxt "@action:inmenu"
+msgid "Playback"
+msgstr "Afspelen"
+
+#: src/qml/Menus/Global/GlobalSettingsMenu.qml:36
+#: src/qml/Menus/SettingsMenu.qml:31
+msgctxt "@action:inmenu"
+msgid "Video"
+msgstr "Video"
+
+#: src/qml/Menus/Global/GlobalSettingsMenu.qml:42
+#: src/qml/Menus/SettingsMenu.qml:35
+msgctxt "@action:inmenu"
+msgid "Audio"
+msgstr "Audio"
+
+#: src/qml/Menus/Global/GlobalSettingsMenu.qml:48
+#: src/qml/Menus/SettingsMenu.qml:39
+msgctxt "@action:inmenu"
+msgid "Subtitles"
+msgstr "Ondertiteling"
+
+#: src/qml/Menus/Global/GlobalSettingsMenu.qml:54
+#: src/qml/Menus/SettingsMenu.qml:43
+msgctxt "@action:inmenu"
+msgid "Playlist"
+msgstr "Afspeellijst"
+
+#: src/qml/Menus/Global/GlobalSettingsMenu.qml:60
+#: src/qml/Menus/SettingsMenu.qml:47
+msgctxt "@action:inmenu"
+msgid "Mouse"
+msgstr "Muis"
+
+#: src/qml/Menus/Global/GlobalSettingsMenu.qml:66
+#: src/qml/Menus/SettingsMenu.qml:51
+msgctxt "@action:inmenu"
+msgid "Shortcuts"
+msgstr "Sneltoetsen"
+
+#: src/qml/Menus/Global/GlobalSettingsMenu.qml:73
+#: src/qml/Menus/SettingsMenu.qml:55
+msgctxt "@action:inmenu"
+msgid "Custom Commands"
+msgstr "Aangepaste commando's"
+
+#: src/qml/Menus/Global/GlobalSettingsMenu.qml:79
+#: src/qml/Menus/SettingsMenu.qml:59
+msgctxt "@action:inmenu"
+msgid "Database"
+msgstr "Database"
+
+#: src/qml/Menus/Global/GlobalSettingsMenu.qml:85
+#: src/qml/Menus/SettingsMenu.qml:63
+msgctxt "@action:inmenu"
+msgid "Debug"
+msgstr "Debuggen"
+
+#: src/qml/Menus/Global/GlobalSubtitlesMenu.qml:22
+#: src/qml/Menus/SubtitlesMenu.qml:20
+msgctxt "@title:menu"
+msgid "&Subtitles"
+msgstr "Ondertitel&s"
+
+#: src/qml/Menus/Global/GlobalVideoMenu.qml:16 src/qml/Menus/VideoMenu.qml:16
+msgctxt "@title:menu"
+msgid "&Video"
+msgstr "&Video"
+
+#: src/qml/Menus/Global/GlobalVideoMenu.qml:85 src/qml/Menus/VideoMenu.qml:31
+msgctxt "@title:menu"
+msgid "Adjustments"
+msgstr "Aanpassingen"
+
+#: src/qml/Menus/Global/GlobalViewMenu.qml:18 src/qml/Menus/ViewMenu.qml:17
+msgctxt "@title:menu"
+msgid "&View"
+msgstr "&Beeld"
+
+#: src/qml/Menus/Global/GlobalViewMenu.qml:30 src/qml/Menus/ViewMenu.qml:26
+msgctxt "@action:inmenu"
+msgid "Hide Menubar"
+msgstr "Menubalk verbergen"
+
+#: src/qml/Menus/Global/GlobalViewMenu.qml:32 src/qml/Menus/ViewMenu.qml:28
+msgctxt "@action:inmenu"
+msgid "Show Menubar"
+msgstr "Menubalk tonen"
+
+#: src/qml/Menus/Global/GlobalViewMenu.qml:42 src/qml/Menus/ViewMenu.qml:37
+msgctxt "@action:inmenu"
+msgid "Hide Toolbar"
+msgstr "Werkbalk verbergen"
+
+#: src/qml/Menus/Global/GlobalViewMenu.qml:44 src/qml/Menus/ViewMenu.qml:39
+msgctxt "@action:inmenu"
+msgid "Show Toolbar"
+msgstr "Werkbalk tonen"
+
+#: src/qml/Menus/MpvContextMenu.qml:48
+msgctxt "@title:menu"
+msgid "Playback Speed"
+msgstr "Afspeelsnelheid"
+
+#: src/qml/MpvVideo.qml:244
+msgctxt "@info:drag&drop append items"
+msgid "Add to Playlist"
+msgstr "Aan afspeellijst toevoegen"
+
+#: src/qml/MpvVideo.qml:293
+msgctxt "@info:drag&drop play now"
+msgid "Play Now"
+msgstr "Nu afspelen"
+
+#: src/qml/MpvVideo.qml:384
+msgctxt "@label:title"
+msgid "Loading…"
+msgstr "Bezig met laden…"
+
+#: src/Settings/AudioPage.qml:26 src/Settings/SubtitlesPage.qml:123
+msgctxt "@label:textbox"
+msgid "Preferred language"
+msgstr "Voorkeurstaal"
+
+#: src/Settings/AudioPage.qml:53 src/Settings/AudioPage.qml:80
+#: src/Settings/SubtitlesPage.qml:152 src/Settings/SubtitlesPage.qml:180
+msgctxt "@info:tooltip"
+msgid ""
+"Track selection priority:<br>- preferred track id<br>- track matching the "
+"preferred language<br>- default track<br>- no track"
+msgstr ""
+"Prioriteit bij trackselectie:<br>- voorkeurstrack-ID<br>- track die "
+"overeenkomt met de voorkeurstaal<br>- standaardtrack<br>- geen track"
+
+#: src/Settings/AudioPage.qml:62
+msgctxt "@label:spinbox"
+msgid "Preferred track id"
+msgstr "Voorkeurstrack-ID"
+
+#: src/Settings/AudioPage.qml:90
+msgctxt "@label:spinbox"
+msgid "Volume step"
+msgstr "Volumestap"
+
+#: src/Settings/AudioPage.qml:109
+msgctxt "@title"
+msgid "Replay gain"
+msgstr "Afspeelversterking"
+
+#: src/Settings/AudioPage.qml:115
+msgctxt "@label:listbox"
+msgid "Mode"
+msgstr "Modus"
+
+#: src/Settings/AudioPage.qml:127
+msgctxt "@item:listbox replay gain"
+msgid "Disabled"
+msgstr "Uitgeschakeld"
+
+#: src/Settings/AudioPage.qml:133
+msgctxt "@item:listbox replay gain"
+msgid "Track"
+msgstr "Track"
+
+#: src/Settings/AudioPage.qml:139
+msgctxt "@item:listbox replay gain"
+msgid "Album"
+msgstr "Album"
+
+#: src/Settings/AudioPage.qml:153
+msgctxt "@info:tooltip"
+msgid ""
+"Adjust volume gain according to <i>replaygain</i> values stored in the file "
+"metadata. If set to album gain, apply album gain if present and fallback to "
+"track gain otherwise."
+msgstr ""
+"Volumeversterking aanpassen volgens waarden van <i>afspeelversterking</i> "
+"opgeslagen in de metagegevens van het bestand. Indien gezet op "
+"albumversterking, pas albumversterking toe indien aanwezig en val anders "
+"terug op trackversterking."
+
+#: src/Settings/AudioPage.qml:166
+msgctxt "@label:spinbox"
+msgid "Prevent clipping"
+msgstr "Voorkom afsnijden"
+
+#: src/Settings/AudioPage.qml:174
+msgctxt "@info:tooltip"
+msgid "Prevent clipping by lowering the gain"
+msgstr "Voorkom afsnijden door de versterking te verlagen"
+
+#: src/Settings/AudioPage.qml:183
+msgctxt "@label:spinbox"
+msgid "Preamp (dB)"
+msgstr "Voorversterking (dB)"
+
+#: src/Settings/AudioPage.qml:206 src/Settings/AudioPage.qml:244
+#: src/Settings/SubtitlesPage.qml:247 src/Settings/SubtitlesPage.qml:348
+#: src/Settings/SubtitlesPage.qml:408 src/Settings/SubtitlesPage.qml:493
+msgctxt "@info:tooltip"
+msgid "Reset to default value"
+msgstr "Terug naar standaardinstellingen"
+
+#: src/Settings/AudioPage.qml:221
+msgctxt "@label:spinbox"
+msgid "Fallback (dB)"
+msgstr "Terugval (dB)"
+
+#: src/Settings/AudioPage.qml:251
+msgctxt "@info:tooltip"
+msgid ""
+"Gain in dB to apply if the file has no replay gain tags.<br><br>This setting "
+"is in effect only when:<br>- the replaygain setting is disabled<br>- the "
+"replaygain setting is enabled and the file has no replaygain metadata<br>If "
+"this is in effect, other replaygain settings are ignored."
+msgstr ""
+"Versterking in dB om toe te passen als het bestand geen "
+"afspeelversterkingstags heeft.<br><br>Deze instelling is in effect alleen "
+"wanneer:<br>- de afspeelversterkingsinstelling is uitgeschakeld<br>- de "
+"afspeelversterkingsinstelling is ingeschakeld en het bestand geen "
+"metagegevens afspeelversterking heeft<br>Als dit in effect is worden andere "
+"afspeelversterkingsinstellingen genegeerd."
+
+#: src/Settings/CustomCommandsPage.qml:48
+msgctxt "@label:textbox"
+msgid "No custom commands yet"
+msgstr "Nog geen aangepaste commando's"
+
+#: src/Settings/CustomCommandsPage.qml:50
+msgctxt "@action:button"
+msgid "&Add Command"
+msgstr "Commando &toevoegen"
+
+#: src/Settings/CustomCommandsPage.qml:100
+msgctxt "@info:tooltip"
+msgid ""
+"Checked: property will be set at startup\n"
+"Unchecked: property will not be set at startup"
+msgstr ""
+"Geactiveerd: eigenschap zal ingesteld worden bij opstarten\n"
+"Niet geactiveerd: eigenschap zal niet ingesteld worden bij opstarten"
+
+#: src/Settings/CustomCommandsPage.qml:184
+msgctxt "@action:intoolbar"
+msgid "&Add"
+msgstr "&Toevoegen"
+
+#: src/Settings/DatabasePage.qml:25
+msgctxt "@label"
+msgid "Clear recent files"
+msgstr "Recente bestanden wissen"
+
+#: src/Settings/DatabasePage.qml:32 src/Settings/DatabasePage.qml:48
+#: src/Settings/DatabasePage.qml:64
+msgctxt "@action:button:"
+msgid "Clear"
+msgstr "Wissen"
+
+#: src/Settings/DatabasePage.qml:36
+msgctxt "@info:tooltip"
+msgid "Deletes all recent files saved in the database"
+msgstr "Alle recente bestanden verwijderen uit de database"
+
+#: src/Settings/DatabasePage.qml:41
+msgctxt "@label"
+msgid "Clear metadata"
+msgstr "Metagegevens wissen"
+
+#: src/Settings/DatabasePage.qml:52
+msgctxt "@info:tooltip"
+msgid "Deletes all metadata saved in the database"
+msgstr "Verwijdert alle metagegevens opgeslagen in de database"
+
+#: src/Settings/DatabasePage.qml:57
+msgctxt "@label"
+msgid "Clear playback positions"
+msgstr "Afspeelpositie wissen"
+
+#: src/Settings/DatabasePage.qml:68
+msgctxt "@info:tooltip"
+msgid "Deletes all playback positions saved in the database"
+msgstr "Verwijdert alle afspeelposities opgeslagen in de database"
+
+#: src/Settings/DebugPage.qml:26
+msgctxt "@label:textbox"
+msgid "Config file"
+msgstr "Configuratiebestand"
+
+#: src/Settings/DebugPage.qml:38
+msgctxt "@label:textbox"
+msgid "Custom commands config file"
+msgstr "Configuratiebestand met aangepaste commando's"
+
+#: src/Settings/DebugPage.qml:50
+msgctxt "@label:textbox"
+msgid "Shortcuts config file"
+msgstr "Configuratiebestand van sneltoetsen"
+
+#: src/Settings/DebugPage.qml:62
+msgctxt "@label:textbox"
+msgid "Playlists config file"
+msgstr "Configuratiebestand van afspeellijsten"
+
+#: src/Settings/DebugPage.qml:74
+msgctxt "@info:usagetip"
+msgid ""
+"If fields are empty that means there is no config file/folder (e.g when "
+"using the default settings)."
+msgstr ""
+"Als velden leeg zijn dan betekent dat dat er geen configuratiebestand/map is "
+"(bijv. bij gebruik van de standaard instellingen)."
+
+#: src/Settings/DebugPage.qml:104
+msgctxt "@info:tooltip"
+msgid "Open file"
+msgstr "Bestand openen"
+
+#: src/Settings/DebugPage.qml:113
+msgctxt "@info:tooltip"
+msgid "Open containing folder"
+msgstr "Map openen waarin het zich bevindt"
+
+#: src/Settings/EditCustomCommand.qml:46
+msgctxt "@label:textbox"
+msgid "Command"
+msgstr "Commando"
+
+#: src/Settings/EditCustomCommand.qml:62
+msgctxt "@info:tooltip"
+msgid ""
+"What mpv command to run, see <a href=\"https://mpv.io/manual/stable/#list-of-"
+"input-commands\">MPV Commands</a> for a list of available commands.<br>Not "
+"all commands will work as some are specific for mpv.<br>Most useful are the "
+"commands to manipulate properties, like <strong>set</strong>, <strong>add</"
+"strong>, <strong>cycle</strong>.<br><strong>set</strong>: sets the value of "
+"a property <strong>set volume-max 150</strong>.<br><strong>add</strong>: "
+"increases/decreases the value of a property <strong>add volume 15</strong>, "
+"increases volume by 15. To decrease the value use <strong>add volume -15</"
+"strong>.<br><strong>cycle</strong>: cycle through the values of a property "
+"<strong>cycle aid up</strong>."
+msgstr ""
+"Welk mpv-commando uitvoeren, zie <a href=\"https://mpv.io/manual/stable/"
+"#list-of-input-commands\">MPV-commando's</a> voor een lijst met beschikbare "
+"commando's.<br>Niet alle commando's zullen werken omdat sommigen specifiek "
+"voor mpv zijn.<br>Het nuttigst zijn de commando's om eigenschappen te "
+"manipuleren, zoals <strong>set</strong>, <strong>add</strong>, "
+"<strong>cycle</strong>.<br><strong>set</strong>: stelt de waarde van een "
+"eigenschap  in <strong>set volume-max 150</strong>.<br><strong>add</strong>: "
+"verhoogt/verlaagt de waarde van een eigenschap <strong>add volume 15</"
+"strong>, verhoogt het volume met 15. Om de waarde te verlagen gebruik "
+"<strong>add volume -15</strong>.<br><strong>cycle</strong>: loop door de "
+"waarden van een eigenschap <strong>cycle aid up</strong>."
+
+#: src/Settings/EditCustomCommand.qml:79
+msgctxt "@label:textbox"
+msgid "OSD Message"
+msgstr "OSD-bericht"
+
+#: src/Settings/EditCustomCommand.qml:89
+msgctxt "placeholder text; %1 is an example of how to display an mpv property"
+msgid "Filename: %1"
+msgstr "Bestandsnaam: %1"
+
+#: src/Settings/EditCustomCommand.qml:95
+msgctxt "@info:tooltip"
+msgid ""
+"An OSD message to display when triggering an action type custom command."
+"<br>Use ${property_name} to display the value of a property <strong>Volume: "
+"${volume}</strong>"
+msgstr ""
+"Een OSD-bericht om te tonen bij starten van een actietype aangepast commando."
+"<br>${property_name} gebruiken om de waarde van een eigenschap te tonen "
+"<strong>Volume: ${volume}</strong>"
+
+#: src/Settings/EditCustomCommand.qml:104
+msgctxt "@label"
+msgid "Type"
+msgstr "Type"
+
+#: src/Settings/EditCustomCommand.qml:125
+msgctxt "@option:radio"
+msgid "Keyboard shortcut"
+msgstr "Sneltoets"
+
+#: src/Settings/EditCustomCommand.qml:126
+msgctxt "@info:tooltip"
+msgid ""
+"The command will be triggered with a shortcut. The shortcut can be set after "
+"saving."
+msgstr ""
+"Het commando zal gestart worden met een sneltoets. De sneltoets kan "
+"ingesteld worden na opslaan."
+
+#: src/Settings/EditCustomCommand.qml:135
+msgctxt "@option:radio"
+msgid "Run at startup"
+msgstr "Bij opstarten uitvoeren"
+
+#: src/Settings/EditCustomCommand.qml:136
+msgctxt "@info:tooltip"
+msgid "The command will be run at application startup."
+msgstr "Het commando zal uitgevoerd worden bij opstarten van de toepassing."
+
+#: src/Settings/EditCustomCommand.qml:148
+msgctxt "@action:intoolbar"
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: src/Settings/EditCustomCommand.qml:163
+msgctxt "@action:intoolbar"
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: src/Settings/EditCustomCommand.qml:170
+msgctxt "@action:intoolbar"
+msgid "&Save"
+msgstr "Op&slaan"
+
+#: src/Settings/GeneralPage.qml:27
+msgctxt "@label:spinbox"
+msgid "Maximum recent files"
+msgstr "Maximale recente bestanden"
+
+#: src/Settings/GeneralPage.qml:45
+msgctxt "@info:tooltip"
+msgid ""
+"The number of recent files to display. Enter 0 (zero) to disable.<br>Every "
+"opened file is stored.<br>Bold entries are files opened from the open file/"
+"url actions and from external apps (command line, file manager, drag and "
+"drop etc.)."
+msgstr ""
+"Het aantal te tonen recente bestandsnaam. Voer 0 (zero) in om uit te "
+"schakelen.<br>Elke geopende bestand wordt opgeslagen.<br>Vette items zijn "
+"bestanden geopend uit de acties open bestand/url en uit externe toepassingen "
+"(opdrachtregel, bestandsbeheerder, slepen en loslaten etc.)."
+
+#: src/Settings/GeneralPage.qml:58
+msgctxt "@option:check"
+msgid "Allow only one instance"
+msgstr "Slecht één exemplaar toestaan"
+
+#: src/Settings/GeneralPage.qml:67
+msgctxt "@info:tooltip"
+msgid ""
+"Trying to open another RunaPlayer instance will do nothing.<br>Trying to open "
+"another file with RunaPlayer will open the file in the running instance."
+msgstr ""
+"Een ander exemplaar van RunaPlayer openen zal niets doen.<br>Proberen een ander "
+"bestand met RunaPlayer te openen zal het bestand openen in het actieve exemplaar."
+
+#: src/Settings/GeneralPage.qml:78
+msgctxt "@option:check"
+msgid "Add file to playlist"
+msgstr "Bestand aan afspeellijst toevoegen"
+
+#: src/Settings/GeneralPage.qml:88
+msgctxt "@info:tooltip"
+msgid "File will be added to the end of the playlist."
+msgstr "Bestand zal aan het einde van de afspeellijst worden toegevoegd."
+
+#: src/Settings/GeneralPage.qml:97
+msgctxt "@option:check"
+msgid "Play new file"
+msgstr "Nieuw bestand afspelen"
+
+#: src/Settings/GeneralPage.qml:108
+msgctxt "@title"
+msgid "Interface"
+msgstr "Interface"
+
+#: src/Settings/GeneralPage.qml:114
+msgctxt "@label:spinbox"
+msgid "Footer style"
+msgstr "Stijl van voettekst"
+
+#: src/Settings/GeneralPage.qml:126
+msgctxt "@item:listbox the footer style"
+msgid "Default"
+msgstr "Standaard"
+
+#: src/Settings/GeneralPage.qml:132
+msgctxt "@item:listbox the footer style"
+msgid "Floating"
+msgstr "Zwevend"
+
+#: src/Settings/GeneralPage.qml:146
+msgctxt "@label:listbox"
+msgid "Show floating footer on"
+msgstr "Zwevende voettekst aan tonen"
+
+#: src/Settings/GeneralPage.qml:161
+msgctxt "@item:listbox how to trigger the floating footer"
+msgid "Every mouse movement"
+msgstr "Elke muisbeweging"
+
+#: src/Settings/GeneralPage.qml:167
+msgctxt "@item:listbox how to trigger the floating footer"
+msgid "Bottom mouse movement"
+msgstr "Onderste muisbeweging"
+
+#: src/Settings/GeneralPage.qml:182
+msgctxt "@info:tooltip"
+msgid ""
+"What action shows the footer.<br><strong>Every mouse movement</strong> — "
+"every mouse movement over the video area<br><strong>Bottom mouse movement</"
+"strong> — mouse movement on the bottom of the video area"
+msgstr ""
+"Welke actie toont de voettekst.<br><strong>Iedere muisbeweging</strong> — "
+"iedere muisbeweging over het videogebied<br><strong>Muisbeweging onderaan</"
+"strong> — muisbeweging onderaan het videogebied"
+
+#: src/Settings/GeneralPage.qml:190
+msgctxt "@label:spinbox"
+msgid "Preview thumbnail"
+msgstr "Voorbeeldminiatuur"
+
+#: src/Settings/GeneralPage.qml:195
+msgctxt "@option:check"
+msgid "Show preview thumbnail"
+msgstr "Voorbeeldminiatuur tonen"
+
+#: src/Settings/GeneralPage.qml:202
+msgctxt "@info:tooltip"
+msgid "Shows a preview while hovering the seek/progress bar."
+msgstr "Een voorbeeld tonen tijdens zweven boven de zoek-voortgangsbalk."
+
+#: src/Settings/GeneralPage.qml:211
+msgctxt "@option:check"
+msgid "Use accurate preview"
+msgstr "Accuraat voorbeeld gebruiken"
+
+#: src/Settings/GeneralPage.qml:221
+msgctxt "@info:tooltip"
+msgid "Generating an accurate preview is slow"
+msgstr "Een accuraat voorbeeld genereren is langzaam"
+
+#: src/Settings/GeneralPage.qml:229
+msgctxt "@label:spinbox"
+msgid "Thumbnail width"
+msgstr "Breedte miniatuur"
+
+#: src/Settings/GeneralPage.qml:247
+msgctxt "@label"
+msgid "Window"
+msgstr "Venster"
+
+#: src/Settings/GeneralPage.qml:253
+msgctxt "@option:check"
+msgid "Resize to fit video"
+msgstr "Grootte wijzigen zodat de video past"
+
+#: src/Settings/GeneralPage.qml:264
+msgctxt "@info:tooltip"
+msgid "Not supported on Wayland."
+msgstr "Niet ondersteund onder Wayland."
+
+#: src/Settings/GeneralPage.qml:265
+msgctxt "@info:tooltip"
+msgid ""
+"The window is resized according to the video resolution.<br>The maximum size "
+"is not constrained, this is left to the operating system."
+msgstr ""
+"Het venster is van grootte gewijzigd volgens de resolutie van de video."
+"<br>De maximum grootte is niet beperkt, dit wordt overgelaten aan het "
+"besturingssysteem."
+
+#: src/Settings/GeneralPage.qml:275
+msgctxt "@option:check"
+msgid "Start in fullscreen mode"
+msgstr "In modus volledig-scherm starten"
+
+#: src/Settings/GeneralPage.qml:284
+msgctxt "@info:tooltip"
+msgid ""
+"Enter fullscreen mode when the application starts.<br>This takes precedence "
+"over Resize to fit video, and Remember window size and position settings."
+msgstr ""
+"Ga in modus volledig-scherm wanneer de toepassing start.<br>Dit gaat boven "
+"Grootte opnieuw bepalen om video te laten passen en Onthoud venstergrootte "
+"en positie-instellingen."
+
+#: src/Settings/GeneralPage.qml:295
+msgctxt "@option:check"
+msgid "Remember window size and position"
+msgstr "Vensterafmetingen en positie onthouden"
+
+#: src/Settings/GeneralPage.qml:308
+msgctxt ""
+"@info:tooltip extra wayland info for the “Remember window size and position” "
+"setting"
+msgid "<b>Restoring position is not supported on Wayland.</b><br><br>"
+msgstr ""
+"<b>Herstel van positie wordt niet ondersteund onder Wayland.</b><br><br>"
+
+#: src/Settings/GeneralPage.qml:310
+msgctxt "@info:tooltip"
+msgid ""
+"Changes to the window’s size and position are saved and used for newly "
+"opened windows.<br><br>%1The “Resize to fit video” setting takes precedence."
+msgstr ""
+"Wijzigingen aan de venstergrootte en positie worden opgeslagen en gebruikt "
+"voor nieuw geopende vensters.<br><br>%1De instelling “Grootte wijzigen om "
+"video te laten passen” heeft voorrang."
+
+#: src/Settings/GeneralPage.qml:322
+msgctxt "@option:check"
+msgid "Show menubar"
+msgstr "Menubalk tonen"
+
+#: src/Settings/GeneralPage.qml:333 src/Settings/PlaylistPage.qml:169
+msgctxt "@option:check"
+msgid "Show toolbar"
+msgstr "Werkbalk tonen"
+
+#: src/Settings/GeneralPage.qml:345
+msgctxt "@option:check"
+msgid "Show explanatory tooltips"
+msgstr "Tekstballonnen met uitleg tonen"
+
+#: src/Settings/GeneralPage.qml:354
+msgctxt "@info:tooltip"
+msgid ""
+"Only affects tooltips that explain how something works or what it does."
+"<br><br>Tooltips that show extra information will not be disabled (e.g. the "
+"seekbar tooltip showing the time at the mouse position, tooltips for "
+"truncated text)."
+msgstr ""
+"Dit heeft alleen invloed op tekstballonnen die uitleggen hoe iets werkt of "
+"wat het doet.<br><br>Tekstballonnen die extra informatie weergeven, worden "
+"niet uitgeschakeld (bijv. de tekstballon van de zoekbalk die de tijd op de "
+"muispositie toont, tekstballonnen voor afgekorte tekst)."
+
+#: src/Settings/GeneralPage.qml:364
+msgctxt "@option:check"
+msgid "Show chapter markers"
+msgstr "Hoofdstukmerktekens tonen"
+
+#: src/Settings/GeneralPage.qml:375
+msgctxt "@option:check"
+msgid "Show progress on taskbar icon"
+msgstr "Voortgang tonen op het taakbalkpictogram"
+
+#: src/Settings/GeneralPage.qml:384
+msgctxt "@label:listbox"
+msgid "Color scheme"
+msgstr "Kleurenschema"
+
+#: src/Settings/GeneralPage.qml:429
+msgctxt "@label:listbox"
+msgid "GUI style"
+msgstr "GUI-stijl"
+
+#: src/Settings/GeneralPage.qml:462
+msgctxt "@item:listbox default GUI style"
+msgid "Default"
+msgstr "Standaard"
+
+#: src/Settings/MousePage.qml:51
+msgctxt "@label represents a mouse double click, for example `Right x2`"
+msgid "x2"
+msgstr "x2"
+
+#: src/Settings/MousePage.qml:93
+msgctxt "@label:action change action associated with mouse event"
+msgid "Change action"
+msgstr "Actie wijzigen"
+
+#: src/Settings/MousePage.qml:107
+msgctxt "@label:action delete mouse event"
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: src/Settings/MousePage.qml:135
+msgctxt "@action:intoolbar add a mouse button action"
+msgid "&Add"
+msgstr "&Toevoegen"
+
+#: src/Settings/MousePage.qml:170
+msgctxt "@title:window"
+msgid "Add mouse button action"
+msgstr "Actie van Add muisknop toevoegen"
+
+#: src/Settings/MousePage.qml:183
+msgctxt "@label:listbox"
+msgid "Mouse button"
+msgstr "Muisknop"
+
+#: src/Settings/MousePage.qml:200
+msgctxt "@item:listbox left mouse button"
+msgid "Left"
+msgstr "Links"
+
+#: src/Settings/MousePage.qml:206
+msgctxt "@item:listbox middle mouse button"
+msgid "Middle"
+msgstr "Midden"
+
+#: src/Settings/MousePage.qml:212
+msgctxt "@item:listbox right mouse button"
+msgid "Right"
+msgstr "Rechts"
+
+#: src/Settings/MousePage.qml:218
+msgctxt "@item:listbox forward mouse button"
+msgid "Forward"
+msgstr "Voorwaarts"
+
+#: src/Settings/MousePage.qml:224
+msgctxt "@item:listbox back mouse button"
+msgid "Back"
+msgstr "Achterwaarts"
+
+#: src/Settings/MousePage.qml:230
+msgctxt "@item:listbox mouse scroll up"
+msgid "Scroll up"
+msgstr "Omhoog schuiven"
+
+#: src/Settings/MousePage.qml:236
+msgctxt "@item:listbox mouse scroll down"
+msgid "Scroll down"
+msgstr "Omlaag schuiven"
+
+#: src/Settings/MousePage.qml:245
+msgctxt "@label:listbox"
+msgid "Modifier key"
+msgstr "Samensteltoets"
+
+#: src/Settings/MousePage.qml:263
+msgctxt "@item:listbox no modifier key"
+msgid "No modifier"
+msgstr "Geen modifier"
+
+#: src/Settings/MousePage.qml:269
+msgctxt "@item:listbox control modifier key"
+msgid "Control"
+msgstr "Besturing"
+
+#: src/Settings/MousePage.qml:275
+msgctxt "@item:listbox shift modifier key"
+msgid "Shift"
+msgstr "Shift"
+
+#: src/Settings/MousePage.qml:281
+msgctxt "@item:listbox alt modifier key"
+msgid "Alt"
+msgstr "Alt"
+
+#: src/Settings/MousePage.qml:287
+msgctxt "@item:listbox meta modifier key"
+msgid "Meta"
+msgstr "Meta"
+
+#: src/Settings/MousePage.qml:299
+msgctxt ""
+"@label:check whether mouse button action should trigger on double click"
+msgid "Trigger on double click"
+msgstr "Starten bij dubbelklik"
+
+#: src/Settings/MousePage.qml:309
+msgctxt "@label"
+msgid "Action"
+msgstr "Actie"
+
+#: src/Settings/MousePage.qml:317
+msgctxt "@action:button select mouse button action"
+msgid "Select action"
+msgstr "Actie selecteren"
+
+#: src/Settings/MousePage.qml:333
+msgctxt "@action:button"
+msgid "Change action"
+msgstr "Actie wijzigen"
+
+#: src/Settings/MousePage.qml:344
+msgctxt "@info"
+msgid "No action selected"
+msgstr "Geen actie geselecteerd"
+
+#: src/Settings/MousePage.qml:367
+msgctxt "@info"
+msgid "Mouse button combination is already assigned to “%1”"
+msgstr "Muisknopcombinatie is al toegekend aan “%1”"
+
+#: src/Settings/OsdPage.qml:24
+msgctxt "@label:spinbox"
+msgid "OSD font size"
+msgstr "Tekengrootte van OSD"
+
+#: src/Settings/OsdPage.qml:43
+msgctxt "@title"
+msgid "Choose when to show osd"
+msgstr "Kies wanneer het OSD-scherm moet worden weergegeven."
+
+#: src/Settings/PlaybackPage.qml:27
+msgctxt "@label:spinbox"
+msgid "Seek small step"
+msgstr "Kleine stap verplaatsen"
+
+#: src/Settings/PlaybackPage.qml:47
+msgctxt "@info:tooltip seek small step setting"
+msgid ""
+"How much to seek when triggering the corresponding action. Seek mode is <a "
+"href='https://mpv.io/manual/stable/#command-interface-seek-<target>-"
+"[<flags>]'>exact</a>"
+msgstr ""
+"Hoeveel te springen bij starten van de overeenkomende actie. Modus springen "
+"is <a href='https://mpv.io/manual/stable/#command-interface-seek-<target>-"
+"[<flags>]'>exact</a>"
+
+#: src/Settings/PlaybackPage.qml:54
+msgctxt "@label:spinbox"
+msgid "Seek medium step"
+msgstr "Middelmatige stap verplaatsen"
+
+#: src/Settings/PlaybackPage.qml:74
+msgctxt "@info:tooltip seek medium step setting"
+msgid ""
+"How much to seek when triggering the corresponding action. Seek mode is <a "
+"href='https://mpv.io/manual/stable/#command-interface-seek-<target>-"
+"[<flags>]'>exact</a>.<br>This is also used for mouse wheel seeking, when "
+"mouse is over the progress bar."
+msgstr ""
+"Hoeveel te springen bij starten van de overeenkomende actie. Modus springen "
+"is <a href='https://mpv.io/manual/stable/#command-interface-seek-<target>-"
+"[<flags>]'>exact</a>.<br>Dit wordt ook gebruikt voor springen met het "
+"muiswiel wanneer de muis boven de voortgangsbalk is."
+
+#: src/Settings/PlaybackPage.qml:82
+msgctxt "@label:spinbox"
+msgid "Seek big step"
+msgstr "Grote stap verplaatsen"
+
+#: src/Settings/PlaybackPage.qml:101
+msgctxt "@info:tooltip seek big step setting"
+msgid ""
+"How much to seek when triggering the corresponding action. Seek mode is <a "
+"href='https://mpv.io/manual/stable/#command-interface-seek-<target>-"
+"[<flags>]'>exact</a>"
+msgstr ""
+"Hoeveel te springen bij starten van de overeenkomende actie. Modus springen "
+"is <a href='https://mpv.io/manual/stable/#command-interface-seek-<target>-"
+"[<flags>]'>exact</a>"
+
+#: src/Settings/PlaybackPage.qml:107
+msgctxt "@label"
+msgid "Hardware decoding"
+msgstr "Decoderen met hardware"
+
+#: src/Settings/PlaybackPage.qml:149
+msgctxt "@info:tooltip hardware decoding setting"
+msgid ""
+"Specify the hardware video decoding API that should be used if possible. "
+"Whether hardware decoding is actually done depends on the video codec. If "
+"hardware decoding is not possible, mpv will fall back on software decoding."
+"<br><br><ul><li><strong>auto</strong> tries to automatically enable hardware "
+"decoding using the first available method.</li><li><strong>auto-safe</"
+"strong> similar to auto, but allows only whitelisted methods that are "
+"considered “safe”.</li><li><strong>vaapi</strong> works with Intel and AMD "
+"GPUs only. It also requires the opengl EGL backend.</li><li><strong>nvdec</"
+"strong> the newest, and recommended method to do hardware decoding on Nvidia "
+"GPUs.</li><li><strong>cuda</strong> an older implementation of hardware "
+"decoding on Nvidia GPUs.</li><li><strong>videotoolbox</strong></"
+"li><li><strong>d3d11va</strong></li></ul><br><br>You can read more about "
+"hardware decoding here: <a href='https://mpv.io/manual/stable/#options-"
+"hwdec'>https://mpv.io/manual/stable/#options-hwdec</a><br><br>You can set "
+"another hardware decoder by creating a startup custom command <strong>set "
+"hwdec <i>decoder_name</i></strong>."
+msgstr ""
+"Specify de API van de hardware video-decodering die, indien mogelijk, "
+"gebruikt zou moeten worden. Of decoderen met hardware ook echt wordt gedaan "
+"hangt af van de videocodec. Als hardware decoderen niet mogelijk is zal mpv "
+"terugvallen op software decoderen.<br><br><ul><li><strong>auto</strong> "
+"probeert automatisch decoderen met hardware in te schakelen met de eerst "
+"beschikbare methode.</li><li><strong>auto-safe</strong> is gelijk aan "
+"automatisch, maar staat alleen methoden op de witte lijst toe die als "
+"“veilig” worden beschouwd.</li><li><strong>vaapi</strong> werkt alleen met "
+"Intel en AMD GPU's. Het vereist ook de opengl EGL-backend.</"
+"li><li><strong>nvdec</strong> de nieuwste en de aanbevolen methode om "
+"decoderen met hardware te doen op Nvidia GPU's.</li><li><strong>cuda</"
+"strong> is een oudere implementatie van hardware decoderen op Nvidia GPUs.</"
+"li><li><strong>videotoolbox</strong></li><li><strong>d3d11va</strong></li></"
+"ul><br><br>U kunt meer lezen over hardware decoding hier: <a href='https://"
+"mpv.io/manual/stable/#options-hwdec'>https://mpv.io/manual/stable/#options-"
+"hwdec</a><br><br>u kunt een andere hardware decodeerder instellen door "
+"opstart aangepast commando te maken <strong>set hwdec <i>decoder_name</i></"
+"strong>."
+
+#: src/Settings/PlaybackPage.qml:173
+msgctxt "@option:check"
+msgid "Open last played file on startup"
+msgstr "Laatste afgespeelde bestand openen bij opstarten"
+
+#: src/Settings/PlaybackPage.qml:182
+msgctxt "@info:tooltip open last played file setting"
+msgid ""
+"On startup it opens the file that was playing when the application was "
+"closed."
+msgstr ""
+"Bij opstarten opent het het bestand dat speelde toen de toepassing werd "
+"gesloten."
+
+#: src/Settings/PlaybackPage.qml:194
+msgctxt "@option:check"
+msgid "Pause on minimize"
+msgstr "Pauzeren bij minimaliseren"
+
+#: src/Settings/PlaybackPage.qml:203
+msgctxt "@info:tooltip pause on minimize setting"
+msgid ""
+"Pauses the player while the window is minimized, playback resumes when "
+"restored."
+msgstr ""
+"Pauzeert de speler terwijl het venster is geminimaliseerd, afspelen gaat "
+"verder bij herstel."
+
+#: src/Settings/PlaybackPage.qml:215
+msgctxt "@title"
+msgid "Playback position"
+msgstr "Afspeelpositie"
+
+#: src/Settings/PlaybackPage.qml:225
+msgctxt "@option:check"
+msgid "Restore playback position"
+msgstr "Afspeelpositie herstellen"
+
+#: src/Settings/PlaybackPage.qml:234
+msgctxt "@info:tooltip save playback position"
+msgid ""
+"Saves the file position during playback, opening the same file again will "
+"seek to the saved position.\n"
+"Position is saved every %1 second, except for the last 10 seconds of the "
+"video."
+msgid_plural ""
+"Saves the file position during playback, opening the same file again will "
+"seek to the saved position.\n"
+"Position is saved every %1 seconds, except for the last 10 seconds of the "
+"video."
+msgstr[0] ""
+"Slaat de positie van afspelen van het bestand op, hetzelfde bestand opnieuw "
+"openen zal naar dezelfde opgeslagen positie gaan.\n"
+"Positie wordt elke %1 seconde opgeslagen, behalve gedurende de laatste 10 "
+"seconden van de video."
+msgstr[1] ""
+"Slaat de positie van afspelen van het bestand op, hetzelfde bestand opnieuw "
+"openen zal naar dezelfde opgeslagen positie gaan.\n"
+"Positie wordt elke %1 seconden opgeslagen, behalve gedurende de laatste 10 "
+"seconden van de video."
+
+#: src/Settings/PlaybackPage.qml:251
+msgctxt "@option:check"
+msgid "Start playing"
+msgstr "Afspelen starten"
+
+#: src/Settings/PlaybackPage.qml:261
+msgctxt "@info:tooltip start playing setting"
+msgid "The file will be playing after restoring the playback position"
+msgstr "Het bestand zal worden afgespeeld na herstel van de afspeelpositie"
+
+#: src/Settings/PlaybackPage.qml:269
+msgctxt "@label:spinbox when to save position"
+msgid "Save position"
+msgstr "Positie opslaan"
+
+#: src/Settings/PlaybackPage.qml:290
+msgctxt "@info when to save position"
+msgid "for any duration"
+msgstr "voor elke tijdsduur"
+
+#: src/Settings/PlaybackPage.qml:293
+msgctxt "@info when to save position"
+msgid "if duration is longer than %1 minute"
+msgid_plural "if duration is longer than %1 minutes"
+msgstr[0] "als de tijdsduur langer is dan %1 minuut"
+msgstr[1] "als de tijdsduur langer is dan %1 minuten"
+
+#: src/Settings/PlaybackPage.qml:320
+msgctxt "@info:tooltip how often to save position"
+msgid "every %1 second"
+msgid_plural "every %1 seconds"
+msgstr[0] "Positie elke %1 seconde opslaan"
+msgstr[1] "%1 seconden"
+
+#: src/Settings/PlaybackPage.qml:333
+msgctxt "@title"
+msgid "Chapters"
+msgstr "Hoofdstukken"
+
+#: src/Settings/PlaybackPage.qml:342
+msgctxt "@option:check"
+msgid "Skip chapters"
+msgstr "Hoofdstukken overslaan"
+
+#: src/Settings/PlaybackPage.qml:350
+msgctxt "@info:tooltip skip chapters setting"
+msgid ""
+"When enabled it automatically skips chapters containing certain words/"
+"characters."
+msgstr ""
+"Indien ingeschakeld slaat het automatisch hoofdstukken over die bepaalde "
+"woorden/tekens bevatten."
+
+#: src/Settings/PlaybackPage.qml:356
+msgctxt "@label:textbox"
+msgid "Keywords"
+msgstr "Trefwoorden"
+
+#: src/Settings/PlaybackPage.qml:365
+msgctxt "placeholder text"
+msgid "op, ed, chapter 1"
+msgstr "op, ed, hoofdstuk 1"
+
+#: src/Settings/PlaybackPage.qml:371
+msgctxt "@info:tooltip skip words setting"
+msgid ""
+"Skip chapters containing these words. Comma separated list. The match is not "
+"exact, meaning <strong>op</strong> will match words containing it like "
+"<strong><u>op</u>ening</strong>."
+msgstr ""
+"Hoofdstukken met deze woorden overslaan. Komma-gescheiden lijst. De "
+"overeenkomst is niet exact, wat berekent dat <strong>op</strong> zal "
+"overeenkomen met woorden die het bevatten zoals <strong><u>op</u>ening</"
+"strong>"
+
+#: src/Settings/PlaybackPage.qml:395
+msgctxt "@title"
+msgid "Youtube-dl"
+msgstr "Youtube-dl"
+
+#: src/Settings/PlaybackPage.qml:401
+msgctxt "@label"
+msgid "Format selection"
+msgstr "Selectie van formaat"
+
+#: src/Settings/PlaybackPage.qml:426
+msgctxt "@item:listbox the custom youtube-dl format selection"
+msgid "Custom"
+msgstr "Aangepast"
+
+#: src/Settings/PlaybackPage.qml:432
+msgctxt "@item:listbox the default youtube-dl format selection"
+msgid "Default"
+msgstr "Standaard"
+
+#: src/Settings/PlaybackPage.qml:447
+msgctxt "@info:tooltip format selection setting"
+msgid "Selects a video source that is closest to the selected format."
+msgstr ""
+"Selecteert een videobron die het dichtst bij het geselecteerde formaat is."
+
+#: src/Settings/PlaylistPage.qml:26
+msgctxt "@label:listbox"
+msgid "Position"
+msgstr "Positie"
+
+#: src/Settings/PlaylistPage.qml:38
+msgctxt "@item:listbox playlist position"
+msgid "Left"
+msgstr "Links"
+
+#: src/Settings/PlaylistPage.qml:44
+msgctxt "@item:listbox playlist position"
+msgid "Right"
+msgstr "Rechts"
+
+#: src/Settings/PlaylistPage.qml:59
+msgctxt "@label:listbox"
+msgid "Playlist style"
+msgstr "Stijl van afspeellijst"
+
+#: src/Settings/PlaylistPage.qml:71
+msgctxt "@item:listbox the style of the playlist"
+msgid "Default"
+msgstr "Standaard"
+
+#: src/Settings/PlaylistPage.qml:77
+msgctxt "@item:listbox the style of the playlist"
+msgid "With thumbnails"
+msgstr "Met miniaturen"
+
+#: src/Settings/PlaylistPage.qml:92
+msgctxt "@label:listbox"
+msgid "Playback behavior"
+msgstr "Afspeelgedrag"
+
+#: src/Settings/PlaylistPage.qml:106
+msgctxt "@item:listbox the playback behavior of the playlist"
+msgid "Repeat playlist"
+msgstr "Afspeellijst herhalen"
+
+#: src/Settings/PlaylistPage.qml:112
+msgctxt "@item:listbox the playback behavior of the playlist"
+msgid "Stop after last item"
+msgstr "Stoppen na laatste item"
+
+#: src/Settings/PlaylistPage.qml:118
+msgctxt "@item:listbox the playback behavior of the playlist"
+msgid "Repeat item"
+msgstr "Item herhalen"
+
+#: src/Settings/PlaylistPage.qml:124
+msgctxt "@item:listbox the playback behavior of the playlist"
+msgid "Stop after item"
+msgstr "Stoppen na item"
+
+#: src/Settings/PlaylistPage.qml:147
+msgctxt "@info:tooltip playback description"
+msgid ""
+"<strong>Repeat playlist</strong>: playlist is repeated "
+"indefinitely<br><strong>Stop after last item</strong>: playback stops after "
+"the last item in the playlist<br><strong>Repeat item</strong>: current "
+"playing item is repeated indefinitely<br><strong>Stop after item</strong>: "
+"playback stops after the current playing item"
+msgstr ""
+"<strong>Afspeellijst herhalen</strong>: afspeellijst wordt oneindig "
+"herhaald<br><strong>Stoppen na laatste item</strong>: afspelen stopt na het "
+"laatste item in de afspeellijst<br><strong>Item herhalen</strong>: nu "
+"spelend item wordt oneindig herhaald<br><strong>Stoppen na item</strong>: "
+"afspelen stopt na het nu spelende item"
+
+#: src/Settings/PlaylistPage.qml:159
+msgctxt "@item:listbox the playback behavior of the playlist"
+msgid "Random playback"
+msgstr "Willekeurig afspelen"
+
+#: src/Settings/PlaylistPage.qml:181
+msgctxt "@option:check"
+msgid "Overlay video"
+msgstr "Video over elkaar"
+
+#: src/Settings/PlaylistPage.qml:188
+msgctxt "@info:tooltip"
+msgid ""
+"When checked the playlist goes on top of the video\n"
+"When unchecked the video is resized"
+msgstr ""
+"Indien geactiveerd gaat de afspeellijst bovenop de video\n"
+"Indien niet geactiveerd wordt de video van grootte gewijzigd"
+
+#: src/Settings/PlaylistPage.qml:198
+msgctxt "@option:check"
+msgid "Show media title instead of file name"
+msgstr "Titel van medium tonen in plaats van bestandsnaam"
+
+#: src/Settings/PlaylistPage.qml:208
+msgctxt "@option:check"
+msgid "Auto load videos from same folder"
+msgstr "Video's automatisch uit dezelfde map laden"
+
+#: src/Settings/PlaylistPage.qml:218
+msgctxt "@option:check"
+msgid "Show row number"
+msgstr "Rijnummer tonen"
+
+#: src/Settings/PlaylistPage.qml:228
+msgctxt "@option:check"
+msgid "Toggle with mouse"
+msgstr "Omschakelen met muis"
+
+#: src/Settings/PlaylistPage.qml:237
+msgctxt "@option:check"
+msgid "Increase font size when fullscreen"
+msgstr "Tekengrootte vergroten bij volledig scherm"
+
+#: src/Settings/PlaylistPage.qml:250
+msgctxt "@option:check"
+msgid "Remember last playlist state"
+msgstr "Status van laatste afspeellijst onthouden"
+
+#: src/Settings/PlaylistPage.qml:257
+msgctxt "@info:tooltip"
+msgid ""
+"When checked the playlist state (visible/hidden) is remembered across "
+"launches"
+msgstr ""
+"Indien geactiveerd wordt de status (zichtbaar/verborgen) van de afspeellijst "
+"onthouden bij elke keer starten"
+
+#: src/Settings/PlaylistPage.qml:268
+msgctxt "@option:check"
+msgid "Open items with single click"
+msgstr "Items openen met een enkele klik"
+
+#: src/Settings/SettingsWindow.qml:73
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "Instellingen"
+
+#: src/Settings/SettingsWindow.qml:90
+msgctxt "@action"
+msgid "General"
+msgstr "Algemeen"
+
+#: src/Settings/SettingsWindow.qml:99
+msgctxt "@action"
+msgid "Osd"
+msgstr "Osd"
+
+#: src/Settings/SettingsWindow.qml:108
+msgctxt "@action"
+msgid "Playback"
+msgstr "Afspelen"
+
+#: src/Settings/SettingsWindow.qml:117
+msgctxt "@action"
+msgid "Video"
+msgstr "Video"
+
+#: src/Settings/SettingsWindow.qml:127
+msgctxt "@action"
+msgid "Audio"
+msgstr "Audio"
+
+#: src/Settings/SettingsWindow.qml:136
+msgctxt "@action"
+msgid "Subtitles"
+msgstr "Ondertiteling"
+
+#: src/Settings/SettingsWindow.qml:154
+msgctxt "@action"
+msgid "Mouse"
+msgstr "Muis"
+
+#: src/Settings/SettingsWindow.qml:163
+msgctxt "@action"
+msgid "Shortcuts"
+msgstr "Sneltoetsen"
+
+#: src/Settings/SettingsWindow.qml:172
+msgctxt "@action"
+msgid "Custom Commands"
+msgstr "Aangepaste commando's"
+
+#: src/Settings/SettingsWindow.qml:181
+msgctxt "@action"
+msgid "Database"
+msgstr "Database"
+
+#: src/Settings/SettingsWindow.qml:190
+msgctxt "@action"
+msgid "Debug"
+msgstr "Debuggen"
+
+#: src/Settings/SettingsWindow.qml:199
+msgctxt "@action"
+msgid "About"
+msgstr "Info over"
+
+#: src/Settings/SubtitlesPage.qml:106
+msgctxt "@label:check"
+msgid "Auto select track"
+msgstr "Automatisch geselecteerde track"
+
+#: src/Settings/SubtitlesPage.qml:115
+msgctxt "@info:tooltip"
+msgid ""
+"When checked a subtitle track will be automatically selected and displayed"
+msgstr ""
+"Indien geactiveerd zal een ondertiteltrack automatisch geselecteerd en "
+"getoond worden"
+
+#: src/Settings/SubtitlesPage.qml:161
+msgctxt "@label:spinbox"
+msgid "Preferred track"
+msgstr "Track met voorkeur"
+
+#: src/Settings/SubtitlesPage.qml:193
+msgctxt "@option:check"
+msgid "Allow subtitles in black borders"
+msgstr "Ondertitels in zwarte randen toestaan"
+
+#: src/Settings/SubtitlesPage.qml:200
+msgctxt "@info:tooltip"
+msgid ""
+"When checked the subtitles can be rendered outside the video, in the black "
+"borders. Might not work for all .ass subtitles."
+msgstr ""
+"Indien geactiveerd kunnen de ondertitels weergegeven worden buiten de video, "
+"in de zwarte randen. Kan niet werken voor alle .ass ondertitels."
+
+#: src/Settings/SubtitlesPage.qml:208
+msgctxt "@title"
+msgid "Styling"
+msgstr "De stijl"
+
+#: src/Settings/SubtitlesPage.qml:214
+msgctxt "@label:listbox"
+msgid "Font family"
+msgstr "Lettertypefamilie"
+
+#: src/Settings/SubtitlesPage.qml:230
+msgctxt "@info:tooltip"
+msgid "Click to change font"
+msgstr "Klik om het lettertype te wijzigen"
+
+#: src/Settings/SubtitlesPage.qml:256
+msgctxt "@label:spinbox"
+msgid "Font size"
+msgstr "Tekengrootte"
+
+#: src/Settings/SubtitlesPage.qml:271
+msgctxt "@label"
+msgid "Font style"
+msgstr "Tekenstijl"
+
+#: src/Settings/SubtitlesPage.qml:276
+msgctxt "@option:check"
+msgid "Bold"
+msgstr "Vet"
+
+#: src/Settings/SubtitlesPage.qml:287
+msgctxt "@option:check"
+msgid "Italic"
+msgstr "Cursief"
+
+#: src/Settings/SubtitlesPage.qml:296
+msgctxt "@label:textbox"
+msgid "Font color"
+msgstr "Tekstkleur"
+
+#: src/Settings/SubtitlesPage.qml:357
+msgctxt "@label:textbox"
+msgid "Shadow color"
+msgstr "Schaduwkleur"
+
+#: src/Settings/SubtitlesPage.qml:417
+msgctxt "@label:spinbox"
+msgid "Shadow offset"
+msgstr "Schaduwoffset"
+
+#: src/Settings/SubtitlesPage.qml:434 src/Settings/SubtitlesPage.qml:519
+msgctxt "@info:tooltip"
+msgid "Set to 0 (zero) to disable."
+msgstr "Op 0 (nul) instellen om uit te schakelen."
+
+#: src/Settings/SubtitlesPage.qml:442
+msgctxt "@label:textbox"
+msgid "Border color"
+msgstr "Randkleur"
+
+#: src/Settings/SubtitlesPage.qml:502
+msgctxt "@label:spinbox"
+msgid "Border width"
+msgstr "Breedte omlijning"
+
+#: src/Settings/SubtitlesPage.qml:527
+msgctxt "@label:listbox"
+msgid "Border style"
+msgstr "Randstijl"
+
+#: src/Settings/SubtitlesPage.qml:539
+msgctxt "@item:listbox border style"
+msgid "Outline and Shadow"
+msgstr "Omlijning en schaduw"
+
+#: src/Settings/SubtitlesPage.qml:545
+msgctxt "@item:listbox border style"
+msgid "Opaque Box"
+msgstr "Ondoorzichtig vak"
+
+#: src/Settings/SubtitlesPage.qml:551
+msgctxt "@item:listbox border style"
+msgid "Background Box"
+msgstr "Achtergrond van vak"
+
+#: src/Settings/VideoPage.qml:30
+msgctxt "@label:listbox"
+msgid "Default cover"
+msgstr "Standaard omslag"
+
+#: src/Settings/VideoPage.qml:39
+msgctxt "placeholder text"
+msgid "path to image"
+msgstr "pad naar afbeelding"
+
+#: src/Settings/VideoPage.qml:51
+msgctxt "@info:tooltip"
+msgid ""
+"Used for music files that don’t have a video track, an embedded cover image "
+"or a cover/folder image in the same folder as the played file."
+msgstr ""
+"Gebruikt voor muziekbestanden die geen videotrack, geen ingebedde "
+"omslagafbeelding of een omslag/mapafbeelding in dezelfde map hebben als het "
+"afgespeelde bestand."
+
+#: src/Settings/VideoPage.qml:88
+msgctxt "@title"
+msgid "Screenshots"
+msgstr "Schermafdrukken"
+
+#: src/Settings/VideoPage.qml:97
+msgctxt "@label:listbox"
+msgid "Format"
+msgstr "Formaat"
+
+#: src/Settings/VideoPage.qml:136
+msgctxt "@label:textbox"
+msgid "Template"
+msgstr "Sjabloon"
+
+#: src/Settings/VideoPage.qml:165
+msgctxt "@info:tooltip"
+msgid ""
+"Specify the filename template used to save screenshots. The template "
+"specifies the filename without file extension, and can contain format "
+"specifiers, which will be substituted when taking a screenshot. By default, "
+"the template is “%F-%n”. <br>The template can start with a relative or "
+"absolute path, in order to specify a directory location where screenshots "
+"should be saved.<br>If the final screenshot filename points to an already "
+"existing file, the file will not be overwritten. The screenshot will either "
+"not be saved, or if the template contains %n, saved using different, newly "
+"generated filename.<br>For full info checkout <a href='https://mpv.io/manual/"
+"stable/#options-screenshot-template'>https://mpv.io/manual/stable/#options-"
+"screenshot-template</a><br><br><strong>Allowed format specifiers:</"
+"strong><br><ul><li><strong>%[#][0X]n</strong> A sequence number, padded with "
+"zeros to length X.<br><li><strong>%f</strong> Filename of the currently "
+"played video.<br><li><strong>%F</strong> Same as %f, but without the file "
+"extension.<br><li><strong>%x</strong> Directory path of the currently played "
+"video. If the video is not on the filesystem (http:// urls), this expands to "
+"an empty string.<br><li><strong>%X{fallback}</strong> Same as %x, but if the "
+"video file is not on the filesystem, return the fallback string inside the "
+"{…}.<br><li><strong>%p</strong> Current playback time. The result is a "
+"string of the form “HH:MM:SS”.<br><li><strong>%P</strong> Similar to %p, but "
+"extended with the playback time in milliseconds “HH:MM:SS.mmm”."
+"<br><li><strong>%wX</strong> Specify the current playback time using the "
+"format string X.<br>Valid format specifiers:<br><ul><li><strong>%wH</strong> "
+"hour (padded with 0 to two digits)</li><li><strong>%wh</strong> hour (not "
+"padded)</li><li><strong>%wM</strong> minutes (00–59)</li><li><strong>%wm</"
+"strong> total minutes (includes hours, unlike %wM)</li><li><strong>%wS</"
+"strong> seconds (00–59)</li><li><strong>%ws</strong> total seconds (includes "
+"hours and minutes)</li><li><strong>%wf</strong> like %ws, but as float</"
+"li><li><strong>%wT</strong> milliseconds (000–999)</li><li><strong>%%</"
+"strong> Replaced with the % character itself.</li></ul><br>"
+msgstr ""
+"Specificeer het bestandsnaamsjabloon gebruikt om schermafdrukken op te "
+"slaan. Het sjabloon specificeert de bestandsnaam zonder bestandsextensie en "
+"kan formaatspecificaties bevatten, die gesubstitueerd worden bij het nemen "
+"van een schermafdruk. Standaard is het sjabloon “%F-%n”. <br>Het sjabloon "
+"kan beginnen met een relatief of absoluut pad, om een locatie van een map te "
+"specificeren waar schermafdrukken opgeslagen zouden moeten worden.<br>Als de "
+"uiteindelijke bestandsnaam van de schermafdruk wijst naar een al bestaand "
+"bestand, zal het bestand niet overschreven worden. De schermafdruk zal ofwel "
+"niet opgeslagen worden of als het sjabloon een %n bevat, opgeslagen worden "
+"met een verschillende, nieuw gegenereerd bestandsnaam.<br>Voor volledige "
+"informatie bekijk <a href='https://mpv.io/manual/stable/#options-screenshot-"
+"template'>https://mpv.io/manual/stable/#options-screenshot-template</"
+"a><br><br><strong>Sta formaatspecificaties:</strong><br><ul><li><strong>%[#]"
+"[0X]n</strong> toe. Een volgordenummer, aangevuld met nullen tot lengte X."
+"<br><li><strong>%f</strong> Bestandsnaam van de nu afgespeelde video."
+"<br><li><strong>%F</strong> Hetzelfde als %f, maar zonder de "
+"bestandsextensie.<br><li><strong>%x</strong> Pad van map van de nu "
+"afgespeelde video. Als de video zich niet op het bestandssysteem bevindt "
+"(http:// urls), dan expandeert dit tot een lege tekenreeks.<br><li><strong>"
+"%X{fallback}</strong> Hetzelfde als %x, maar als het videobestand niet op "
+"het bestandssysteem is, geef dan de terugval tekenreeks in de {...}."
+"<br><li><strong>%p</strong> Huidige afspeeltijd. Het resultaat is een "
+"tekenreeks van de vorm \"HH:MM:SS\".<br><li><strong>%P</strong> gelijk aan "
+"%p, maar uitgebreid met de afspeeltijd in milliseconden \"HH:MM:SS.mmm\"."
+"<br><li><strong>%wX</strong> Specificeert de huidige afspeeltijd met gebruik "
+"van de formaat tekenreeks X.<br>Geldige formaatspecifiërs:"
+"<br><ul><li><strong>%wH</strong> uur (aangevuld met 0 naar twee cijfers)</"
+"li><li><strong>%wh</strong> uur (niet aangevuld)</li><li><strong>%wM</"
+"strong> minuten (00-59)</li><li><strong>%wm</strong> totaal aantal minuten "
+"(inclusief uren, anders dan %wM)</li><li><strong>%wS</strong> seconden "
+"(00-59)</li><li><strong>%ws</strong> totaal aantal seconden (inclusief uren "
+"en minuten)</li><li><strong>%wf</strong> net als %ws, maar als drijvende-"
+"komma</li><li><strong>%wT</strong> milliseconden (000-999)</li><li><strong>%"
+"%</strong> Vervangen door het % teken zelf.</li></ul><br>"
+
+#: src/Settings/VideoPage.qml:200
+msgctxt "@title"
+msgid "Image adjustments"
+msgstr "Aanpassingen van afbeelding"
+
+#: src/Settings/VideoPage.qml:210
+msgctxt "@label:slider"
+msgid "Contrast"
+msgstr "Contrast"
+
+#: src/Settings/VideoPage.qml:229
+msgctxt "@label:slider"
+msgid "Brightness"
+msgstr "Helderheid"
+
+#: src/Settings/VideoPage.qml:248
+msgctxt "@label:slider"
+msgid "Gamma"
+msgstr "Gamma"
+
+#: src/Settings/VideoPage.qml:267
+msgctxt "@label:slider"
+msgid "Saturation"
+msgstr "Verzadiging"
+
+#: src/Settings/VideoPage.qml:283
+msgctxt "@info"
+msgid "Middle click on the sliders to reset them"
+msgstr "Midden-klik op de schuifregelaars om ze te resetten"
+
+#: src/Transcript/subtitleparser.cpp:96
+#, kde-format
+msgctxt "@item:listbox combobox option to show all ASS subtitle styles"
+msgid "All"
+msgstr "Alles"
+
+#: src/Transcript/Transcript.qml:130
+msgctxt "@info:tooltip"
+msgid "Select subtitle"
+msgstr "Ondertitel selecteren"
+
+#: src/Transcript/Transcript.qml:191
+msgctxt "@info:tooltip"
+msgid "Follow active subtitle"
+msgstr "Actieve ondertitels volgen"
+
+#: src/Transcript/Transcript.qml:216
+msgctxt "@info:tooltip"
+msgid "ASS subtitle styles"
+msgstr "ASS stijlen van ondertitel"
+
+#: src/Utilities/commandlineoptions.cpp:33
+#, kde-format
+msgctxt "@info:shell"
+msgid "File to open"
+msgstr "Te openen bestand"
+
+#: src/Utilities/commandlineoptions.cpp:37
+#, kde-format
+msgctxt "@info:shell"
+msgid ""
+"Allows to temporarily override the yt-dlp format selection setting. Will be "
+"overwritten if the setting is changed through the GUI"
+msgstr ""
+"Staat toe de instelling van het yt-dlp-formaat te overschrijven. Zal "
+"overschreven worden als de instelling gewijzigd is via de GUI"
+
+#: src/Utilities/osdutils.cpp:77
+#, kde-format
+msgctxt "@option:check"
+msgid "AB loop"
+msgstr "AB-lus"
+
+#: src/Utilities/osdutils.cpp:78
+#, kde-format
+msgctxt "@option:check"
+msgid "Image adjustments (contrast, brightness, gamma and saturation)"
+msgstr ""
+"Aanpassingen van afbeelding (contrast, helderheid, gamma en verzadiging)"
+
+#: src/Utilities/osdutils.cpp:79
+#, kde-format
+msgctxt "@option:check"
+msgid "Playback speed change"
+msgstr "Afspeelsnelheid wijzigen"
+
+#: src/Utilities/osdutils.cpp:80
+#, kde-format
+msgctxt "@option:check"
+msgid "Playing new file"
+msgstr "Nieuw bestand afspelen"
+
+#: src/Utilities/osdutils.cpp:81
+#, kde-format
+msgctxt "@option:check"
+msgid "Skip chapter"
+msgstr "Hoofdstuk overslaan"
+
+#: src/Utilities/osdutils.cpp:82
+#, kde-format
+msgctxt "@option:check"
+msgid "Subtitle scale change"
+msgstr "Wijziging van schaal van ondertiteling"
+
+#: src/Utilities/osdutils.cpp:83
+#, kde-format
+msgctxt "@option:check"
+msgid "Subtitle timing change"
+msgstr "Wijziging van timing van ondertiteling"
+
+#: src/Utilities/osdutils.cpp:84
+#, kde-format
+msgctxt "@option:check"
+msgid "Taking screenshot"
+msgstr "Schermafdruk nemen"
+
+#: src/Utilities/osdutils.cpp:85
+#, kde-format
+msgctxt "@option:check"
+msgid "Toggle deinterlace"
+msgstr "De-interlacing omschakelen"
+
+#: src/Utilities/osdutils.cpp:86
+#, kde-format
+msgctxt "@option:check"
+msgid "Toggle subtitle"
+msgstr "Ondertiteling omschakelen"
+
+#: src/Utilities/osdutils.cpp:87
+#, kde-format
+msgctxt "@option:check"
+msgid "Track change"
+msgstr "Wijziging van track"
+
+#: src/Utilities/osdutils.cpp:88
+#, kde-format
+msgctxt "@option:check"
+msgid "Volume change"
+msgstr "Volumewijziging"
+
+#: src/YouTube/youtube.cpp:80
+#, kde-format
+msgctxt "@info:tooltip; error when yt-dlp fails to get playlist"
+msgid ""
+"Could not retrieve playlist with id: %1\n"
+"\n"
+"%2"
+msgstr ""
+"Kon afspeellijst met id \"%1\" niet ophalen\n"
+"\n"
+"%2"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "About"
+#~ msgstr "Info over"
+
+#~ msgctxt "@option:check"
+#~ msgid "Show OSD message on skip"
+#~ msgstr "OSD-bericht tonen bij overslaan"
+
+#~ msgctxt "@info:tooltip show OSD message on skip setting"
+#~ msgid ""
+#~ "When skipping chapters an osd message will show the title of the skipped "
+#~ "chapter."
+#~ msgstr ""
+#~ "Bij het overslaan van hoofdstukken zal er een osd-bericht verschijnen die "
+#~ "de titel van het overgeslagen hoofdstuk toont."
+
+#~ msgctxt "@item:listbox the style of the playlist"
+#~ msgid "Compact"
+#~ msgstr "Compact"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Recent Files"
+#~ msgstr "Recente bestanden"
+
+#~ msgctxt "@action:button clear (delete from database) recent files"
+#~ msgid "Clear"
+#~ msgstr "Wissen"
+
+#~ msgctxt "@info:tooltip restore playback position > duration"
+#~ msgid "Position for remote files is restored regardless of duration."
+#~ msgstr ""
+#~ "Positie voor bestanden op afstand wordt hersteld ongeacht de tijdsduur."
+
+#~ msgctxt "@label:button track no"
+#~ msgid "Track No"
+#~ msgstr "Track-nr"
+
+#~ msgctxt "@info:tooltip show blank"
+#~ msgid ""
+#~ "Hide this group property in the <br> section label when it is empty <br> "
+#~ "or not unique."
+#~ msgstr ""
+#~ "Verberg deze groepseigenschap in het <br> sectielabel wanneer deze leeg "
+#~ "is <br> of niet uniek."
+
+#~ msgctxt "@info:tooltip hide blank"
+#~ msgid ""
+#~ "Show the group property in the <br> section label even if it is empty."
+#~ msgstr ""
+#~ "Toon de groepseigenschap in het <br> sectielabel, zelfs als deze leeg is."
+
+#~ msgctxt "@action:button"
+#~ msgid "Advanced…"
+#~ msgstr "Geavanceerd…"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "None"
+#~ msgstr "Geen"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "File Name"
+#~ msgstr "Bestandsnaam"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Title"
+#~ msgstr "Titel"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Duration"
+#~ msgstr "Tijdsduur"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Modified Date"
+#~ msgstr "Gewijzigde datum"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "File Size"
+#~ msgstr "Bestandsgrootte"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Track No"
+#~ msgstr "Track-nr"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Sample Rate"
+#~ msgstr "Samplesnelheid"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Bitrate"
+#~ msgstr "Bitsnelheid"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "Playlist items will be grouped by the active <br>properties in the "
+#~ "provided order and each group <br>is sorted within by the primary sort "
+#~ "configuration set above."
+#~ msgstr ""
+#~ "Afspeellijstitems zullen gegroepeerd worden op de actieve "
+#~ "<br>eigenschappen in de geboden volgorde en elke groep <br>wordt intern "
+#~ "gesorteerd door de primaire sorteerconfiguratie boven ingesteld."
+
+#~ msgctxt "@label availabe grouping properties"
+#~ msgid "Available Groups"
+#~ msgstr "Beschikbare groepen"
+
+#~ msgctxt "@label active grouping properties"
+#~ msgid "Active Groups:"
+#~ msgstr "Actieve groepen:"
+
+#~ msgctxt "@action:button"
+#~ msgid "Name, descending"
+#~ msgstr "Naam, afnemend"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Config folder"
+#~ msgstr "Configuratiemap"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Open config folder"
+#~ msgstr "Configuratiemap openen"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Set default value"
+#~ msgstr "Standaard waarde instellen"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Remove mouse button action"
+#~ msgstr "Actie van muisknop verwijderen"
+
+#~ msgctxt "@title:window"
+#~ msgid "Edit mouse button action"
+#~ msgstr "Actie van muisknop bewerken"
+
+#~ msgctxt "@option:check"
+#~ msgid "Use Breeze icon theme"
+#~ msgstr "Thema Breeze-pictogrammen gebruiken"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Sets the icon theme to breeze.<br>Requires restart."
+#~ msgstr ""
+#~ "Stelt het pictogramthema in op breeze.<br>Vereist een opnieuw starten."
+
+#~ msgctxt "@action:button"
+#~ msgid "Random"
+#~ msgstr "Willekeurig"
+
+#~ msgctxt "@item:listbox the playback behavior of the playlist"
+#~ msgid "Random"
+#~ msgstr "Willekeurig"
+
+#~ msgctxt "@option:check"
+#~ msgid "Autoplay"
+#~ msgstr "Automatisch afspelen"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "When checked the next video will play automatically"
+#~ msgstr ""
+#~ "Wanneer ingeschakeld zal de volgende video automatisch worden afgespeeld"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "File dialog location"
+#~ msgstr "Locatie in bestandsdialoog"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "The default location of the open file dialog. If empty, the file dialog "
+#~ "will try to open to the last opened location."
+#~ msgstr ""
+#~ "De standaard locatie van de dialoog bestand openen. Indien leeg, zal de "
+#~ "bestandsdialoog de laatst geopende locatie openen."
+
+#~ msgctxt "@title:window select mouse button action"
+#~ msgid "Select action"
+#~ msgstr "Actie selecteren"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The number of recent files to store. Enter 0 (zero) to disable."
+#~ msgstr ""
+#~ "Het aantal recente bestanden om op te slaan. Voer 0 (zero) in om uit te "
+#~ "schakelen."
+
+#~ msgctxt "@title"
+#~ msgid "Double Click to Set Action"
+#~ msgstr "Dubbelklikken om actie in te stellen"
+
+#~ msgctxt "@info:shell"
+#~ msgid "bestvideo+bestaudio/best"
+#~ msgstr "bestvideo+bestaudio/best"
+
+#~ msgctxt "@action"
+#~ msgid "Audio Cycle Down"
+#~ msgstr "Audio omlaag draaien"
+
+#~ msgctxt "@action"
+#~ msgid "Playback Speed Decrease"
+#~ msgstr "Afspeelsnelheid verkleinen"
+
+#~ msgctxt "@action"
+#~ msgid "Playback Speed Reset"
+#~ msgstr "Afspeelsnelheid reset"
+
+#~ msgctxt "@action"
+#~ msgid "Subtitle Toggle"
+#~ msgstr "Ondertitel omschakelen"
+
+#~ msgctxt "@action"
+#~ msgid "Subtitle Move Up"
+#~ msgstr "Ondertiteling omhoog verplaatsen"
+
+#~ msgctxt "@action"
+#~ msgid "Subtitle Move Down"
+#~ msgstr "Ondertiteling omlaag verplaatsen"
+
+#~ msgctxt "@action"
+#~ msgid "Subtitle Quicken"
+#~ msgstr "Ondertitel Quicken"
+
+#~ msgctxt "@action"
+#~ msgid "Subtitle Delay"
+#~ msgstr "Ondertitel vertraging"
+
+#~ msgctxt "@action"
+#~ msgid "Subtitle Cycle Down"
+#~ msgstr "Ondertiteling omlaag draaien"
+
+#~ msgctxt "@action"
+#~ msgid "Video Move Down"
+#~ msgstr "Video omlaag verplaatsen"
+
+#~ msgctxt "@action"
+#~ msgid "Zoom Reset"
+#~ msgstr "Zoomen reset"
+
+#~ msgctxt "@action"
+#~ msgid "Contrast Up"
+#~ msgstr "Contrast omhoog"
+
+#~ msgctxt "@action"
+#~ msgid "Contrast Down"
+#~ msgstr "Contrast omlaag"
+
+#~ msgctxt "@action"
+#~ msgid "Contrast Reset"
+#~ msgstr "Contrast reset"
+
+#~ msgctxt "@action"
+#~ msgid "Brightness Up"
+#~ msgstr "Helderheid omhoog"
+
+#~ msgctxt "@action"
+#~ msgid "Brightness Down"
+#~ msgstr "Helderheid omlaag"
+
+#~ msgctxt "@action"
+#~ msgid "Brightness Reset"
+#~ msgstr "Helderheid reset"
+
+#~ msgctxt "@action"
+#~ msgid "Gamma Up"
+#~ msgstr "Gamma omhoog"
+
+#~ msgctxt "@action"
+#~ msgid "Gamma Down"
+#~ msgstr "Gamma omlaag"
+
+#~ msgctxt "@action"
+#~ msgid "Gamma Reset"
+#~ msgstr "Gamma reset"
+
+#~ msgctxt "@action"
+#~ msgid "Saturation Up"
+#~ msgstr "Verzadiging omhoog"
+
+#~ msgctxt "@action"
+#~ msgid "Saturation Down"
+#~ msgstr "Verzadiging omlaag"
+
+#~ msgctxt "@action"
+#~ msgid "Saturation Reset"
+#~ msgstr "Verzadiging reset"
+
+#~ msgctxt "placeholder text"
+#~ msgid "eng, ger etc."
+#~ msgstr "eng, ger etc."
+
+#~ msgctxt "placeholder text"
+#~ msgid "add volume +10"
+#~ msgstr "volume +10 toevoegen"
+
+#~ msgctxt "placeholder text"
+#~ msgid "Filename: ${filename}"
+#~ msgstr "Bestandsnaam: ${filename}"
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Skip words"
+#~ msgstr "Woorden overslaan"
+
+#~ msgctxt "placeholder text"
+#~ msgid "bestvideo+bestaudio/best"
+#~ msgstr "bestvideo+bestaudio/best"
+
+#~ msgctxt "@action:button"
+#~ msgid "Add ..."
+#~ msgstr "Toevoegen ..."
+
+#~ msgctxt "@action:button"
+#~ msgid "Url"
+#~ msgstr "Url"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Trash file"
+#~ msgstr "Bestand naar prullenbak verplaatsen"
+
+#~ msgctxt "@action"
+#~ msgid "Custom commands"
+#~ msgstr "Aangepaste commando's"
+
+#~ msgctxt "@option:check"
+#~ msgid "Enabled"
+#~ msgstr "Ingeschakeld"
+
+#~ msgctxt "@label:spinbox"
+#~ msgid "Resume playback"
+#~ msgstr "Afspelen hervatten"
+
+#~ msgctxt "@info:tooltip seek to last playback position setting"
+#~ msgid ""
+#~ "When opening a file that was played before, seek at the position it was "
+#~ "last time."
+#~ msgstr ""
+#~ "Bij openen van een bestand dat eerder is afgespeeld, spoel naar de "
+#~ "positie waar het het laatst was."
+
+#~ msgctxt "@info:tooltip start playing setting"
+#~ msgid ""
+#~ "When resuming playback and seeking to last playback position, start "
+#~ "playing it automatically."
+#~ msgstr ""
+#~ "Bij hervatten van afspelen en gaan naar de laatste afspeelpositie, het "
+#~ "automatisch afspelen."
+
+#~ msgctxt "@info"
+#~ msgid "Disabled"
+#~ msgstr "Uitgeschakeld"
+
+#~ msgctxt "@info"
+#~ msgid "For all files"
+#~ msgstr "Voor alle bestanden"
+
+#~ msgctxt "@action"
+#~ msgid "Configure"
+#~ msgstr "Configureren"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Subtitles function on"
+#~ msgstr "Ondertitelingsfunctie aan"
+
+#~ msgctxt "@action:intoolbar"
+#~ msgid "Help"
+#~ msgstr "Help"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "RunaPlayer help window (english only)"
+#~ msgstr "Hulpvenster van RunaPlayer (alleen Engels)"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "RunaPlayer handbook"
+#~ msgstr "Handboek van RunaPlayer"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Don't set on next startup"
+#~ msgstr "Niet instellen bij volgende start"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "This is also used for mouse wheel seeking, when mouse is over the "
+#~ "progress bar"
+#~ msgstr ""
+#~ "Dit wordt ook gebruikt voor verplaatsen met het muiswiel, wanneer de muis "
+#~ "boven de voortgangsbalk zich bevindt"
+
+#~ msgctxt "@label:spinbox"
+#~ msgid "Remember time position"
+#~ msgstr "Tijdpositie onthouden"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Skip chapters containing these words. Comma separated list."
+#~ msgstr "Hoofdstukken met deze woorden overslaan. Komma-gescheiden lijst."
+
+#~ msgctxt "@title:window"
+#~ msgid "Help"
+#~ msgstr "Help"
+
+#~ msgctxt "@title"
+#~ msgid "A configurable media player."
+#~ msgstr "Een te configureren mediaspeler."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Primary Track"
+#~ msgstr "&Primaire track"
+
+#~ msgctxt "@info"
+#~ msgid "Playlist is empty"
+#~ msgstr "Afspeellijst is leeg"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Do not use spaces."
+#~ msgstr "Geen spaties gebruiken."
+
+#~ msgctxt "@action"
+#~ msgid "Video pan y up"
+#~ msgstr "Video pan naar omhoog"
+
+#~ msgctxt "@action"
+#~ msgid "Video pan y down"
+#~ msgstr "Video pan naar omlaag"
+
+#~ msgctxt "@info"
+#~ msgid "<a href=\"https://youtube-dl.org\">Youtube-dl</a> was not found."
+#~ msgstr "<a href=\"https://youtube-dl.org\">Youtube-dl</a> is niet gevonden."
+
+#~ msgctxt "@info"
+#~ msgid "No title found for url %1"
+#~ msgstr "Geen titel gevonden voor url %1"
+
+#~ msgctxt "@info reason for blocking sleep and screen slocking"
+#~ msgid "Playing video"
+#~ msgstr "Video wordt afgespeeld"
+
+#~ msgctxt "@action:button"
+#~ msgid "Add file"
+#~ msgstr "Bestand toevoegen"
+
+#~ msgctxt "@action:button"
+#~ msgid "Add url"
+#~ msgstr "URL toevoegen"
+
+#~ msgid "Toggle Playlist"
+#~ msgstr "Afspeellijst omschakelen"
+
+#~ msgid "Leave empty for default value: <i>bestvideo+bestaudio/best</i>"
+#~ msgstr ""
+#~ "Leeg laten voor de standaard waarde: <i>bestvideo+bestaudio/best</i>"
+
+#~ msgid "Subtitle color"
+#~ msgstr "Kleur van ondertitels"
+
+#~ msgid "Configure shortcuts"
+#~ msgstr "Sneltoetsen configureren"
+
+#~ msgid "Move one frame forward, then pause"
+#~ msgstr "Eén frame voorwaarts, daarna pauzeren"
+
+#~ msgid "Move one frame backward, then pause"
+#~ msgstr "Eén frame achterwaarts, daarna pauzeren"
+
+#~ msgid "Cycle Subtitle Down"
+#~ msgstr "Ondertitel iets verlagen"
+
+#~ msgid "Unmute"
+#~ msgstr "Dempen opheffen"
+
+#~ msgid "Video pan x: %1"
+#~ msgstr "Video pan x-richting: %1"
+
+#~ msgid "Video pan y: %1"
+#~ msgstr "Video pan y-richting: %1"
+
+#~ msgid "Type to filter..."
+#~ msgstr "Typen om te filteren..."
+
+#~ msgid "Startup"
+#~ msgstr "Opstarten"
+
+#~ msgid "For files longer than %1 minutes"
+#~ msgstr "Voor bestanden langer dan %1 minuten"
+
+#~ msgid "Show header"
+#~ msgstr "Kop tonen"
+
+#~ msgid "Volume"
+#~ msgstr "Volume"
+
+#~ msgid "File default dialog location"
+#~ msgstr "Standaard locatie in bestandsdialoog"
+
+#~ msgid "File dialog last location"
+#~ msgstr "Laatste locatie in bestandsdialoog"
+
+#~ msgid "Last url"
+#~ msgstr "Laatste URL"
+
+#~ msgid "Action for left click"
+#~ msgstr "Actie voor linker klik"
+
+#~ msgid "Action for middle click"
+#~ msgstr "Actie voor midden klik"
+
+#~ msgid "Action for middle double click"
+#~ msgstr "Actie voor midden dubbelklikken"
+
+#~ msgid "Action for right click"
+#~ msgstr "Actie voor rechter klik"
+
+#~ msgid "Action for right double click"
+#~ msgstr "Actie voor rechter dubbelklikken"
+
+#~ msgid "Action for scroll up"
+#~ msgstr "Actie voor omhoog schuiven"
+
+#~ msgid "Chapters to skip"
+#~ msgstr "Hoofdstukken on over te slaan"
+
+#~ msgid "Show osd on skip chapters"
+#~ msgstr "OSD tonen bij hoofdstukken overslaan"
+
+#~ msgid "Ytdl format selection"
+#~ msgstr "Selectie van Ytdl-formaat"
+
+#~ msgid "Screenshot format"
+#~ msgstr "Schermafdrukformaat"
+
+#~ msgid "Show Menu Bar"
+#~ msgstr "Menubalk tonen"
+
+#~ msgid "Help!"
+#~ msgstr "Help!"
+
+#~ msgid "KHelpCenter"
+#~ msgstr "KHelpCenter"

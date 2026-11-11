@@ -1,0 +1,525 @@
+/*
+ * SPDX-FileCopyrightText: 2020 George Florea Bănuș <georgefb899@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+pragma ComponentBehavior: Bound
+
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Dialogs
+
+import org.kde.ki18n
+import org.kde.kirigami as Kirigami
+import org.kde.config as KConfig
+
+import win.sectorfive.runaplayer
+import win.sectorfive.runaplayer.playlist
+import win.sectorfive.runaplayer.transcript
+import win.sectorfive.runaplayer.utilities
+import win.sectorfive.runaplayer.settings
+import win.sectorfive.runaplayer.youtube
+
+ApplicationWindow {
+    id: appWindow
+
+    property bool containsMouse: false
+    property int previousVisibility: Window.Windowed
+
+    property Kirigami.InlineMessage errorBox: null
+    property var acceptedSubtitleTypes: ["application/x-subrip", "text/x-ssa", "text/x-microdvd"]
+
+    function initPlaylist() : void {
+        if (!playlist.isReady || !mpv.isReady) {
+            return
+        }
+        playlist.manager.initialize(CommandLineOptions.startupUrls)
+        if (CommandLineOptions.startupUrls.length > 0) {
+            Models.recentFilesModel.addRecentFile(CommandLineOptions.startupUrls[0], RecentFilesModel.OpenedFrom.ExternalApp)
+        }
+    }
+
+    function openFile(path: string, openedFrom: int) : void {
+        mpv.stop()
+        Models.recentFilesModel.addRecentFile(path, openedFrom)
+        playlist.manager.defaultPlaylist.addItem(path, PlaylistModel.Clear)
+    }
+
+    function isFullScreen() : bool {
+        return appWindow.visibility === Window.FullScreen
+    }
+
+    function isMaximized() : bool {
+        return appWindow.visibility === Window.Maximized
+    }
+
+    function toggleFullScreen() : void {
+        if (!isFullScreen()) {
+            appWindow.showFullScreen()
+        } else {
+            exitFullscreen()
+        }
+    }
+
+    function exitFullscreen() : void {
+        if (appWindow.previousVisibility === Window.Maximized) {
+            appWindow.show()
+            appWindow.showMaximized()
+        } else {
+            appWindow.showNormal()
+        }
+    }
+
+    function resizeWindow() : void {
+        if (SystemUtils.isPlatformWayland() || !GeneralSettings.resizeWindowToVideo || isFullScreen()) {
+            return
+        }
+
+        appWindow.width = mpv.videoWidth
+        appWindow.height = mpv.videoHeight
+                + (footerItem.isFloating ? 0 : footerItem.height)
+                + (menuBar.visible ? menuBar.height : 0)
+    }
+
+    objectName: "RunaplayerMainWindow"
+
+    visible: true
+    title: mpv.mediaTitle ? mpv.mediaTitle + " - Runa" : "Runa"
+    width: 1000
+    height: 600
+    minimumWidth: 400
+    minimumHeight: 200
+    color: "transparent"
+    background: Rectangle {
+        color: Kirigami.Theme.backgroundColor
+    }
+
+    Component.onCompleted: {
+        RunaplayerApp.setupEventFilter(appWindow)
+
+        const hasCommandLineFile = RunaplayerApp.url(0).toString() !== ""
+        const hasLastPlayedFile = GeneralSettings.lastPlayedFile !== ""
+        const hasFileToOpen = hasCommandLineFile || (PlaybackSettings.openLastPlayedFile && hasLastPlayedFile)
+        if (GeneralSettings.fullscreenOnStartUp && hasFileToOpen) {
+            toggleFullScreen()
+        }
+    }
+
+    onVisibilityChanged: function(visibility) {
+        if (PlaybackSettings.pauseWhileMinimized) {
+            if (visibility === Window.Minimized) {
+                if (mpv.pause) {
+                    mpv.preMinimizePlaybackState = VlcVideo.PlaybackState.Paused
+                } else {
+                    mpv.preMinimizePlaybackState = VlcVideo.PlaybackState.Playing
+                }
+                mpv.pause = true
+            }
+            if (previousVisibility === Window.Minimized
+                    && visibility === Window.Windowed | Window.Maximized | Window.FullScreen) {
+                if (mpv.preMinimizePlaybackState === VlcVideo.PlaybackState.Playing) {
+                    mpv.pause = false
+                }
+            }
+        }
+
+        // used to restore window state, when exiting fullscreen,
+        // to the one it had before going fullscreen
+        if (visibility !== Window.FullScreen) {
+            previousVisibility = visibility
+        }
+    }
+
+    onClosing: {
+        const settingsWindow = settingsLoader.item as Window
+        const sortConfigWindow = playlist.advancedSortWindow.item as Kirigami.ApplicationWindow
+        settingsWindow?.close()
+        sortConfigWindow?.close()
+    }
+
+    menuBar: MenuBarLoader {
+        id: menuBarLoader
+
+        state: !appWindow.isFullScreen() && GeneralSettings.showMenuBar
+               ? "visible"
+               : "hidden"
+        m_mpv: mpv
+        onVisibleChanged: appWindow.resizeWindow()
+    }
+
+
+    Loader {
+        active: false
+        sourceComponent: KConfig.WindowStateSaver {
+            configGroupName: "MainWindow"
+        }
+        Component.onCompleted: active = GeneralSettings.rememberWindowGeometry
+    }
+
+    VlcVideo {
+        id: mpv
+
+        playlistsManager: playlist.manager
+
+        width: appWindow.contentItem.width
+        height: appWindow.isFullScreen()
+                ? appWindow.contentItem.height
+                : appWindow.contentItem.height - (footerItem.isFloating ? 0 : footerItem.height)
+        anchors.left: playlist.edge === Qt.LeftEdge
+                      ? PlaylistSettings.overlayVideo ? appWindow.contentItem.left : playlist.right
+                      : transcript.right
+        anchors.right: playlist.edge === Qt.RightEdge
+                       ? PlaylistSettings.overlayVideo ? appWindow.contentItem.right : playlist.left
+                       : transcript.left
+        anchors.top: appWindow.contentItem.top
+
+        onFilesDropped: function(urls, mode) {
+            playlist.manager.defaultPlaylist.addFilesAndFolders(urls, mode)
+            if (mode === PlaylistModel.Behavior.Clear) {
+                Models.recentFilesModel.addRecentFile(playlist.manager.activeItemPath(), RecentFilesModel.OpenedFrom.Playlist)
+            }
+        }
+
+        onVideoReconfig: {
+            appWindow.resizeWindow()
+        }
+
+        onEofPlayNext: {
+            Models.recentFilesModel.addRecentFile(playlist.manager.activeItemPath(), RecentFilesModel.OpenedFrom.Playlist)
+        }
+
+        onIsReadyChanged: {
+            osd.active = true
+            appWindow.initPlaylist()
+        }
+
+        Osd {
+            id: osd
+
+            maxWidth: mpv.width
+        }
+    }
+
+    MprisItem {
+        playerItem: mpv
+        window: appWindow
+        activePlaylist: playlist.manager.activePlaylist
+
+        onRaise: { RunaplayerApp.raiseWindow() }
+        onOpenUri: function(uri) {
+            appWindow.openFile(uri, RecentFilesModel.OpenedFrom.ExternalApp)
+        }
+        Component.onCompleted: {
+            console.log("MprisItem QML Component.onCompleted")
+            console.log("playerItem:", playerItem)
+        }
+    }
+
+    // extra space outside the playlist so that the playlist is not closed
+    // when the mouse leaves it by mistake (dragging items, resizing the playlist)
+    Item {
+        // when window width is very small, there is only 50 pixels not covered by the playlist
+        // in that case the extra space is reduced to 30 to allow the playlist to be closed with the mouse
+        width: playlist.width >= Window.window.width - 70 ? 30 : 50
+        height: playlist.height
+        anchors.right: PlaylistSettings.position === "right" ? playlist.left : undefined
+        anchors.left: PlaylistSettings.position === "left" ? playlist.right : undefined
+        visible: playlist.visible
+        HoverHandler {}
+    }
+
+    Transcript {
+        id: transcript
+
+        m_mpv: mpv
+        height: mpv.height
+        mainWindowWidth: appWindow.width
+        fsScale: appWindow.isFullScreen() && PlaylistSettings.bigFontFullscreen ? 1.36 : 1
+    }
+
+    Playlist {
+        id: playlist
+
+        property bool isReady: false
+
+        m_mpv: mpv
+        height: mpv.height
+        mainWindowWidth: appWindow.width
+        fsScale: appWindow.isFullScreen() && PlaylistSettings.bigFontFullscreen ? 1.36 : 1
+
+        Component.onCompleted: {
+            isReady = true
+            appWindow.initPlaylist()
+        }
+    }
+
+    Footer {
+        id: footerItem
+
+        anchors.bottom: appWindow.contentItem.bottom
+
+        m_mpv: mpv
+        playlistsManager: playlist.manager
+        m_menuBarLoader: menuBarLoader
+    }
+
+    Actions {
+        id: actions
+
+        m_mpv: mpv
+        playlistsManager: playlist.manager
+        m_mpvContextMenuLoader: mpvContextMenuLoader
+        m_footer: footerItem
+        m_openUrlPopup: openUrlPopup
+
+        onOpenFileDialog: {
+            const item = fileDialogComponent.createObject(appWindow)
+            const fileDialog = item as FileDialog
+            fileDialog.open()
+        }
+        onOpenFolderDialog: {
+            const item = folderDialogComponent.createObject(appWindow)
+            const folderDialog = item as FolderDialog
+            folderDialog.open()
+        }
+        onOpenSubtitleDialog: {
+            const item = subtitlesFileDialogComponent.createObject(appWindow)
+            const subtitlesFileDialog = item as FileDialog
+            subtitlesFileDialog.open()
+        }
+    }
+
+    PlayerContextMenu {
+        id: mpvContextMenuLoader
+
+        m_mpv: mpv
+    }
+
+    SettingsWindow {
+        id: settingsLoader
+
+        m_mpv: mpv
+    }
+
+    YouTube {
+        id: youtube
+    }
+
+    InputPopup {
+        id: openUrlPopup
+
+        x: 10
+        y: 10
+        width: Math.min(appWindow.width * 0.9, 600)
+        lastText: GeneralSettings.lastUrl
+        buttonText: KI18n.i18nc("@action:button", "Open")
+        warningText: youtube.hasYoutubeDl()
+                     ? ""
+                     : KI18n.i18nc("@info", "Neither <a href=\"https://github.com/yt-dlp/yt-dlp\">yt-dlp</a> nor <a href=\"https://github.com/ytdl-org/youtube-dl\">youtube-dl</a> was found.")
+
+        onSubmitted: function(url) {
+            appWindow.openFile(youtube.normalizeUrl(url), RecentFilesModel.OpenedFrom.OpenAction)
+
+            GeneralSettings.lastUrl = url
+            GeneralSettings.save()
+        }
+    }
+
+    Component {
+        id: messageBoxComponent
+
+        Kirigami.InlineMessage {
+            id: messageBox
+
+            width: Math.min(Kirigami.Units.gridUnit * 50, appWindow.width * 0.8)
+            anchors.centerIn: parent
+
+            type: Kirigami.MessageType.Error
+            showCloseButton: true
+
+            onVisibleChanged: {
+                if (!visible) {
+                    destroy()
+                }
+            }
+        }
+    }
+
+    Component {
+        id: fileDialogComponent
+
+        FileDialog {
+            title: KI18n.i18nc("@title:window", "Select File")
+            currentFolder: GeneralSettings.fileDialogLastLocation
+            fileMode: FileDialog.OpenFile
+
+            onAccepted: {
+                appWindow.openFile(selectedFile, RecentFilesModel.OpenedFrom.OpenAction)
+                mpv.focus = true
+
+                GeneralSettings.fileDialogLastLocation = PathUtils.parentUrl(selectedFile)
+                GeneralSettings.save()
+                destroy()
+            }
+            onRejected: {
+                mpv.focus = true
+                destroy()
+            }
+            onVisibleChanged: {
+                RunaplayerApp.actionsEnabled = !visible
+            }
+        }
+    }
+
+    Component {
+        id: subtitlesFileDialogComponent
+
+        FileDialog {
+            title: KI18n.i18nc("@title:window", "Select Subtitles File")
+            currentFolder: PathUtils.parentUrl(mpv.currentUrl)
+            fileMode: FileDialog.OpenFile
+            nameFilters: ["Subtitles (*.srt *.ssa *.ass *.sub)"]
+
+            onAccepted: {
+                if (appWindow.acceptedSubtitleTypes.includes(MiscUtils.mimeType(selectedFile))) {
+                    mpv.addSubtitles(selectedFile)
+                }
+                destroy()
+            }
+            onRejected: {
+                mpv.focus = true
+                destroy()
+            }
+            onVisibleChanged: {
+                RunaplayerApp.actionsEnabled = !visible
+            }
+        }
+    }
+
+    Component {
+        id: folderDialogComponent
+
+        FolderDialog {
+            currentFolder: GeneralSettings.fileDialogLastLocation
+            onAccepted: {
+                playlist.manager.visiblePlaylist.addFilesAndFolders([selectedFolder], PlaylistModel.Clear)
+                GeneralSettings.fileDialogLastLocation = PathUtils.parentUrl(selectedFolder)
+                GeneralSettings.save()
+                destroy()
+            }
+            onRejected: {
+                mpv.focus = true
+                destroy()
+            }
+            onVisibleChanged: {
+                RunaplayerApp.actionsEnabled = !visible
+            }
+        }
+    }
+
+    Connections {
+        target: actions
+        function onTogglePlaylist() {
+            if (playlist.state === "visible") {
+                playlist.state = "hidden"
+            } else {
+                playlist.state = "visible"
+            }
+        }
+        function onToggleTranscript() {
+            transcript.toggle()
+        }
+        function onOpenSettingsWindow(page) {
+            settingsLoader.openSettingPage(page)
+        }
+    }
+
+    Connections {
+        target: mpv
+        function onOpenPlaylist() {
+            playlist.state = "visible"
+        }
+        function onClosePlaylist() {
+            playlist.state = "hidden"
+        }
+    }
+
+    Connections {
+        id: miscUtilsOnErrorConnection
+        target: MiscUtils
+        function onError(message) {
+            if (appWindow.errorBox === null) {
+                appWindow.errorBox = messageBoxComponent.createObject(appWindow)
+            }
+            appWindow.errorBox.visible = true
+            appWindow.errorBox.text = message
+        }
+    }
+
+    Connections {
+        target: OsdUtils
+        function onMessageReceived(message, context) {
+            osd.message(message)
+        }
+    }
+
+    Connections {
+        target: RunaplayerApp
+        function onQmlApplicationMouseLeave() {
+            if (PlaylistSettings.canToggleWithMouse && (appWindow.isFullScreen() || appWindow.isMaximized())) {
+                playlist.state = "hidden"
+            }
+            appWindow.containsMouse = false
+        }
+        function onQmlApplicationMouseEnter() {
+            appWindow.containsMouse = true
+        }
+        function onOpenUrl(url) {
+            if (GeneralSettings.appendVideoToSingleInstance) {
+                let behavior = GeneralSettings.playNewFileInSingleInstance
+                    ? PlaylistModel.AppendAndPlay
+                    : PlaylistModel.Append
+
+                playlist.manager.defaultPlaylist.addItem(url.toString(), behavior)
+                return
+            }
+
+            appWindow.openFile(url, RecentFilesModel.OpenedFrom.ExternalApp)
+        }
+        function onOpenRecentFile(url) {
+            appWindow.openFile(url, RecentFilesModel.OpenedFrom.Other)
+        }
+    }
+
+    Connections {
+        target: GeneralSettings
+        function onMaxRecentFilesChanged() {
+            Models.recentFilesModel.getItems()
+        }
+        function onResizeWindowToVideoChanged() {
+            appWindow.resizeWindow()
+        }
+    }
+    Connections {
+        target: OsdSettings
+        function onOsdFontSizeChanged() {
+            OsdUtils.message("Test osd font size", OsdUtils.Context.None)
+        }
+    }
+    Connections {
+        target: AudioSettings
+        function onPreferredTrackChanged() {
+            mpv.audioId = AudioSettings.preferredTrack
+        }
+    }
+    Connections {
+        target: SubtitlesSettings
+        function onAutoSelectSubtitlesChanged() {
+            mpv.selectSubtitleTrack()
+        }
+        function onPreferredTrackChanged() {
+            mpv.subtitleId = SubtitlesSettings.preferredTrack
+        }
+    }
+}

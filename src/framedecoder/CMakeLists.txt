@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: 2025 George Florea Bănuș <georgefb899@gmail.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+
+qt_add_library(framedecoder STATIC)
+add_library(Runaplayer::FrameDecoder ALIAS framedecoder)
+target_sources(framedecoder
+    PRIVATE
+        framedecoder.h
+        framedecoder.cpp
+)
+
+ecm_qt_declare_logging_category(framedecoder
+    HEADER "logging/_framedecoder.h"
+    IDENTIFIER "RunaplayerFrameDecoder"
+    CATEGORY_NAME "win.sectorfive.runaplayer.framedecoder"
+    DEFAULT_SEVERITY Info
+)
+
+target_link_libraries(framedecoder PRIVATE
+    Qt6::Core
+    Qt6::Gui
+
+    FFmpeg::AVFORMAT
+    FFmpeg::AVCODEC
+    FFmpeg::AVUTIL
+    FFmpeg::AVFILTER
+    FFmpeg::SWSCALE
+)

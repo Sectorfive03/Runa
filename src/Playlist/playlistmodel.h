@@ -1,0 +1,195 @@
+/*
+ * SPDX-FileCopyrightText: 2020 George Florea Bănuș <georgefb899@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+#ifndef PLAYLISTMODEL_H
+#define PLAYLISTMODEL_H
+
+#include <QAbstractListModel>
+#include <QThreadPool>
+#include <QUrl>
+#include <QtQml/qqmlregistration.h>
+
+#include "playlistmetadata.h"
+#include "youtube.h"
+
+class QFileInfo;
+struct YTVideoInfo;
+struct AudioMetaData;
+struct VideoMetaData;
+
+struct PlaylistItem {
+    QUrl url;
+    QString filename;
+    QString mediaTitle;
+    QString folderPath;
+    QString dirName;
+    QString formattedDuration;
+    double playbackPosition{0.0};
+    double duration{0.0};
+    qint64 fileSize{0};
+    QDateTime modifiedDate;
+    QString extension;
+    QString fileType;
+
+    AudioMetaData audio;
+    VideoMetaData video;
+};
+
+class PlaylistModel : public QAbstractListModel
+{
+    Q_OBJECT
+    QML_ELEMENT
+
+public:
+    explicit PlaylistModel(QObject *parent = nullptr);
+    ~PlaylistModel();
+
+    enum Roles {
+        NameRole = Qt::UserRole,
+        NameWithFallbackRole,
+        RowNumberRole,
+        // General
+        DurationRole,
+        FormattedDurationRole,
+        PathRole,
+        FolderPathRole,
+        DirNameRole,
+        DateRole,
+        FileSizeRole,
+        TypeRole,
+        ExtensionRole,
+        PlayingRole,
+        IsLocalRole,
+        IsSelectedRole,
+        SectionRole,
+        PlaybackPositionRole,
+        // Audio
+        TrackNoRole,
+        DiscNoRole,
+        GenreRole,
+        TitleRole,
+        TitleWithFallbackRole,
+        ReleaseYearRole,
+        AlbumRole,
+        ArtistRole,
+        AlbumArtistRole,
+        ComposerRole,
+        LyricistRole,
+        AudioCodecRole,
+        SampleRateRole,
+        BitrateRole,
+        // Video
+        DisplayedWidthRole,
+        DisplayedHeightRole,
+        FramerateRole,
+        VideoCodecRole,
+        OrientationRole,
+    };
+    Q_ENUM(Roles)
+
+    enum Behavior {
+        Append,
+        AppendAndPlay,
+        Insert,
+        Clear,
+    };
+    Q_ENUM(Behavior)
+
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    Q_INVOKABLE bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
+    QHash<int, QByteArray> roleNames() const override;
+
+    void clear();
+    void addItem(const QUrl &url, PlaylistModel::Behavior behavior);
+    void addM3uItems(const QUrl &url, PlaylistModel::Behavior behavior);
+    void stop();
+
+    int playingItem() const;
+    void setPlayingItem(uint i);
+    void removeItem(uint row);
+
+    bool isPlaying() const;
+    void setIsPlaying(bool newIsPlaying);
+
+    QList<PlaylistItem> playlist() const;
+    void addPlaylist(const QList<PlaylistItem> &newPlaylist);
+    QString playlistName() const;
+    void setPlaylistName(const QString &newPlaylistName);
+
+    void updateMetadata();
+    QString padNumberWithZeros(int number, int length) const;
+
+    // shuffling
+    // when shuffling is on, instead of using an m_playlist index to determine
+    // the next and previous item to play, an index (m_currentShuffledRow) of m_shuffledIndexes is used
+
+    // m_playlist          m_shuffledIndexes
+    // 0 file_0            0 m_playlist.index_4 (file_4}
+    // 1 file_1            1 m_playlist.index_3 (file_3)
+    // 2 file_2            2 m_playlist.index_1 (file_1)
+    // 3 file_3            3 m_playlist.index_2 (file_2)
+    // 4 file_4            4 m_playlist.index_0 (file_0)
+    //
+    // if the current file is file_3 at index m_playlist.index_3
+    // when shuffle if OFF m_playlist.index_3 in incremented/decremented by 1 for the next/previous item
+    // previous file: m_playlist.index_2 file_2
+    //  current file: m_playlist.index_3 file_3
+    //     next file: m_playlist.index_4 file_4
+    //
+    // when shuffle if ON m_shuffledIndexes.index_1 in incremented/decremented by 1 for the next/previous item
+    // previous file: m_shuffledIndexes.index_0 -> m_playlist.index_4 file_4
+    //  current file: m_shuffledIndexes.index_1 -> m_playlist.index_3 file_3
+    //     next file: m_shuffledIndexes.index_2 -> m_playlist.index_1 file_1
+
+    // when shuffling the playing item is moved to the front
+    void shuffleIndexes(const std::vector<int> &included = {});
+    std::vector<int> shuffledIndexes() const;
+    int currentShuffledIndex() const;
+    void setCurrentShuffledIndex(int shuffledIndex);
+
+Q_SIGNALS:
+    void itemAdded(uint index, const QString &path, QString playlistName);
+    void playingItemChanged(QString playlistName);
+    void metaDataReady(uint index, const QUrl &url, KFileMetaData::PropertyMultiMap metadata);
+    void youtubeMetaDataReady();
+    void youtubePlaylistFinished();
+    void siblingsPlaylistFinished();
+    void metadataUpdateFinished();
+
+private:
+    void appendItem(const QUrl &url);
+    void appendWithBehavior(const QUrl &url, Behavior behavior);
+    void handleRemoteUrl(const QUrl &url, Behavior behavior);
+    void handleLocalFile(const QUrl &url, Behavior behavior);
+    void getSiblingItems(const QUrl &url);
+    std::optional<PlaylistItem> localFileToPlaylistItem(const QFileInfo &fileInfo);
+    void addYouTubePlaylist(const QJsonArray &playlist, const QString &videoId);
+    void updateFileInfo(const YTVideoInfo &info, const QVariantMap &data);
+    bool isVideoOrAudioMimeType(const QString &mimeType);
+    void getMetaData(uint i, const QString &path);
+    void onMetaDataReady(uint i, const QUrl &url, const KFileMetaData::PropertyMultiMap &properties);
+    double getPlaybackPosition(const uint row);
+
+    QList<PlaylistItem> m_playlist;
+    QString m_playlistName{u"Default"};
+    // The flag to check if this is the active playlist.
+    bool m_isPlaying{false};
+    QPersistentModelIndex m_playingIndex;
+    QString m_playlistPath;
+    YouTube youtube;
+
+    std::vector<int> m_shuffledIndexes;
+    int m_currentShuffledIndex{-1};
+    QThreadPool m_threadPool;
+    // incremented when playlist is cleared, worker threads abort if this value changes
+    std::atomic<int> m_playlistVersion{0};
+    // set to true in the destructor, worker threads abort if this value is true
+    std::atomic<bool> m_isShuttingDown{false};
+};
+
+Q_DECLARE_METATYPE(PlaylistModel::Behavior)
+#endif // PLAYLISTMODEL_H
